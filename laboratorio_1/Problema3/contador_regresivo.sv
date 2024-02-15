@@ -1,12 +1,10 @@
-module contador_regresivo(output reg [3:0] Count,
-								  input wire clock, reset);
+module contador_regresivo(input clk, reset,
+									output reg[3:0] out);
 								  
-always @ (posedge clock or negedge reset)
-	begin: COUNTER
-		if (!reset)
-			Count <= 0;
-		else
-			Count <= Count+1;
+always @ (posedge clk) begin
+	if (!reset)
+		out <= 0;
+	else
+		out <= out +1;
 	end
-	
 endmodule

@@ -1,0 +1,30 @@
+|contador_regresivo
+num[0] => out[0].DATAB
+num[1] => out[1].DATAB
+num[2] => out[2].DATAB
+num[3] => out[3].DATAB
+num[4] => out[4].DATAB
+num[5] => out[5].DATAB
+reset => out[0].OUTPUTSELECT
+reset => out[1].OUTPUTSELECT
+reset => out[2].OUTPUTSELECT
+reset => out[3].OUTPUTSELECT
+reset => out[4].OUTPUTSELECT
+reset => out[5].OUTPUTSELECT
+reset => out[5].IN1
+dec => out[5].IN1
+out[0] << out[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out[1] << out[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out[2] << out[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out[3] << out[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out[4] << out[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out[5] << out[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] << WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] << WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] << WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] << WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] << WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] << WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] << WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

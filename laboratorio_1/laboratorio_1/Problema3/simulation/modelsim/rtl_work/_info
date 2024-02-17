@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3/simulation/modelsim
+vcontador_manual_tb
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1708117184
+!i10b 1
+!s100 Ai^akgLPQM^>4MBRS>KLk1
+I7^I36_SnJH0lHR5jK=Rz[1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 contador_manual_tb_sv_unit
+S1
+R0
+w1708117169
+8C:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3/contador_manual_tb.sv
+FC:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3/contador_manual_tb.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1708117184.000000
+!s107 C:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3/contador_manual_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3|C:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3/contador_manual_tb.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3
+Z8 tCvgOpt 0
+vcontador_regresivo
+R1
+R2
+!i10b 1
+!s100 ;=[he4I]HVXP2D>1bU]7L0
+Il9jlKVQ@_6BHKdPNO`c^F2
+R3
+!s105 contador_regresivo_sv_unit
+S1
+R0
+w1708117130
+8C:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3/contador_regresivo.sv
+FC:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3/contador_regresivo.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3/contador_regresivo.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3|C:/Users/User/Desktop/auriza_digital_design_lab_2023-Problema-3/laboratorio_1/Problema3/contador_regresivo.sv|
+!i113 1
+R6
+R7
+R8

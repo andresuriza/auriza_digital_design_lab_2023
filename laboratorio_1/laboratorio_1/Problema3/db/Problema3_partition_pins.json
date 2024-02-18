@@ -56,15 +56,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset",
-					"strict" : false
-				},
-				{
 					"name" : "num[0]",
 					"strict" : false
 				},
 				{
 					"name" : "dec",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
 					"strict" : false
 				},
 				{

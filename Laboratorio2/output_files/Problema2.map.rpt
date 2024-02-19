@@ -1,5 +1,5 @@
 Analysis & Elaboration report for Problema2
-Sun Feb 18 17:09:49 2024
+Mon Feb 19 08:17:52 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Sun Feb 18 17:09:49 2024          ;
+; Analysis & Elaboration Status ; Successful - Mon Feb 19 08:17:52 2024          ;
 ; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                 ; Problema2                                      ;
 ; Top-level Entity Name         ; Problema2                                      ;
@@ -171,19 +171,17 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sun Feb 18 17:09:35 2024
+    Info: Processing started: Mon Feb 19 08:17:37 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Problema2 -c Problema2 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Info (12021): Found 8 design units, including 4 entities, in source file problema2.vhd
-    Info (12022): Found design unit 1: full_adder-Behavioral File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 14
-    Info (12022): Found design unit 2: Problema2-Behavioral File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 30
-    Info (12022): Found design unit 3: hex_to_7seg-Behavioral File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 55
-    Info (12022): Found design unit 4: top_level-Behavioral File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 91
-    Info (12023): Found entity 1: full_adder File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 6
-    Info (12023): Found entity 2: Problema2 File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 23
-    Info (12023): Found entity 3: hex_to_7seg File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 50
-    Info (12023): Found entity 4: top_level File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 84
+Info (12021): Found 6 design units, including 3 entities, in source file problema2.vhd
+    Info (12022): Found design unit 1: full_adder-Behavioral File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 13
+    Info (12022): Found design unit 2: hex_decoder-Behavioral File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 27
+    Info (12022): Found design unit 3: Problema2-Behavioral File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 64
+    Info (12023): Found entity 1: full_adder File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 5
+    Info (12023): Found entity 2: hex_decoder File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 22
+    Info (12023): Found entity 3: Problema2 File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 56
 Info (12021): Found 2 design units, including 1 entities, in source file problema2_tb.vhd
     Info (12022): Found design unit 1: Problema2_tb-Behavioral File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2_tb.vhd Line: 8
     Info (12023): Found entity 1: Problema2_tb File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2_tb.vhd Line: 5
@@ -191,11 +189,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file to_7seg
     Info (12022): Found design unit 1: to_7seg-Behavioral File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/to_7seg.vhd Line: 10
     Info (12023): Found entity 1: to_7seg File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/to_7seg.vhd Line: 4
 Info (12127): Elaborating entity "Problema2" for the top level hierarchy
-Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:FA0" File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 40
+Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:FA0" File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 78
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:HD" File: C:/Users/maest/Documents/TEC/TallerDigital/Laboratorio2/Problema2.vhd Line: 83
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4852 megabytes
-    Info: Processing ended: Sun Feb 18 17:09:49 2024
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Mon Feb 19 08:17:52 2024
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:11
 
 

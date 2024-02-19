@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Sat Feb 17 18:02:37 2024
+Analysis & Synthesis Status : Successful - Sun Feb 18 21:03:36 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : Problema3
 Top-level Entity Name : contador_regresivo
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 0
-Total pins : 21
+Total registers : 35
+Total pins : 23
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

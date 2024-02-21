@@ -46,6 +46,7 @@ vlib rtl_work
 vmap work rtl_work
 
 vlog -sv -work work +incdir+C:/Users/andres/Documents/TEC/Taller\ de\ Diseno\ Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3 {C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv}
+vlog -sv -work work +incdir+C:/Users/andres/Documents/TEC/Taller\ de\ Diseno\ Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3 {C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/slowClock.sv}
 
 vlog -sv -work work +incdir+C:/Users/andres/Documents/TEC/Taller\ de\ Diseno\ Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3 {C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo_self_tb.sv}
 

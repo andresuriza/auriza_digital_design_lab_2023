@@ -274,7 +274,6 @@ module contador_regresivo #(parameter N=6)
 		end
 	endcase
 		
-	
 	always_ff @(posedge new_clock, posedge rst) begin
 		if (rst)
 			current <= num;

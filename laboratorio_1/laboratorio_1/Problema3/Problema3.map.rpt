@@ -1,5 +1,5 @@
-Analysis & Synthesis report for Problema3
-Sun Feb 18 21:03:36 2024
+Analysis & Elaboration report for Problema3
+Tue Feb 20 20:59:10 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -7,17 +7,11 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |contador_regresivo
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |contador_regresivo
+  5. Analysis & Elaboration Settings
+  6. Analysis & Elaboration Messages
 
 
 
@@ -41,31 +35,52 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Feb 18 21:03:36 2024          ;
-; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name                   ; Problema3                                      ;
-; Top-level Entity Name           ; contador_regresivo                             ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 35                                             ;
-; Total pins                      ; 23                                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                 ;
++-------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Tue Feb 20 20:59:10 2024          ;
+; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                 ; Problema3                                      ;
+; Top-level Entity Name         ; contador_regresivo                             ;
+; Family                        ; Cyclone V                                      ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
+; Total registers               ; N/A until Partition Merge                      ;
+; Total pins                    ; N/A until Partition Merge                      ;
+; Total virtual pins            ; N/A until Partition Merge                      ;
+; Total block memory bits       ; N/A until Partition Merge                      ;
+; Total PLLs                    ; N/A until Partition Merge                      ;
+; Total DLLs                    ; N/A until Partition Merge                      ;
++-------------------------------+------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |contador_regresivo ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 6     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -151,180 +166,32 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                          ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                      ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; contador_regresivo.sv            ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv ;         ;
-; slowClock.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/slowClock.sv          ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 39        ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 68        ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 10        ;
-;     -- 5 input functions                    ; 2         ;
-;     -- 4 input functions                    ; 15        ;
-;     -- <=3 input functions                  ; 41        ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 35        ;
-;                                             ;           ;
-; I/O pins                                    ; 23        ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; rst~input ;
-; Maximum fan-out                             ; 47        ;
-; Total fan-out                               ; 388       ;
-; Average fan-out                             ; 2.60      ;
-+---------------------------------------------+-----------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name        ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+--------------------+--------------+
-; |contador_regresivo        ; 68 (33)             ; 35 (6)                    ; 0                 ; 0          ; 23   ; 0            ; |contador_regresivo                      ; contador_regresivo ; work         ;
-;    |slowClock:slow_clock|  ; 35 (35)             ; 29 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |contador_regresivo|slowClock:slow_clock ; slowClock          ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+--------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 35    ;
-; Number of registers using Synchronous Clear  ; 28    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 35    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |contador_regresivo ;
-+----------------+-------+-----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                      ;
-+----------------+-------+-----------------------------------------------------------+
-; N              ; 6     ; Signed Integer                                            ;
-+----------------+-------+-----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 35                          ;
-;     CLR               ; 7                           ;
-;     CLR SCLR          ; 28                          ;
-; arriav_lcell_comb     ; 72                          ;
-;     arith             ; 28                          ;
-;         1 data inputs ; 28                          ;
-;     normal            ; 44                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 15                          ;
-;         5 data inputs ; 2                           ;
-;         6 data inputs ; 10                          ;
-; boundary_port         ; 23                          ;
-;                       ;                             ;
-; Max LUT depth         ; 3.70                        ;
-; Average LUT depth     ; 2.67                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sun Feb 18 21:03:25 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Problema3 -c Problema3
+    Info: Processing started: Tue Feb 20 20:58:56 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Problema3 -c Problema3 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file contador_regresivo_self_tb.sv
+    Info (12023): Found entity 1: contador_regresivo_self_tb File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo_self_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file contador_regresivo.sv
     Info (12023): Found entity 1: contador_regresivo File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file contador_manual_tb.sv
     Info (12023): Found entity 1: contador_manual_tb File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_manual_tb.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file contador_regresivo_self_tb.sv
-    Info (12023): Found entity 1: contador_regresivo_self_tb File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo_self_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file slowclock.sv
     Info (12023): Found entity 1: slowClock File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/slowClock.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file button_conditioner.sv
-    Info (12023): Found entity 1: button_conditioner File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/button_conditioner.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file seven_seg_decoder6b.sv
-    Info (12023): Found entity 1: seven_seg_decoder6b File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/seven_seg_decoder6b.sv Line: 1
 Info (12127): Elaborating entity "contador_regresivo" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at contador_regresivo.sv(283): truncated value with size 32 to match size of target (6) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 283
+Warning (10230): Verilog HDL assignment warning at contador_regresivo.sv(282): truncated value with size 32 to match size of target (6) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 282
 Info (12128): Elaborating entity "slowClock" for hierarchy "slowClock:slow_clock" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 9
 Warning (10230): Verilog HDL assignment warning at slowClock.sv(15): truncated value with size 32 to match size of target (28) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/slowClock.sv Line: 15
-Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276004): RAM logic "Ram0" is uninferred due to inappropriate RAM size File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 12
-    Info (276004): RAM logic "Ram1" is uninferred due to inappropriate RAM size File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 12
-Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "current[0]" is converted into an equivalent circuit using register "current[0]~_emulated" and latch "current[0]~1" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 281
-    Warning (13310): Register "current[1]" is converted into an equivalent circuit using register "current[1]~_emulated" and latch "current[1]~5" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 281
-    Warning (13310): Register "current[2]" is converted into an equivalent circuit using register "current[2]~_emulated" and latch "current[2]~9" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 281
-    Warning (13310): Register "current[3]" is converted into an equivalent circuit using register "current[3]~_emulated" and latch "current[3]~13" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 281
-    Warning (13310): Register "current[5]" is converted into an equivalent circuit using register "current[5]~_emulated" and latch "current[5]~17" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 281
-    Warning (13310): Register "current[4]" is converted into an equivalent circuit using register "current[4]~_emulated" and latch "current[4]~21" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 281
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "seg2[5]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/laboratorio_1/laboratorio_1/Problema3/contador_regresivo.sv Line: 4
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 91 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 68 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Sun Feb 18 21:03:36 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:29
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4777 megabytes
+    Info: Processing ended: Tue Feb 20 20:59:10 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:38
 
 

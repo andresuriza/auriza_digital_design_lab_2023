@@ -1,0 +1,163 @@
+module ALU_Testbench;
+    // Parameters
+    parameter WIDTH = 4;
+    
+    // Signals
+    logic [WIDTH-1:0] operandA, operandB;
+    logic [2:0] operation;
+    logic [WIDTH-1:0] result;
+    logic N, Z, C, V;
+    
+    // Instantiate ALU
+    ALU #(.WIDTH(WIDTH)) alu(
+        .operandA(operandA),
+        .operandB(operandB),
+        .operation(operation),
+        .result(result),
+        .N(N),
+        .Z(Z),
+        .C(C),
+        .V(V)
+    );
+    
+    // Function to display test results
+    function void display_result(string op, logic [WIDTH-1:0] expected, logic [WIDTH-1:0] actual);
+        $display("%s Test: Expected = %b, Actual = %b, Result = %s", op, expected, actual, (expected == actual) ? "PASS" : "FAIL");
+    endfunction
+    
+    // Perform self-checking tests
+    initial begin
+        // Test addition
+        operandA = 4'b0010;
+        operandB = 4'b0011;
+        operation = 3'b000;
+        #10;
+        display_result("Addition", 4'b0101, result);
+        
+        operandA = 4'b1010;
+        operandB = 4'b0110;
+        operation = 3'b000;
+        #10;
+        display_result("Addition", 4'b10000, result);
+        
+        // Test subtraction
+        operandA = 4'b1010;
+        operandB = 4'b0110;
+        operation = 3'b001;
+        #10;
+        display_result("Subtraction", 4'b0100, result);
+        
+        operandA = 4'b1000;
+        operandB = 4'b0011;
+        operation = 3'b001;
+        #10;
+        display_result("Subtraction", 4'b0101, result);
+        
+        // Test multiplication
+        operandA = 4'b1010;
+        operandB = 4'b0011;
+        operation = 3'b010;
+        #10;
+        display_result("Multiplication", 4'b1110, result);
+        
+        operandA = 4'b1111;
+        operandB = 4'b0010;
+        operation = 3'b010;
+        #10;
+        display_result("Multiplication", 4'b11110, result);
+        
+        // Test division
+        operandA = 4'b1101;
+        operandB = 4'b0100;
+        operation = 3'b011;
+        #10;
+        display_result("Division", 4'b0010, result);
+        
+        operandA = 4'b1011;
+        operandB = 4'b0010;
+        operation = 3'b011;
+        #10;
+        display_result("Division", 4'b0101, result);
+        
+        // Test modulus
+        operandA = 4'b1101;
+        operandB = 4'b0100;
+        operation = 3'b100;
+        #10;
+        display_result("Modulus", 4'b0010, result);
+        
+        operandA = 4'b1011;
+        operandB = 4'b0010;
+        operation = 3'b100;
+        #10;
+        display_result("Modulus", 4'b0001, result);
+        
+        // Test logical AND
+        operandA = 4'b1101;
+        operandB = 4'b0110;
+        operation = 3'b101;
+        #10;
+        display_result("Logical AND", 4'b0100, result);
+        
+        operandA = 4'b1011;
+        operandB = 4'b0011;
+        operation = 3'b101;
+        #10;
+        display_result("Logical AND", 4'b0011, result);
+        
+        // Test logical OR
+        operandA = 4'b1101;
+        operandB = 4'b0110;
+        operation = 3'b110;
+        #10;
+        display_result("Logical OR", 4'b1111, result);
+        
+        operandA = 4'b1011;
+        operandB = 4'b0010;
+        operation = 3'b110;
+        #10;
+        display_result("Logical OR", 4'b1011, result);
+        
+        // Test logical XOR
+        operandA = 4'b1101;
+        operandB = 4'b0110;
+        operation = 3'b111;
+        #10;
+        display_result("Logical XOR", 4'b1011, result);
+        
+        operandA = 4'b1011;
+        operandB = 4'b0010;
+        operation = 3'b111;
+        #10;
+        display_result("Logical XOR", 4'b1001, result);
+        
+        // Test left shift
+        operandA = 4'b1101;
+        operandB = 4'b0011;
+        operation = 3'b1000;
+        #10;
+        display_result("Left Shift", 4'b1000, result);
+        
+        operandA = 4'b1010;
+        operandB = 4'b0010;
+        operation = 3'b1000;
+        #10;
+        display_result("Left Shift", 4'b101000, result);
+        
+        // Test right shift
+        operandA = 4'b1101;
+        operandB = 4'b0011;
+        operation = 3'b1001;
+        #10;
+        display_result("Right Shift", 4'b0001, result);
+        
+        operandA = 4'b1010;
+        operandB = 4'b0010;
+        operation = 3'b1001;
+        #10;
+        display_result("Right Shift", 4'b000010, result);
+        
+        // End simulation
+        $finish;
+    end
+endmodule

@@ -1,0 +1,25 @@
+module fulladder(input logic a, b, cin,
+						output logic sum, cout);
+	logic p, g;
+	
+	assign p = a ^ b;
+	assign g = a & b;
+	
+	assign sum = p ^ cin;
+	assign cout = g | (p & cin);
+endmodule
+
+
+module full_subtractor(input logic A, B, bin,
+                       output logic diff, bout);
+
+    logic w1, w2, w3;
+    
+    assign w1 = A ^ B;
+    assign w2 = (~A) & B;
+    assign w3 = w1 & cbin;
+    
+    assign diff = w1 ^ cin;
+    assign bout = w2 | (cin & (~w1))
+
+endmodule

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Problema1
-Wed Feb 28 14:08:10 2024
+Wed Feb 28 14:19:38 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -15,17 +15,16 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Parameter Settings for User Entity Instance: Top-level Entity: |Problema1
- 10. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 12. Port Connectivity Checks: "to_7seg:BCDseg"
- 13. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder9"
- 14. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder5"
- 15. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder4"
- 16. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder1"
- 17. Port Connectivity Checks: "multiplier:mult"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 10. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 11. Port Connectivity Checks: "to_7seg:BCDseg"
+ 12. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder9"
+ 13. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder5"
+ 14. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder4"
+ 15. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder1"
+ 16. Port Connectivity Checks: "multiplier:mult"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -52,7 +51,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Feb 28 14:08:10 2024          ;
+; Analysis & Synthesis Status     ; Successful - Wed Feb 28 14:19:38 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; Problema1                                      ;
 ; Top-level Entity Name           ; Problema1                                      ;
@@ -188,10 +187,9 @@ https://fpgasoftware.intel.com/eula.
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc                                          ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc                                      ;         ;
 ; aglobal221.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                                           ;         ;
-; db/lpm_divide_1am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/lpm_divide_1am.tdf      ;         ;
-; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/sign_div_unsign_7kh.tdf ;         ;
-; db/alt_u_div_kse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/alt_u_div_kse.tdf       ;         ;
-; db/lpm_divide_42m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/lpm_divide_42m.tdf      ;         ;
+; db/lpm_divide_72m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/lpm_divide_72m.tdf      ;         ;
+; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/sign_div_unsign_dkh.tdf ;         ;
+; db/alt_u_div_0te.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/alt_u_div_0te.tdf       ;         ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -200,14 +198,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimate of Logic utilization (ALMs needed) ; 85         ;
+; Estimate of Logic utilization (ALMs needed) ; 76         ;
 ;                                             ;            ;
-; Combinational ALUT usage for logic          ; 144        ;
+; Combinational ALUT usage for logic          ; 114        ;
 ;     -- 7 input functions                    ; 3          ;
-;     -- 6 input functions                    ; 22         ;
-;     -- 5 input functions                    ; 37         ;
-;     -- 4 input functions                    ; 36         ;
-;     -- <=3 input functions                  ; 46         ;
+;     -- 6 input functions                    ; 34         ;
+;     -- 5 input functions                    ; 25         ;
+;     -- 4 input functions                    ; 9          ;
+;     -- <=3 input functions                  ; 43         ;
 ;                                             ;            ;
 ; Dedicated logic registers                   ; 0          ;
 ;                                             ;            ;
@@ -215,10 +213,10 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;            ;
 ; Total DSP Blocks                            ; 0          ;
 ;                                             ;            ;
-; Maximum fan-out node                        ; B[2]~input ;
-; Maximum fan-out                             ; 34         ;
-; Total fan-out                               ; 650        ;
-; Average fan-out                             ; 2.98       ;
+; Maximum fan-out node                        ; A[0]~input ;
+; Maximum fan-out                             ; 28         ;
+; Total fan-out                               ; 547        ;
+; Average fan-out                             ; 2.91       ;
 +---------------------------------------------+------------+
 
 
@@ -227,28 +225,23 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Entity Name         ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Problema1                             ; 144 (61)            ; 0 (0)                     ; 0                 ; 0          ; 37   ; 0            ; |Problema1                                                                                                 ; Problema1           ; work         ;
-;    |lpm_divide:Div0|                   ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_1am:auto_generated|  ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Div0|lpm_divide_1am:auto_generated                                                   ; lpm_divide_1am      ; work         ;
-;          |sign_div_unsign_7kh:divider| ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
-;             |alt_u_div_kse:divider|    ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse       ; work         ;
-;    |lpm_divide:Mod0|                   ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_42m:auto_generated|  ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                   ; lpm_divide_42m      ; work         ;
-;          |sign_div_unsign_7kh:divider| ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
-;             |alt_u_div_kse:divider|    ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse       ; work         ;
-;    |multiplier:mult|                   ; 17 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult                                                                                 ; multiplier          ; work         ;
+; |Problema1                             ; 114 (75)            ; 0 (0)                     ; 0                 ; 0          ; 37   ; 0            ; |Problema1                                                                                                 ; Problema1           ; work         ;
+;    |lpm_divide:Mod0|                   ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_72m:auto_generated|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0|lpm_divide_72m:auto_generated                                                   ; lpm_divide_72m      ; work         ;
+;          |sign_div_unsign_dkh:divider| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
+;             |alt_u_div_0te:divider|    ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
+;    |multiplier:mult|                   ; 15 (3)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult                                                                                 ; multiplier          ; work         ;
 ;       |half_adder:halfAdder10|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder10                                                          ; half_adder          ; work         ;
-;       |half_adder:halfAdder12|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder12                                                          ; half_adder          ; work         ;
-;       |half_adder:halfAdder1|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder1                                                           ; half_adder          ; work         ;
-;       |half_adder:halfAdder2|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder2                                                           ; half_adder          ; work         ;
+;       |half_adder:halfAdder11|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder11                                                          ; half_adder          ; work         ;
+;       |half_adder:halfAdder12|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder12                                                          ; half_adder          ; work         ;
+;       |half_adder:halfAdder2|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder2                                                           ; half_adder          ; work         ;
 ;       |half_adder:halfAdder3|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder3                                                           ; half_adder          ; work         ;
 ;       |half_adder:halfAdder4|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder4                                                           ; half_adder          ; work         ;
 ;       |half_adder:halfAdder5|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder5                                                           ; half_adder          ; work         ;
-;       |half_adder:halfAdder6|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder6                                                           ; half_adder          ; work         ;
 ;       |half_adder:halfAdder7|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder7                                                           ; half_adder          ; work         ;
 ;       |half_adder:halfAdder8|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder8                                                           ; half_adder          ; work         ;
-;       |half_adder:halfAdder9|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder9                                                           ; half_adder          ; work         ;
-;    |to_7seg:BCDseg|                    ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|to_7seg:BCDseg                                                                                  ; to_7seg             ; work         ;
+;       |half_adder:halfAdder9|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder9                                                           ; half_adder          ; work         ;
+;    |to_7seg:BCDseg|                    ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|to_7seg:BCDseg                                                                                  ; to_7seg             ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -279,41 +272,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                ;
-; LPM_WIDTHD             ; 4              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_1am ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
 +------------------------+----------------+------------------------+
 ; Parameter Name         ; Value          ; Type                   ;
 +------------------------+----------------+------------------------+
 ; LPM_WIDTHN             ; 4              ; Untyped                ;
-; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_PIPELINE           ; 0              ; Untyped                ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_42m ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_72m ; Untyped                ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
@@ -387,29 +357,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 148                         ;
-;     arith             ; 12                          ;
-;         0 data inputs ; 4                           ;
-;         2 data inputs ; 2                           ;
-;         5 data inputs ; 6                           ;
+; arriav_lcell_comb     ; 118                         ;
 ;     extend            ; 3                           ;
 ;         7 data inputs ; 3                           ;
-;     normal            ; 115                         ;
+;     normal            ; 107                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 15                          ;
-;         3 data inputs ; 13                          ;
-;         4 data inputs ; 30                          ;
-;         5 data inputs ; 31                          ;
-;         6 data inputs ; 22                          ;
-;     shared            ; 18                          ;
-;         0 data inputs ; 6                           ;
-;         2 data inputs ; 6                           ;
-;         4 data inputs ; 6                           ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 9                           ;
+;         5 data inputs ; 25                          ;
+;         6 data inputs ; 34                          ;
+;     shared            ; 8                           ;
+;         0 data inputs ; 4                           ;
+;         2 data inputs ; 4                           ;
 ; boundary_port         ; 37                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.50                       ;
-; Average LUT depth     ; 10.52                       ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 6.29                        ;
 +-----------------------+-----------------------------+
 
 
@@ -418,7 +383,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -428,7 +393,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Wed Feb 28 14:07:59 2024
+    Info: Processing started: Wed Feb 28 14:19:31 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Problema1 -c Problema1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -450,43 +415,34 @@ Warning (10230): Verilog HDL assignment warning at Problema1.sv(36): truncated v
 Info (12128): Elaborating entity "multiplier" for hierarchy "multiplier:mult" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 11
 Info (12128): Elaborating entity "half_adder" for hierarchy "multiplier:mult|half_adder:halfAdder1" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/multiplier.sv Line: 9
 Info (12128): Elaborating entity "to_7seg" for hierarchy "to_7seg:BCDseg" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 12
-Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 41
+Info (278001): Inferred 1 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 42
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 41
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 41
-    Info (12134): Parameter "LPM_WIDTHN" = "4"
-    Info (12134): Parameter "LPM_WIDTHD" = "4"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_1am.tdf
-    Info (12023): Found entity 1: lpm_divide_1am File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/lpm_divide_1am.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/sign_div_unsign_7kh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kse.tdf
-    Info (12023): Found entity 1: alt_u_div_kse File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/alt_u_div_kse.tdf Line: 23
 Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 42
 Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 42
     Info (12134): Parameter "LPM_WIDTHN" = "4"
-    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_42m.tdf
-    Info (12023): Found entity 1: lpm_divide_42m File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/lpm_divide_42m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_72m.tdf
+    Info (12023): Found entity 1: lpm_divide_72m File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/lpm_divide_72m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dkh File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/sign_div_unsign_dkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0te.tdf
+    Info (12023): Found entity 1: alt_u_div_0te File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/alt_u_div_0te.tdf Line: 23
 Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "seg2[5]" is stuck at GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 7
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 181 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 151 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 25 output pins
-    Info (21061): Implemented 144 logic cells
+    Info (21061): Implemented 114 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4856 megabytes
-    Info: Processing ended: Wed Feb 28 14:08:10 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Wed Feb 28 14:19:38 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:05
 
 

@@ -2,12 +2,14 @@ module Problema1 #(parameter WIDTH = 4) (
     input logic [WIDTH-1:0] A, B,
     input logic [3:0] opcode, // Increased opcode width to 5 bits to accommodate new operations
     output logic [2 * (WIDTH - 1):0] result,
-    output logic N, Z, C, V
+    output logic N, Z, C, V,
+	 output logic [6:0]seg1, seg2
 );
 
 logic [2 * (WIDTH - 1):0] multResult;
 
 multiplier mult(A, B, multResult);
+to_7seg BCDseg(result, seg1, seg2);
 						
     always_comb begin
         case (opcode)

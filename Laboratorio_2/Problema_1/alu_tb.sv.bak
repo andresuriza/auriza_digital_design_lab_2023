@@ -1,0 +1,17 @@
+module alu_tb;
+
+	logic [1:0] a, b;       
+	logic [3:0] ALU_Sel;
+	logic [3:0] ALU_Out; 
+//	logic CarryOut;
+	logic n, z, c, v;
+
+	Problema1 modulo(a, b, ALU_Sel, ALU_Out, n, z, c, v);
+
+	initial begin
+		a = 2'b0010;
+		b = 2'b0010;
+		ALU_Sel = 4'b0010;
+	end
+
+endmodule

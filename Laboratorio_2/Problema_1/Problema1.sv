@@ -1,9 +1,14 @@
 module Problema1 #(parameter WIDTH = 4) (
-    input [WIDTH-1:0] A, B,
-    input [3:0] opcode, // Increased opcode width to 5 bits to accommodate new operations
-    output logic [WIDTH-1:0] result,
+    input logic [WIDTH-1:0] A, B,
+    input logic [3:0] opcode, // Increased opcode width to 5 bits to accommodate new operations
+    output logic [2 * (WIDTH - 1):0] result,
     output logic N, Z, C, V
 );
+
+logic [2 * (WIDTH - 1):0] multResult;
+
+multiplier mult(A, B, multResult);
+						
     always_comb begin
         case (opcode)
             4'b0000: // ADD
@@ -30,19 +35,10 @@ module Problema1 #(parameter WIDTH = 4) (
                         result = result ^ shiftedBorrow;
                     end
                 end
-            4'b0010: result = A * B; // MUL
+            4'b0010: result = multResult;	// MUL
             4'b0011: result = A / B; // DIV
             4'b0100: result = A % B; // MOD
-            4'b0101: // AND
-                begin
-                    for(int i = 0; i < WIDTH; i = i + 1) begin
-                        // Implement AND using NAND gates
-                        logic nand1, nand2;
-                        nand1 = ~(A[i] & B[i]); // NAND
-                        nand2 = ~nand1; // NAND
-                        result[i] = ~nand2; // NAND
-                    end
-                end
+            4'b0101: result = A & B;// AND
             4'b0110: result = A | B; // OR
             4'b0111: result = A ^ B; // XOR
             4'b1000: result = A << B; // SHL

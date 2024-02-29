@@ -1,5 +1,5 @@
-Analysis & Synthesis report for Problema1
-Wed Feb 28 14:19:38 2024
+Analysis & Elaboration report for Problema1
+Wed Feb 28 18:51:33 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -7,24 +7,10 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |Problema1
- 10. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 11. Port Connectivity Checks: "to_7seg:BCDseg"
- 12. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder9"
- 13. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder5"
- 14. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder4"
- 15. Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder1"
- 16. Port Connectivity Checks: "multiplier:mult"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -48,31 +34,42 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Feb 28 14:19:38 2024          ;
-; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name                   ; Problema1                                      ;
-; Top-level Entity Name           ; Problema1                                      ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 0                                              ;
-; Total pins                      ; 37                                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                 ;
++-------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status ; Failed - Wed Feb 28 18:51:33 2024              ;
+; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                 ; Problema1                                      ;
+; Top-level Entity Name         ; Problema1                                      ;
+; Family                        ; Cyclone V                                      ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
+; Total registers               ; N/A until Partition Merge                      ;
+; Total pins                    ; N/A until Partition Merge                      ;
+; Total virtual pins            ; N/A until Partition Merge                      ;
+; Total block memory bits       ; N/A until Partition Merge                      ;
+; Total PLLs                    ; N/A until Partition Merge                      ;
+; Total DLLs                    ; N/A until Partition Merge                      ;
++-------------------------------+------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -158,243 +155,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 12          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                           ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                       ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------+---------+
-; multiplier.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/multiplier.sv              ;         ;
-; half_adder.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/half_adder.sv              ;         ;
-; Problema1.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv               ;         ;
-; to_7seg.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/to_7seg.sv                 ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf                                           ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc                                          ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc                                      ;         ;
-; aglobal221.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                                           ;         ;
-; db/lpm_divide_72m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/lpm_divide_72m.tdf      ;         ;
-; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/sign_div_unsign_dkh.tdf ;         ;
-; db/alt_u_div_0te.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/alt_u_div_0te.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimate of Logic utilization (ALMs needed) ; 76         ;
-;                                             ;            ;
-; Combinational ALUT usage for logic          ; 114        ;
-;     -- 7 input functions                    ; 3          ;
-;     -- 6 input functions                    ; 34         ;
-;     -- 5 input functions                    ; 25         ;
-;     -- 4 input functions                    ; 9          ;
-;     -- <=3 input functions                  ; 43         ;
-;                                             ;            ;
-; Dedicated logic registers                   ; 0          ;
-;                                             ;            ;
-; I/O pins                                    ; 37         ;
-;                                             ;            ;
-; Total DSP Blocks                            ; 0          ;
-;                                             ;            ;
-; Maximum fan-out node                        ; A[0]~input ;
-; Maximum fan-out                             ; 28         ;
-; Total fan-out                               ; 547        ;
-; Average fan-out                             ; 2.91       ;
-+---------------------------------------------+------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                               ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Entity Name         ; Library Name ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Problema1                             ; 114 (75)            ; 0 (0)                     ; 0                 ; 0          ; 37   ; 0            ; |Problema1                                                                                                 ; Problema1           ; work         ;
-;    |lpm_divide:Mod0|                   ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_72m:auto_generated|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0|lpm_divide_72m:auto_generated                                                   ; lpm_divide_72m      ; work         ;
-;          |sign_div_unsign_dkh:divider| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
-;             |alt_u_div_0te:divider|    ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
-;    |multiplier:mult|                   ; 15 (3)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult                                                                                 ; multiplier          ; work         ;
-;       |half_adder:halfAdder10|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder10                                                          ; half_adder          ; work         ;
-;       |half_adder:halfAdder11|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder11                                                          ; half_adder          ; work         ;
-;       |half_adder:halfAdder12|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder12                                                          ; half_adder          ; work         ;
-;       |half_adder:halfAdder2|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder2                                                           ; half_adder          ; work         ;
-;       |half_adder:halfAdder3|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder3                                                           ; half_adder          ; work         ;
-;       |half_adder:halfAdder4|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder4                                                           ; half_adder          ; work         ;
-;       |half_adder:halfAdder5|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder5                                                           ; half_adder          ; work         ;
-;       |half_adder:halfAdder7|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder7                                                           ; half_adder          ; work         ;
-;       |half_adder:halfAdder8|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder8                                                           ; half_adder          ; work         ;
-;       |half_adder:halfAdder9|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|multiplier:mult|half_adder:halfAdder9                                                           ; half_adder          ; work         ;
-;    |to_7seg:BCDseg|                    ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Problema1|to_7seg:BCDseg                                                                                  ; to_7seg             ; work         ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |Problema1 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; WIDTH          ; 4     ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                ;
-; LPM_WIDTHD             ; 7              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_72m ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "to_7seg:BCDseg"                                                                                                                            ;
-+------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                     ;
-+------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-; num  ; Input ; Warning  ; Input port expression (7 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "num[7..7]" will be connected to GND. ;
-+------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder9"                                                                                                                                               ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder5"                                                                                                                                               ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder4"                                                                                                                                             ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; a     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; a[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "multiplier:mult|half_adder:halfAdder1"                                                                                                                                               ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "multiplier:mult"                                                                                                            ;
-+--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                                                                   ;
-+--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
-; result ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "result[7..7]" have no fanouts ;
-+--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 118                         ;
-;     extend            ; 3                           ;
-;         7 data inputs ; 3                           ;
-;     normal            ; 107                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 15                          ;
-;         4 data inputs ; 9                           ;
-;         5 data inputs ; 25                          ;
-;         6 data inputs ; 34                          ;
-;     shared            ; 8                           ;
-;         0 data inputs ; 4                           ;
-;         2 data inputs ; 4                           ;
-; boundary_port         ; 37                          ;
-;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 6.29                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Wed Feb 28 14:19:31 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Problema1 -c Problema1
+    Info: Processing started: Wed Feb 28 18:51:24 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Problema1 -c Problema1 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file multiplier.sv
@@ -409,40 +177,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file problem
     Info (12023): Found entity 1: Problema1_tb File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file to_7seg.sv
     Info (12023): Found entity 1: to_7seg File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/to_7seg.sv Line: 1
-Info (12127): Elaborating entity "Problema1" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at Problema1.sv(24): truncated value with size 7 to match size of target (4) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 24
-Warning (10230): Verilog HDL assignment warning at Problema1.sv(36): truncated value with size 7 to match size of target (4) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 36
-Info (12128): Elaborating entity "multiplier" for hierarchy "multiplier:mult" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 11
-Info (12128): Elaborating entity "half_adder" for hierarchy "multiplier:mult|half_adder:halfAdder1" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/multiplier.sv Line: 9
-Info (12128): Elaborating entity "to_7seg" for hierarchy "to_7seg:BCDseg" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 12
-Info (278001): Inferred 1 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 42
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 42
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 42
-    Info (12134): Parameter "LPM_WIDTHN" = "4"
-    Info (12134): Parameter "LPM_WIDTHD" = "7"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_72m.tdf
-    Info (12023): Found entity 1: lpm_divide_72m File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/lpm_divide_72m.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_dkh File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/sign_div_unsign_dkh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0te.tdf
-    Info (12023): Found entity 1: alt_u_div_0te File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/db/alt_u_div_0te.tdf Line: 23
-Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "seg2[5]" is stuck at GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 7
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 151 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 25 output pins
-    Info (21061): Implemented 114 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4853 megabytes
-    Info: Processing ended: Wed Feb 28 14:19:38 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:05
+Error (10170): Verilog HDL syntax error at n_bitmultiplier.sv(2) near text: ",";  expecting "]". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/n_bitmultiplier.sv Line: 2
+Error (10170): Verilog HDL syntax error at n_bitmultiplier.sv(2) near text: "]";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/n_bitmultiplier.sv Line: 2
+Error (10112): Ignored design unit "n_bitmultiplier" at n_bitmultiplier.sv(1) due to previous errors File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/n_bitmultiplier.sv Line: 1
+Error (10170): Verilog HDL syntax error at n_bitmultiplier.sv(13) near text: "assign";  expecting a description. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/n_bitmultiplier.sv Line: 13
+Info (12021): Found 0 design units, including 0 entities, in source file n_bitmultiplier.sv
+Error: Quartus Prime Analysis & Elaboration was unsuccessful. 4 errors, 1 warning
+    Error: Peak virtual memory: 4784 megabytes
+    Error: Processing ended: Wed Feb 28 18:51:33 2024
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:12
 
 

@@ -1,5 +1,5 @@
 Analysis & Elaboration report for Problema1
-Sat Mar  2 16:26:19 2024
+Sat Mar  2 16:33:23 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -11,13 +11,16 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   3. Parallel Compilation
   4. Parameter Settings for User Entity Instance: Top-level Entity: |Problema1
   5. Parameter Settings for User Entity Instance: adder_n_bit:adder
-  6. Parameter Settings for User Entity Instance: multiplicador:mult
-  7. Analysis & Elaboration Settings
-  8. Port Connectivity Checks: "to_7seg:BCDseg"
-  9. Port Connectivity Checks: "multiplicador:mult"
- 10. Port Connectivity Checks: "adder_n_bit:adder|full_adder:ADD_LOOP[0].FA1"
- 11. Port Connectivity Checks: "adder_n_bit:adder"
- 12. Analysis & Elaboration Messages
+  6. Parameter Settings for User Entity Instance: subtractor_n_bit:subtractor
+  7. Parameter Settings for User Entity Instance: multiplicador:mult
+  8. Analysis & Elaboration Settings
+  9. Port Connectivity Checks: "to_7seg:BCDseg"
+ 10. Port Connectivity Checks: "multiplicador:mult"
+ 11. Port Connectivity Checks: "subtractor_n_bit:subtractor|full_subtractor:SUB_LOOP[0].FS1"
+ 12. Port Connectivity Checks: "subtractor_n_bit:subtractor"
+ 13. Port Connectivity Checks: "adder_n_bit:adder|full_adder:ADD_LOOP[0].FA1"
+ 14. Port Connectivity Checks: "adder_n_bit:adder"
+ 15. Analysis & Elaboration Messages
 
 
 
@@ -44,7 +47,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Sat Mar  2 16:26:19 2024          ;
+; Analysis & Elaboration Status ; Successful - Sat Mar  2 16:33:23 2024          ;
 ; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                 ; Problema1                                      ;
 ; Top-level Entity Name         ; Problema1                                      ;
@@ -92,6 +95,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+---------------------------------------+
 ; N              ; 4     ; Signed Integer                        ;
 +----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: subtractor_n_bit:subtractor ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -210,6 +223,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "subtractor_n_bit:subtractor|full_subtractor:SUB_LOOP[0].FS1" ;
++------+-------+----------+---------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                       ;
++------+-------+----------+---------------------------------------------------------------+
+; bin  ; Input ; Info     ; Stuck at GND                                                  ;
++------+-------+----------+---------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "subtractor_n_bit:subtractor" ;
++------+--------+----------+------------------------------+
+; Port ; Type   ; Severity ; Details                      ;
++------+--------+----------+------------------------------+
+; bout ; Output ; Info     ; Explicitly unconnected       ;
++------+--------+----------+------------------------------+
+
+
 +--------------------------------------------------------------------------+
 ; Port Connectivity Checks: "adder_n_bit:adder|full_adder:ADD_LOOP[0].FA1" ;
 +------+-------+----------+------------------------------------------------+
@@ -234,7 +265,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sat Mar  2 16:26:09 2024
+    Info: Processing started: Sat Mar  2 16:33:13 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Problema1 -c Problema1 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -242,27 +273,32 @@ Info (12021): Found 1 design units, including 1 entities, in source file multipl
     Info (12023): Found entity 1: multiplier File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/multiplier.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.sv
     Info (12023): Found entity 1: alu_tb File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/alu_tb.sv Line: 1
-Info (12021): Found 5 design units, including 5 entities, in source file problema1.sv
+Info (12021): Found 8 design units, including 8 entities, in source file problema1.sv
     Info (12023): Found entity 1: half_adder File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 2
     Info (12023): Found entity 2: full_adder File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 14
     Info (12023): Found entity 3: adder_n_bit File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 29
-    Info (12023): Found entity 4: multiplicador File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 51
-    Info (12023): Found entity 5: Problema1 File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 68
+    Info (12023): Found entity 4: half_subtractor File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 50
+    Info (12023): Found entity 5: full_subtractor File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 62
+    Info (12023): Found entity 6: subtractor_n_bit File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 77
+    Info (12023): Found entity 7: multiplicador File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 98
+    Info (12023): Found entity 8: Problema1 File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 115
 Info (12021): Found 1 design units, including 1 entities, in source file problema1_tb.sv
     Info (12023): Found entity 1: Problema1_tb File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file to_7seg.sv
     Info (12023): Found entity 1: to_7seg File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/to_7seg.sv Line: 1
 Info (12127): Elaborating entity "Problema1" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at Problema1.sv(98): truncated value with size 7 to match size of target (4) File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 98
-Info (12128): Elaborating entity "adder_n_bit" for hierarchy "adder_n_bit:adder" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 80
+Info (12128): Elaborating entity "adder_n_bit" for hierarchy "adder_n_bit:adder" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 128
 Info (12128): Elaborating entity "full_adder" for hierarchy "adder_n_bit:adder|full_adder:ADD_LOOP[0].FA1" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 40
 Info (12128): Elaborating entity "half_adder" for hierarchy "adder_n_bit:adder|full_adder:ADD_LOOP[0].FA1|half_adder:HA1" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 22
-Info (12128): Elaborating entity "multiplicador" for hierarchy "multiplicador:mult" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 81
-Info (12128): Elaborating entity "to_7seg" for hierarchy "to_7seg:BCDseg" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 82
+Info (12128): Elaborating entity "subtractor_n_bit" for hierarchy "subtractor_n_bit:subtractor" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 129
+Info (12128): Elaborating entity "full_subtractor" for hierarchy "subtractor_n_bit:subtractor|full_subtractor:SUB_LOOP[0].FS1" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 88
+Info (12128): Elaborating entity "half_subtractor" for hierarchy "subtractor_n_bit:subtractor|full_subtractor:SUB_LOOP[0].FS1|half_subtractor:HS1" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 70
+Info (12128): Elaborating entity "multiplicador" for hierarchy "multiplicador:mult" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 130
+Info (12128): Elaborating entity "to_7seg" for hierarchy "to_7seg:BCDseg" File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_2/Problema_1/Problema1.sv Line: 131
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 3 warnings
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 4789 megabytes
-    Info: Processing ended: Sat Mar  2 16:26:19 2024
+    Info: Processing ended: Sat Mar  2 16:33:23 2024
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:07
 

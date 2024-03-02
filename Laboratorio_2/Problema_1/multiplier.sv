@@ -1,21 +1,24 @@
-module multiplier (input logic [3:0] a, b,
-						 output logic [7:0] result);
+module multiplier #(parameter WIDTH = 4) (
+    input [WIDTH-1:0] A, B,
+    output [2*WIDTH-1:0] P
+);
+    generate
+        genvar i, j;
+        wire [WIDTH-1:0] and_gates [WIDTH-1:0];
+        for (i = 0; i < WIDTH; i = i + 1) begin : and_gate_gen
+            assign and_gates[i] = A[i] & B;
+        end
 
-		logic [10:0] cout;
-		logic [5:0] sum;
-		
-		assign result[0] = a[0] & b[0];
-		
-		half_adder halfAdder1(b[0] & a[1], a[0] & b[1], 0, result[1], cout[0]);
-		half_adder halfAdder2(b[0] & a[2], a[1] & b[1], cout[0], sum[0], cout[1]);
-		half_adder halfAdder3(b[0] & a[3], a[2] & b[1], cout[1], sum[1], cout[2]);
-		half_adder halfAdder4(0, a[3] & b[1], cout[2], sum[2], cout[3]);
-		half_adder halfAdder5(sum[0], a[0] & b[2], 0, result[2], cout[4]);
-		half_adder halfAdder6(sum[1], a[1] & b[2], cout[4], sum[3], cout[5]);
-		half_adder halfAdder7(sum[2], a[2] & b[2], cout[5], sum[4], cout[6]);
-		half_adder halfAdder8(cout[3], a[3] & b[2], cout[6], sum[5], cout[7]);
-		half_adder halfAdder9(sum[3], a[0] & b[3], 0, result[3], cout[8]);
-		half_adder halfAdder10(sum[4], a[1] & b[3], cout[8], result[4], cout[9]);
-		half_adder halfAdder11(sum[5], a[2] & b[3], cout[9], result[5], cout[10]);
-		half_adder halfAdder12(cout[7], a[3] & b[3], cout[10], result[6], result[7]);
+        wire [WIDTH:0] carry [WIDTH:0];
+        assign carry[0] = 0;
+        for (i = 1; i < WIDTH+1; i = i + 1) begin : carry_gen
+            assign carry[i] = carry[i-1] + and_gates[i-1];
+        end
+
+        assign P[0] = and_gates[0][0];
+        for (i = 1; i < 2*WIDTH; i = i + 1) begin : result_gen
+            if (i < WIDTH) assign P[i] = carry[i][i-1] ^ and_gates[i][i];
+            else assign P[i] = carry[i-WIDTH+1][WIDTH];
+        end
+    endgenerate
 endmodule

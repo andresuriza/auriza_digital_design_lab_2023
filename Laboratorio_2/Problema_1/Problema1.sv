@@ -1,14 +1,28 @@
+module multiplicador #(parameter N = 8)(input [N-1:0] a, b, output reg [2*N-1:0] product);
+  reg [2*N-1:0] p;
+  integer i;
+
+  always @* begin
+    p = 0;
+    for (i = 0; i < N; i = i + 1) begin
+      if (b[i])
+        p = p + (a << i);
+    end
+  end
+  assign product = p;
+endmodule
+
 module Problema1 #(parameter WIDTH = 4) (
     input logic [WIDTH-1:0] A, B,
-    input logic [3:0] opcode, // Increased opcode width to 5 bits to accommodate new operations
+    input logic [3:0] opcode,
     output logic [2 * (WIDTH - 1):0] result,
     output logic N, Z, C, V,
-	 output logic [6:0]seg1, seg2
+    output logic [6:0]seg1, seg2
 );
 
 logic [2 * (WIDTH - 1):0] multResult;
 
-multiplier mult(A, B, multResult);
+multiplicador #(WIDTH) mult (.a(A), .b(B), .product(multResult));
 to_7seg BCDseg(result, seg1, seg2);
 						
     always_comb begin

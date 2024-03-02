@@ -53,15 +53,13 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH alu_tb -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH Problema1_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME Problema1_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Problema1_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Problema1_tb -section_id Problema1_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE Problema1_tb.sv -section_id Problema1_tb
 set_global_assignment -name EDA_TEST_BENCH_NAME alu_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id alu_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME alu_tb -section_id alu_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE alu_tb.sv -section_id alu_tb
 set_global_assignment -name SYSTEMVERILOG_FILE multiplier.sv
 set_global_assignment -name SYSTEMVERILOG_FILE half_adder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE alu_tb.sv
@@ -101,5 +99,6 @@ set_location_assignment PIN_AF30 -to seg2[1]
 set_location_assignment PIN_AD27 -to seg2[0]
 set_location_assignment PIN_AF9 -to opcode[2]
 set_location_assignment PIN_AF10 -to opcode[3]
-set_global_assignment -name SYSTEMVERILOG_FILE n_bitmultiplier.sv
+set_global_assignment -name EDA_TEST_BENCH_FILE Problema1_tb.sv -section_id Problema1_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE alu_tb.sv -section_id alu_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

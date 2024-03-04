@@ -1,62 +1,111 @@
 module Problema1_tb;
-    reg [3:0] A, B;
-    reg [3:0] opcode;
-    wire [3:0] result;
-    wire N, Z, C, V;
+    logic [3:0] A, B;
+    logic [3:0] opcode;
+    logic [3:0] result;
+    logic N, Z, C, V;
 
-    Problema1 #(.WIDTH(4)) uut (
-        .A(A), .B(B), .opcode(opcode),
-        .result(result),
-        .N(N), .Z(Z), .C(C), .V(V)
-    );
+    Problema1 #(.WIDTH(4)) modulo(.A(A), .B(B), .opcode(opcode), .result(result),.N(N), .Z(Z), .C(C), .V(V));
 
     initial begin
-        $monitor("A=%b B=%b opcode=%b result=%b N=%b Z=%b C=%b V=%b", A, B, opcode, result, N, Z, C, V);
+	 
+	//---------------Add------------------
+		  A = 4'b1010; B = 4'b0010; opcode = 4'b0000; 
+		  #10
+		  assert(result === 4'b1100) 
+		  else $error("Adding failed");
+		  A = 4'b1111; B = 4'b1111; opcode = 4'b0000; 
+		  #10 
+		  assert(result === 4'b1110) 
+		  else $error("Adding failed");
 		  
-			$display("Add test");
-        A = 4'b1010; B = 4'b0010; opcode = 4'b0000; #10; // ADD 1100
-		  A = 4'b1111; B = 4'b1111; opcode = 4'b0000; #10; // ADD 1110 cout
+	//---------------Substract------------------	  
+		  A = 4'b1010; B = 4'b0010; opcode = 4'b0001; 
+		  #10
+		  assert(result === 4'b1000) 
+		  else $error("Substraction failed");
+		  A = 4'b0100; B = 4'b0111; opcode = 4'b0001; 
+		  #10
+		  assert(N === 1) 
+		  else $error("Flag error");
 		  
-		  $display("Sub test");
-        A = 4'b1111; B = 4'b1001; opcode = 4'b0001; #10; // SUB 0110
-        A = 4'b0001; B = 4'b1100; opcode = 4'b0001; #10; // SUB 0101 borrow
+	//---------------Multiplication------------------	  
+		  A = 4'b1010; B = 4'b0010; opcode = 4'b0010; 
+		  #10
+		  assert(result === 4'b0100) 
+		  else $error("Multiplication failed");
+		  A = 4'b0100; B = 4'b0000; opcode = 4'b0010; 
+		  #10
+		  assert(result === 4'b0000) 
+		  else $error("Multiplication failed");
 		  
-		  $display("Mult test");
-        A = 4'b0011; B = 4'b0100; opcode = 4'b0010; #10; // MUL 1100
-        A = 4'b1010; B = 4'b0101; opcode = 4'b0010; #10; // MUL 11 0010
+	//---------------Division------------------	  
+		  A = 4'b1010; B = 4'b1100; opcode = 4'b0011; 
+		  #10
+		  assert(Z === 1) 
+		  else $error("Flag error");
+		  A = 4'b0100; B = 4'b0011; opcode = 4'b0011; 
+		  #10
+		  assert(result === 4'b0001) 
+		  else $error("Division error");
 		  
-		  $display("Div test");
-        A = 4'b0100; B = 4'b0011; opcode = 4'b0011; #10; // DIV 0001
-        A = 4'b1100; B = 4'b0010; opcode = 4'b0011; #10; // DIV 0110
+	//---------------Modulus------------------	  
+		  A = 4'b0100; B = 4'b0011; opcode = 4'b0100; 
+		  #10
+		  assert(result === 4'b0001) 
+		  else $error("Modulus failed");
+		  A = 4'b1111; B = 4'b0100; opcode = 4'b0100; 
+		  #10
+		  assert(result === 4'b0011) 
+		  else $error("Modulus failed");
 		  
-		  $display("Mod test");
-        A = 4'b0101; B = 4'b0110; opcode = 4'b0100; #10; // MOD 0101
-        A = 4'b1111; B = 4'b0010; opcode = 4'b0100; #10; // MOD 0001
+	//---------------AND------------------	  
+		  A = 4'b0100; B = 4'b0011; opcode = 4'b0101; 
+		  #10
+		  assert(result === 4'b0000) 
+		  else $error("AND failed");
+		  A = 4'b1111; B = 4'b0010; opcode = 4'b0101; 
+		  #10
+		  assert(result === 4'b0010) 
+		  else $error("AND failed");
 		  
-		  $display("And test");
-        A = 4'b1111; B = 4'b1111; opcode = 4'b0101; #10; // AND 1111
-        A = 4'b0110; B = 4'b0101; opcode = 4'b0101; #10; // AND 0100
-
-		  $display("Or test");
-        A = 4'b0111; B = 4'b1000; opcode = 4'b0110; #10; // OR 1111
-        A = 4'b0000; B = 4'b0000; opcode = 4'b0110; #10; // OR 0000
-        A = 4'b1111; B = 4'b1111; opcode = 4'b0110; #10; // OR 1111
-
-
-		  $display("XOR test");
-        A = 4'b1000; B = 4'b0111; opcode = 4'b0111; #10; // XOR 1111
-        A = 4'b0000; B = 4'b0000; opcode = 4'b0111; #10; // XOR 0000
-        A = 4'b1111; B = 4'b1111; opcode = 4'b0111; #10; // XOR 0000
+	//---------------OR------------------	  
+		  A = 4'b1000; B = 4'b0000; opcode = 4'b0110; 
+		  #10
+		  assert(result === 4'b1000) 
+		  else $error("OR failed");
+		  A = 4'b1111; B = 4'b1111; opcode = 4'b0110; 
+		  #10
+		  assert(result === 4'b1111) 
+		  else $error("OR failed");
 		  
-		  $display("SHL test");
-        A = 4'b0110; B = 4'b0011; opcode = 4'b1000; #10; //1000
-		  A = 4'b1001; B = 4'b0110; opcode = 4'b1000; #10; //0000
-
-
-		  $display("SHR test");
-		  A = 4'b0110; B = 4'b0011; opcode = 4'b1001; #10; //0000
-		  A = 4'b1001; B = 4'b0110; opcode = 4'b1001; #10; //0000
-
-        $stop;
-    end
+	//---------------XOR------------------	  
+		  A = 4'b1001; B = 4'b1111; opcode = 4'b0111; 
+		  #10
+		  assert(result === 4'b0110) 
+		  else $error("XOR failed");
+		  A = 4'b0111; B = 4'b1000; opcode = 4'b0111; 
+		  #10
+		  assert(result === 4'b1111) 
+		  else $error("XOR failed");
+		  
+	  //---------------SHLEFT------------------
+		  A = 4'b0010; B = 4'b0001; opcode = 4'b1000; 
+		  #10
+		  assert(result === 4'b0100) 
+		  else $error("Shift left failed");
+		  A = 4'b1111; B = 4'b0011; opcode = 4'b1000; 
+		  #10
+		  assert(result === 4'b1000) 
+		  else $error("Shift left failed");
+		  
+	  //---------------SHRIGHT------------------
+		  A = 4'b0100; B = 4'b0011; opcode = 4'b1001; 
+		  #10
+		  assert(result === 4'b0000) 
+		  else $error("Shift right failed");
+		  A = 4'b0101; B = 4'b0000; opcode = 4'b1001; 
+		  #10
+		  assert(result === 4'b0101) 
+		  else $error("Shift right failed");
+	end
 endmodule

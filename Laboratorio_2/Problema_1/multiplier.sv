@@ -1,24 +1,22 @@
-module multiplier #(parameter WIDTH = 4) (
-    input [WIDTH-1:0] A, B,
-    output [2*WIDTH-1:0] P
-);
-    generate
-        genvar i, j;
-        wire [WIDTH-1:0] and_gates [WIDTH-1:0];
-        for (i = 0; i < WIDTH; i = i + 1) begin : and_gate_gen
-            assign and_gates[i] = A[i] & B;
+module multiplier #(parameter N = 4)(
+	input [N-1:0] a, b, 
+	output reg [2*N-1:0] product);
+	
+	
+    integer i, j;
+    reg [2*N-1:0] temp;
+    always @* begin
+        product = 0;
+        for (i = 0; i < N; i = i + 1) begin
+            if (b[i]) begin
+                temp = a << i; //a * 2i
+                for (j = 0; j < 2*N; j = j + 1) begin
+                    if (product[j] & temp[j]) begin
+                        product[j+1] = product[j+1] ^ 1; //add carry
+                    end
+                    product[j] = product[j] ^ temp[j]; // add without carry
+                end
+            end
         end
-
-        wire [WIDTH:0] carry [WIDTH:0];
-        assign carry[0] = 0;
-        for (i = 1; i < WIDTH+1; i = i + 1) begin : carry_gen
-            assign carry[i] = carry[i-1] + and_gates[i-1];
-        end
-
-        assign P[0] = and_gates[0][0];
-        for (i = 1; i < 2*WIDTH; i = i + 1) begin : result_gen
-            if (i < WIDTH) assign P[i] = carry[i][i-1] ^ and_gates[i][i];
-            else assign P[i] = carry[i-WIDTH+1][WIDTH];
-        end
-    endgenerate
+    end
 endmodule

@@ -1,0 +1,26 @@
+module problema2 #(parameter Width = 4) (
+  input  logic clk,
+  input  logic rstN,
+  input  logic shiftRight,
+  input  logic [Width-1:0] dataIn,
+  output logic [Width-1:0] dataOut
+);
+
+
+  logic [Width-1:0] shiftRegisters;
+
+  always_ff @(posedge clk, posedge rstN) begin
+    if (rstN) begin
+      shiftRegisters <= 0;
+    end
+    else if (shiftRight) begin
+      shiftRegisters <= 1;
+    end
+    else begin
+      shiftRegisters <= 2;
+    end
+  end
+
+  assign dataOut = shiftRegisters;
+
+endmodule

@@ -1,5 +1,5 @@
 Analysis & Elaboration report for vga
-Fri Apr  5 14:55:53 2024
+Fri Apr  5 15:11:06 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Fri Apr  5 14:55:53 2024          ;
+; Analysis & Elaboration Status ; Successful - Fri Apr  5 15:11:06 2024          ;
 ; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                 ; vga                                            ;
 ; Top-level Entity Name         ; MEF                                            ;
@@ -161,7 +161,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Fri Apr  5 14:55:44 2024
+    Info: Processing started: Fri Apr  5 15:10:57 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga -c vga --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -185,8 +185,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file clkcoun
     Info (12023): Found entity 1: clkCounter File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/clkCounter.sv Line: 1
 Info (12127): Elaborating entity "MEF" for the top level hierarchy
 Warning (10858): Verilog HDL warning at MEF.sv(5): object jgdr used but never assigned File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 5
+Warning (10858): Verilog HDL warning at MEF.sv(5): object pc used but never assigned File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 5
 Warning (10240): Verilog HDL Always Construct warning at MEF.sv(11): inferring latch(es) for variable "mCounter", which holds its previous value in one or more paths through the always construct File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 11
 Warning (10030): Net "jgdr" at MEF.sv(5) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 5
+Warning (10030): Net "pc" at MEF.sv(5) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 5
 Info (10041): Inferred latch for "mCounter[0]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
 Info (10041): Inferred latch for "mCounter[1]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
 Info (10041): Inferred latch for "mCounter[2]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
@@ -199,10 +201,10 @@ Info (12128): Elaborating entity "clkCounter" for hierarchy "clkCounter:counter"
 Warning (10230): Verilog HDL assignment warning at clkCounter.sv(16): truncated value with size 32 to match size of target (8) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/clkCounter.sv Line: 16
 Info (12128): Elaborating entity "slowClock" for hierarchy "clkCounter:counter|slowClock:slow_clock" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/clkCounter.sv Line: 7
 Warning (10230): Verilog HDL assignment warning at slowClock.sv(15): truncated value with size 32 to match size of target (28) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/slowClock.sv Line: 15
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 6 warnings
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 8 warnings
     Info: Peak virtual memory: 4781 megabytes
-    Info: Processing ended: Fri Apr  5 14:55:53 2024
+    Info: Processing ended: Fri Apr  5 15:11:06 2024
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Total CPU time (on all processors): 00:00:12
 
 

@@ -2,7 +2,7 @@ module MEF (input logic m, rst, clk, x, y,
 					output logic [7:0] estado);
 
 	logic [2:0] state, next_state;
-	logic t0, jgdr;
+	logic t0, jgdr, pc;
 	logic [7:0] mCounter;
 	
 	clkCounter counter(clk, rst, t0);
@@ -39,12 +39,11 @@ module MEF (input logic m, rst, clk, x, y,
 							else if (x) next_state=3'b100;
 							else next_state = 3'b011; 
 						  end // Jugador
-				3'b100: begin
+				3'b100: 
 							if (jgdr) next_state = 3'b011; 
-							else if (!jgdr) next_state = 3'b101;
-							else if (y) next_state = 3'b110;
-							else next_state = 3'b100;
-						  end	//Revision
+							else if (pc) next_state = 3'b101;
+							else next_state = 3'b110;
+						  //Revision
 				3'b101: begin 
 							if (t0) next_state = 3'b011; 
 							else if (x) next_state=3'b100;

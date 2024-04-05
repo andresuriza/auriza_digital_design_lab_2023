@@ -1,5 +1,5 @@
 Analysis & Elaboration report for vga
-Wed Apr  3 15:45:01 2024
+Fri Apr  5 14:55:53 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -9,9 +9,8 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: vgaController:vgaCont
-  5. Analysis & Elaboration Settings
-  6. Analysis & Elaboration Messages
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -38,10 +37,10 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed Apr  3 15:45:01 2024          ;
+; Analysis & Elaboration Status ; Successful - Fri Apr  5 14:55:53 2024          ;
 ; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                 ; vga                                            ;
-; Top-level Entity Name         ; vga                                            ;
+; Top-level Entity Name         ; MEF                                            ;
 ; Family                        ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
 ; Total registers               ; N/A until Partition Merge                      ;
@@ -69,32 +68,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: vgaController:vgaCont ;
-+----------------+------------+--------------------------------------+
-; Parameter Name ; Value      ; Type                                 ;
-+----------------+------------+--------------------------------------+
-; HACTIVE        ; 1010000000 ; Unsigned Binary                      ;
-; HFP            ; 0000010000 ; Unsigned Binary                      ;
-; HSYN           ; 0001100000 ; Unsigned Binary                      ;
-; HBP            ; 0000110000 ; Unsigned Binary                      ;
-; HMAX           ; 1100100000 ; Unsigned Binary                      ;
-; VBP            ; 0000100001 ; Unsigned Binary                      ;
-; VACTIVE        ; 0111100000 ; Unsigned Binary                      ;
-; VFP            ; 0000001010 ; Unsigned Binary                      ;
-; VSYN           ; 0000000010 ; Unsigned Binary                      ;
-; VMAX           ; 1000001101 ; Unsigned Binary                      ;
-+----------------+------------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +---------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; vga                ; vga                ;
+; Top-level entity name                                                           ; MEF                ; vga                ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -181,7 +161,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Wed Apr  3 15:44:54 2024
+    Info: Processing started: Fri Apr  5 14:55:44 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga -c vga --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -198,22 +178,31 @@ Info (12021): Found 1 design units, including 1 entities, in source file rectgen
 Info (12021): Found 1 design units, including 1 entities, in source file chargenrom.sv
     Info (12023): Found entity 1: chargenrom File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mef.sv
-    Info (12023): Found entity 1: MEF_Tarea2 File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 1
-Info (12127): Elaborating entity "vga" for the top level hierarchy
-Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 10
-Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 13
-Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:videoGen" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 16
-Warning (10858): Verilog HDL warning at videoGen.sv(2): object inrect used but never assigned File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 2
-Warning (10030): Net "inrect" at videoGen.sv(2) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 2
-Info (12128): Elaborating entity "chargenrom" for hierarchy "videoGen:videoGen|chargenrom:chargenromb" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 6
-Warning (10850): Verilog HDL warning at chargenrom.sv(8): number of words (24) in memory file does not match the number of elements in the address range [0:2047] File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 8
-Warning (10030): Net "charrom.data_a" at chargenrom.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 4
-Warning (10030): Net "charrom.waddr_a" at chargenrom.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 4
-Warning (10030): Net "charrom.we_a" at chargenrom.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 4
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 7 warnings
+    Info (12023): Found entity 1: MEF File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file slowclock.sv
+    Info (12023): Found entity 1: slowClock File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/slowClock.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clkcounter.sv
+    Info (12023): Found entity 1: clkCounter File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/clkCounter.sv Line: 1
+Info (12127): Elaborating entity "MEF" for the top level hierarchy
+Warning (10858): Verilog HDL warning at MEF.sv(5): object jgdr used but never assigned File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 5
+Warning (10240): Verilog HDL Always Construct warning at MEF.sv(11): inferring latch(es) for variable "mCounter", which holds its previous value in one or more paths through the always construct File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 11
+Warning (10030): Net "jgdr" at MEF.sv(5) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 5
+Info (10041): Inferred latch for "mCounter[0]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
+Info (10041): Inferred latch for "mCounter[1]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
+Info (10041): Inferred latch for "mCounter[2]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
+Info (10041): Inferred latch for "mCounter[3]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
+Info (10041): Inferred latch for "mCounter[4]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
+Info (10041): Inferred latch for "mCounter[5]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
+Info (10041): Inferred latch for "mCounter[6]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
+Info (10041): Inferred latch for "mCounter[7]" at MEF.sv(19) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 19
+Info (12128): Elaborating entity "clkCounter" for hierarchy "clkCounter:counter" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 8
+Warning (10230): Verilog HDL assignment warning at clkCounter.sv(16): truncated value with size 32 to match size of target (8) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/clkCounter.sv Line: 16
+Info (12128): Elaborating entity "slowClock" for hierarchy "clkCounter:counter|slowClock:slow_clock" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/clkCounter.sv Line: 7
+Warning (10230): Verilog HDL assignment warning at slowClock.sv(15): truncated value with size 32 to match size of target (28) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/slowClock.sv Line: 15
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4781 megabytes
-    Info: Processing ended: Wed Apr  3 15:45:01 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Processing ended: Fri Apr  5 14:55:53 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:10
 
 

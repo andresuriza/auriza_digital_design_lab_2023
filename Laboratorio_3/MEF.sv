@@ -1,8 +1,8 @@
-module MEF_Tarea2(input logic m, rst, clk, 
+module MEF (input logic m, rst, clk, x, y, 
 					output logic [7:0] estado);
 
 	logic [2:0] state, next_state;
-	logic t0;	
+	logic t0, jgdr;
 	logic [7:0] mCounter;
 	
 	clkCounter counter(clk, rst, t0);
@@ -22,24 +22,36 @@ module MEF_Tarea2(input logic m, rst, clk,
 			  default: estado = 0;
 			endcase
 			
+			
 			state = next_state;	
 			
-			if (next_state == 3'b001) begin
-				mCounter = mCounter + 1;
-			end
 		end
 	end
 		
 	//next state logic
-	always_comb begin
+	always_comb 
 		case(state)
-			3'b000: if (m) next_state = 3'b001; else next_state = 3'b000; //inicio
-			3'b001: if (m) next_state = 3'b010; else next_state = 3'b011; //barco
-			3'b010: if (m) next_state = 3'b011; else next_state = 3'b010; // Posicion
-			3'b011: if (t0) next_state = 3'b011; else if (m) next_state = 3'b100; // Jugador
-			3'b100: if (m) next_state = 3'b101; else next_state = 3'b011; //Revision
-			3'b101: next_state = 3'b000; //Fin
-			default: next_state = 3'b000;
+				3'b000: if (x) next_state = 3'b001; else next_state = 3'b000; //inicio
+				3'b001: if (x) next_state = 3'b001; else next_state = 3'b010; //barco
+				3'b010: if (x) next_state = 3'b011; else next_state = 3'b010; // Posicion
+				3'b011: begin 
+							if (t0) next_state = 3'b101; 
+							else if (x) next_state=3'b100;
+							else next_state = 3'b011; 
+						  end // Jugador
+				3'b100: begin
+							if (jgdr) next_state = 3'b011; 
+							else if (!jgdr) next_state = 3'b101;
+							else if (y) next_state = 3'b110;
+							else next_state = 3'b100;
+						  end	//Revision
+				3'b101: begin 
+							if (t0) next_state = 3'b011; 
+							else if (x) next_state=3'b100;
+							else next_state = 3'b101; 
+						  end // PC
+				3'b110: next_state = 3'b110;
+				default: next_state = 3'b000;
 		endcase
-	end
+	
 endmodule

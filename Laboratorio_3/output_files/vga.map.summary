@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Wed Apr  3 15:45:01 2024
+Analysis & Elaboration Status : Successful - Fri Apr  5 14:55:53 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : vga
-Top-level Entity Name : vga
+Top-level Entity Name : MEF
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

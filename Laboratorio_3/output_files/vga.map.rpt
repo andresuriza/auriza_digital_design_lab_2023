@@ -1,5 +1,5 @@
-Analysis & Synthesis report for vga
-Fri Mar 15 14:12:48 2024
+Analysis & Elaboration report for vga
+Wed Apr  3 15:45:01 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -7,17 +7,11 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: vgaController:vgaCont
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: vgaController:vgaCont
+  5. Analysis & Elaboration Settings
+  6. Analysis & Elaboration Messages
 
 
 
@@ -41,31 +35,61 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Mar 15 14:12:48 2024          ;
-; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name                   ; vga                                            ;
-; Top-level Entity Name           ; vga                                            ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 21                                             ;
-; Total pins                      ; 30                                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                 ;
++-------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Wed Apr  3 15:45:01 2024          ;
+; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                 ; vga                                            ;
+; Top-level Entity Name         ; vga                                            ;
+; Family                        ; Cyclone V                                      ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
+; Total registers               ; N/A until Partition Merge                      ;
+; Total pins                    ; N/A until Partition Merge                      ;
+; Total virtual pins            ; N/A until Partition Merge                      ;
+; Total block memory bits       ; N/A until Partition Merge                      ;
+; Total PLLs                    ; N/A until Partition Merge                      ;
+; Total DLLs                    ; N/A until Partition Merge                      ;
++-------------------------------+------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaController:vgaCont ;
++----------------+------------+--------------------------------------+
+; Parameter Name ; Value      ; Type                                 ;
++----------------+------------+--------------------------------------+
+; HACTIVE        ; 1010000000 ; Unsigned Binary                      ;
+; HFP            ; 0000010000 ; Unsigned Binary                      ;
+; HSYN           ; 0001100000 ; Unsigned Binary                      ;
+; HBP            ; 0000110000 ; Unsigned Binary                      ;
+; HMAX           ; 1100100000 ; Unsigned Binary                      ;
+; VBP            ; 0000100001 ; Unsigned Binary                      ;
+; VACTIVE        ; 0111100000 ; Unsigned Binary                      ;
+; VFP            ; 0000001010 ; Unsigned Binary                      ;
+; VSYN           ; 0000000010 ; Unsigned Binary                      ;
+; VMAX           ; 1000001101 ; Unsigned Binary                      ;
++----------------+------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -151,204 +175,45 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                             ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                         ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
-; charrom.txt                      ; yes             ; User File                    ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/charrom.txt      ;         ;
-; vga.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv           ;         ;
-; pll.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/pll.sv           ;         ;
-; vgaController.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vgaController.sv ;         ;
-; videoGen.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv      ;         ;
-; chargenrom.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv    ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                     ;
-+---------------------------------------------+-------------------+
-; Resource                                    ; Usage             ;
-+---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 22                ;
-;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 38                ;
-;     -- 7 input functions                    ; 0                 ;
-;     -- 6 input functions                    ; 6                 ;
-;     -- 5 input functions                    ; 5                 ;
-;     -- 4 input functions                    ; 3                 ;
-;     -- <=3 input functions                  ; 24                ;
-;                                             ;                   ;
-; Dedicated logic registers                   ; 21                ;
-;                                             ;                   ;
-; I/O pins                                    ; 30                ;
-;                                             ;                   ;
-; Total DSP Blocks                            ; 0                 ;
-;                                             ;                   ;
-; Maximum fan-out node                        ; pll:vgapll|toggle ;
-; Maximum fan-out                             ; 22                ;
-; Total fan-out                               ; 243               ;
-; Average fan-out                             ; 2.04              ;
-+---------------------------------------------+-------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
-+--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------+--------------+
-; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name   ; Library Name ;
-+--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------+--------------+
-; |vga                           ; 38 (0)              ; 21 (0)                    ; 0                 ; 0          ; 30   ; 0            ; |vga                                          ; vga           ; work         ;
-;    |pll:vgapll|                ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|pll:vgapll                               ; pll           ; work         ;
-;    |vgaController:vgaCont|     ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |vga|vgaController:vgaCont                    ; vgaController ; work         ;
-;    |videoGen:videoGen|         ; 7 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen                        ; videoGen      ; work         ;
-;       |chargenrom:chargenromb| ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|chargenrom:chargenromb ; chargenrom    ; work         ;
-+--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 21    ;
-; Number of registers using Synchronous Clear  ; 20    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: vgaController:vgaCont ;
-+----------------+------------+--------------------------------------+
-; Parameter Name ; Value      ; Type                                 ;
-+----------------+------------+--------------------------------------+
-; HACTIVE        ; 1010000000 ; Unsigned Binary                      ;
-; HFP            ; 0000010000 ; Unsigned Binary                      ;
-; HSYN           ; 0001100000 ; Unsigned Binary                      ;
-; HBP            ; 0000110000 ; Unsigned Binary                      ;
-; HMAX           ; 1100100000 ; Unsigned Binary                      ;
-; VBP            ; 0000100001 ; Unsigned Binary                      ;
-; VACTIVE        ; 0111100000 ; Unsigned Binary                      ;
-; VFP            ; 0000001010 ; Unsigned Binary                      ;
-; VSYN           ; 0000000010 ; Unsigned Binary                      ;
-; VMAX           ; 1000001101 ; Unsigned Binary                      ;
-+----------------+------------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 21                          ;
-;     ENA SCLR          ; 10                          ;
-;     SCLR              ; 10                          ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 40                          ;
-;     arith             ; 20                          ;
-;         1 data inputs ; 20                          ;
-;     normal            ; 20                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 3                           ;
-;         5 data inputs ; 5                           ;
-;         6 data inputs ; 6                           ;
-; boundary_port         ; 30                          ;
-;                       ;                             ;
-; Max LUT depth         ; 3.40                        ;
-; Average LUT depth     ; 2.82                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Fri Mar 15 14:12:37 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga -c vga
+    Info: Processing started: Wed Apr  3 15:44:54 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga -c vga --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vga.sv
-    Info (12023): Found entity 1: vga File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 1
+    Info (12023): Found entity 1: vga File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pll.sv
-    Info (12023): Found entity 1: pll File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/pll.sv Line: 1
+    Info (12023): Found entity 1: pll File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/pll.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vgacontroller.sv
-    Info (12023): Found entity 1: vgaController File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vgaController.sv Line: 3
+    Info (12023): Found entity 1: vgaController File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/vgaController.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file videogen.sv
-    Info (12023): Found entity 1: videoGen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 1
+    Info (12023): Found entity 1: videoGen File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rectgen.sv
-    Info (12023): Found entity 1: rectgen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/rectgen.sv Line: 1
+    Info (12023): Found entity 1: rectgen File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/rectgen.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file chargenrom.sv
-    Info (12023): Found entity 1: chargenrom File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 1
+    Info (12023): Found entity 1: chargenrom File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mef.sv
+    Info (12023): Found entity 1: MEF_Tarea2 File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 1
 Info (12127): Elaborating entity "vga" for the top level hierarchy
-Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 10
-Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 13
-Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:videoGen" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 16
-Warning (10858): Verilog HDL warning at videoGen.sv(2): object inrect used but never assigned File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 2
-Warning (10030): Net "inrect" at videoGen.sv(2) has no driver or initial value, using a default initial value '0' File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 2
-Info (12128): Elaborating entity "chargenrom" for hierarchy "videoGen:videoGen|chargenrom:chargenromb" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 6
-Warning (10850): Verilog HDL warning at chargenrom.sv(8): number of words (24) in memory file does not match the number of elements in the address range [0:2047] File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 8
-Warning (10030): Net "charrom.data_a" at chargenrom.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 4
-Warning (10030): Net "charrom.waddr_a" at chargenrom.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 4
-Warning (10030): Net "charrom.we_a" at chargenrom.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 4
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "videoGen:videoGen|chargenrom:chargenromb|charrom" is uninferred due to asynchronous read logic File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 4
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/db/vga.ram0_chargenrom_5dff6772.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "g[0]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[1]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[2]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[3]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[4]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[5]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[6]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[7]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 5
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 58 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4842 megabytes
-    Info: Processing ended: Fri Mar 15 14:12:48 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 10
+Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 13
+Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:videoGen" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 16
+Warning (10858): Verilog HDL warning at videoGen.sv(2): object inrect used but never assigned File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 2
+Warning (10030): Net "inrect" at videoGen.sv(2) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 2
+Info (12128): Elaborating entity "chargenrom" for hierarchy "videoGen:videoGen|chargenrom:chargenromb" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 6
+Warning (10850): Verilog HDL warning at chargenrom.sv(8): number of words (24) in memory file does not match the number of elements in the address range [0:2047] File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 8
+Warning (10030): Net "charrom.data_a" at chargenrom.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 4
+Warning (10030): Net "charrom.waddr_a" at chargenrom.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 4
+Warning (10030): Net "charrom.we_a" at chargenrom.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 4
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4781 megabytes
+    Info: Processing ended: Wed Apr  3 15:45:01 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:09
 
 

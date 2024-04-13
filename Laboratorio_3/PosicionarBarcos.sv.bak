@@ -1,0 +1,10 @@
+module PosicionarBarcos #(parameter WIDTH = 4)(
+
+input logic [WIDTH - 1:0] NumBarcosTotal
+
+);
+
+
+
+
+

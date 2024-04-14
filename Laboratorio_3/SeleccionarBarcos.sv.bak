@@ -1,0 +1,8 @@
+module SeleccionarBarcos #(parameter WIDTH = 4)(
+
+input logic [WIDTH - 1:0] NumBarcos
+
+);
+
+
+

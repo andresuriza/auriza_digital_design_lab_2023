@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga
-Sun Apr  7 20:22:45 2024
+Sat Apr 13 21:25:03 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -13,29 +13,33 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Parameter Settings for User Entity Instance: vgaController:vgaCont
- 12. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen16"
- 13. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen15"
- 14. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen14"
- 15. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen13"
- 16. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen12"
- 17. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen11"
- 18. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen10"
- 19. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen9"
- 20. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen8"
- 21. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen7"
- 22. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen6"
- 23. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen5"
- 24. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen4"
- 25. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen3"
- 26. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen2"
- 27. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen1"
- 28. Post-Synthesis Netlist Statistics for Top Partition
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Parameter Settings for User Entity Instance: vgaController:vgaCont
+ 11. Port Connectivity Checks: "videoGen:videoGen|rectgen:boat11"
+ 12. Port Connectivity Checks: "videoGen:videoGen|rectgen:boat4"
+ 13. Port Connectivity Checks: "videoGen:videoGen|rectgen:boat3"
+ 14. Port Connectivity Checks: "videoGen:videoGen|rectgen:boat2"
+ 15. Port Connectivity Checks: "videoGen:videoGen|rectgen:boat1"
+ 16. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen16"
+ 17. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen15"
+ 18. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen14"
+ 19. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen13"
+ 20. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen12"
+ 21. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen11"
+ 22. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen10"
+ 23. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen9"
+ 24. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen8"
+ 25. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen7"
+ 26. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen6"
+ 27. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen5"
+ 28. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen4"
+ 29. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen3"
+ 30. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen2"
+ 31. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen1"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
 
 
 
@@ -62,14 +66,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Apr  7 20:22:45 2024          ;
+; Analysis & Synthesis Status     ; Successful - Sat Apr 13 21:25:03 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; vga                                            ;
 ; Top-level Entity Name           ; vga                                            ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 59                                             ;
-; Total pins                      ; 31                                             ;
+; Total registers                 ; 61                                             ;
+; Total pins                      ; 35                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0                                              ;
 ; Total DSP Blocks                ; 0                                              ;
@@ -182,48 +186,48 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.1%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                              ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
-; rectgen.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/rectgen.sv       ;         ;
-; vga.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv           ;         ;
-; videoGen.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/videoGen.sv      ;         ;
-; vgaController.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vgaController.sv ;         ;
-; pll.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/pll.sv           ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                         ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
+; rectgen.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/rectgen.sv       ;         ;
+; vga.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv           ;         ;
+; videoGen.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv      ;         ;
+; vgaController.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vgaController.sv ;         ;
+; pll.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/pll.sv           ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 96        ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 165       ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 27        ;
-;     -- 5 input functions                    ; 28        ;
-;     -- 4 input functions                    ; 23        ;
-;     -- <=3 input functions                  ; 87        ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 59        ;
-;                                             ;           ;
-; I/O pins                                    ; 31        ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; nxt~input ;
-; Maximum fan-out                             ; 38        ;
-; Total fan-out                               ; 748       ;
-; Average fan-out                             ; 2.62      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimate of Logic utilization (ALMs needed) ; 119               ;
+;                                             ;                   ;
+; Combinational ALUT usage for logic          ; 197               ;
+;     -- 7 input functions                    ; 0                 ;
+;     -- 6 input functions                    ; 40                ;
+;     -- 5 input functions                    ; 62                ;
+;     -- 4 input functions                    ; 40                ;
+;     -- <=3 input functions                  ; 55                ;
+;                                             ;                   ;
+; Dedicated logic registers                   ; 61                ;
+;                                             ;                   ;
+; I/O pins                                    ; 35                ;
+;                                             ;                   ;
+; Total DSP Blocks                            ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; pll:vgapll|toggle ;
+; Maximum fan-out                             ; 22                ;
+; Total fan-out                               ; 1094              ;
+; Average fan-out                             ; 3.34              ;
++---------------------------------------------+-------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -231,39 +235,27 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------+--------------+
-; |vga                       ; 165 (0)             ; 59 (0)                    ; 0                 ; 0          ; 31   ; 0            ; |vga                                     ; vga           ; work         ;
+; |vga                       ; 197 (0)             ; 61 (0)                    ; 0                 ; 0          ; 35   ; 0            ; |vga                                     ; vga           ; work         ;
 ;    |pll:vgapll|            ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|pll:vgapll                          ; pll           ; work         ;
-;    |vgaController:vgaCont| ; 33 (33)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |vga|vgaController:vgaCont               ; vgaController ; work         ;
-;    |videoGen:videoGen|     ; 131 (74)            ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen                   ; videoGen      ; work         ;
-;       |rectgen:rectgen10|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen10 ; rectgen       ; work         ;
-;       |rectgen:rectgen11|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen11 ; rectgen       ; work         ;
-;       |rectgen:rectgen12|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen12 ; rectgen       ; work         ;
-;       |rectgen:rectgen13|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen13 ; rectgen       ; work         ;
-;       |rectgen:rectgen14|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen14 ; rectgen       ; work         ;
+;    |vgaController:vgaCont| ; 31 (31)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |vga|vgaController:vgaCont               ; vgaController ; work         ;
+;    |videoGen:videoGen|     ; 165 (91)            ; 40 (40)                   ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen                   ; videoGen      ; work         ;
+;       |rectgen:boat1|      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:boat1     ; rectgen       ; work         ;
+;       |rectgen:boat2|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:boat2     ; rectgen       ; work         ;
+;       |rectgen:boat3|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:boat3     ; rectgen       ; work         ;
+;       |rectgen:boat4|      ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:boat4     ; rectgen       ; work         ;
+;       |rectgen:rectgen11|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen11 ; rectgen       ; work         ;
+;       |rectgen:rectgen12|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen12 ; rectgen       ; work         ;
+;       |rectgen:rectgen13|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen13 ; rectgen       ; work         ;
+;       |rectgen:rectgen14|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen14 ; rectgen       ; work         ;
 ;       |rectgen:rectgen15|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen15 ; rectgen       ; work         ;
 ;       |rectgen:rectgen16|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen16 ; rectgen       ; work         ;
-;       |rectgen:rectgen1|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen1  ; rectgen       ; work         ;
+;       |rectgen:rectgen1|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen1  ; rectgen       ; work         ;
 ;       |rectgen:rectgen2|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen2  ; rectgen       ; work         ;
-;       |rectgen:rectgen8|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen8  ; rectgen       ; work         ;
-;       |rectgen:rectgen9|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen9  ; rectgen       ; work         ;
-;       |rectgen:squareSel|  ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:squareSel ; rectgen       ; work         ;
+;       |rectgen:rectgen8|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen8  ; rectgen       ; work         ;
+;       |rectgen:rectgen9|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen9  ; rectgen       ; work         ;
+;       |rectgen:squareSel|  ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:squareSel ; rectgen       ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+---------------------------------------+-----------------------------------------+
-; Register name                         ; Reason for Removal                      ;
-+---------------------------------------+-----------------------------------------+
-; videoGen:videoGen|leftS[0]            ; Merged with videoGen:videoGen|rightS[0] ;
-; videoGen:videoGen|topS[0]             ; Merged with videoGen:videoGen|rightS[0] ;
-; videoGen:videoGen|topS[10]            ; Lost fanout                             ;
-; videoGen:videoGen|botS[10]            ; Lost fanout                             ;
-; videoGen:videoGen|leftS[10]           ; Lost fanout                             ;
-; videoGen:videoGen|rightS[10]          ; Lost fanout                             ;
-; Total Number of Removed Registers = 6 ;                                         ;
-+---------------------------------------+-----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -271,12 +263,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 59    ;
+; Total registers                              ; 61    ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 50    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -286,25 +278,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; videoGen:videoGen|rightS[3]             ; 2       ;
-; videoGen:videoGen|rightS[2]             ; 2       ;
-; videoGen:videoGen|rightS[1]             ; 2       ;
-; videoGen:videoGen|rightS[5]             ; 3       ;
-; videoGen:videoGen|rightS[6]             ; 3       ;
-; videoGen:videoGen|rightS[4]             ; 3       ;
-; videoGen:videoGen|topS[6]               ; 3       ;
-; videoGen:videoGen|topS[5]               ; 3       ;
-; videoGen:videoGen|topS[3]               ; 2       ;
-; videoGen:videoGen|topS[8]               ; 3       ;
-; videoGen:videoGen|leftS[6]              ; 3       ;
-; videoGen:videoGen|leftS[3]              ; 2       ;
-; videoGen:videoGen|leftS[2]              ; 2       ;
-; videoGen:videoGen|botS[3]               ; 2       ;
-; videoGen:videoGen|botS[1]               ; 2       ;
-; videoGen:videoGen|botS[0]               ; 3       ;
-; videoGen:videoGen|botS[7]               ; 3       ;
-; videoGen:videoGen|botS[4]               ; 3       ;
-; videoGen:videoGen|botS[8]               ; 3       ;
+; videoGen:videoGen|leftC[6]              ; 4       ;
+; videoGen:videoGen|leftC[5]              ; 4       ;
+; videoGen:videoGen|leftC[3]              ; 4       ;
+; videoGen:videoGen|leftC[8]              ; 4       ;
+; videoGen:videoGen|topC[6]               ; 4       ;
+; videoGen:videoGen|topC[3]               ; 4       ;
+; videoGen:videoGen|topC[2]               ; 4       ;
+; videoGen:videoGen|botC[3]               ; 2       ;
+; videoGen:videoGen|botC[2]               ; 2       ;
+; videoGen:videoGen|botC[1]               ; 2       ;
+; videoGen:videoGen|botC[5]               ; 5       ;
+; videoGen:videoGen|botC[6]               ; 5       ;
+; videoGen:videoGen|botC[4]               ; 5       ;
+; videoGen:videoGen|rightC[4]             ; 4       ;
+; videoGen:videoGen|rightC[7]             ; 4       ;
+; videoGen:videoGen|rightC[1]             ; 2       ;
+; videoGen:videoGen|rightC[0]             ; 2       ;
+; videoGen:videoGen|rightC[3]             ; 4       ;
+; videoGen:videoGen|rightC[8]             ; 21      ;
 ; Total number of inverted registers = 19 ;         ;
 +-----------------------------------------+---------+
 
@@ -326,6 +318,93 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VMAX           ; 1000001101 ; Unsigned Binary                      ;
 +----------------+------------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|rectgen:boat11"                                                     ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; inrect ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|rectgen:boat4" ;
++-------------+-------+----------+----------------------------+
+; Port        ; Type  ; Severity ; Details                    ;
++-------------+-------+----------+----------------------------+
+; left[1..0]  ; Input ; Info     ; Stuck at VCC               ;
+; left[9..5]  ; Input ; Info     ; Stuck at GND               ;
+; left[3..2]  ; Input ; Info     ; Stuck at GND               ;
+; left[4]     ; Input ; Info     ; Stuck at VCC               ;
+; right[2..1] ; Input ; Info     ; Stuck at VCC               ;
+; right[9..7] ; Input ; Info     ; Stuck at GND               ;
+; right[5..3] ; Input ; Info     ; Stuck at GND               ;
+; right[6]    ; Input ; Info     ; Stuck at VCC               ;
+; right[0]    ; Input ; Info     ; Stuck at GND               ;
++-------------+-------+----------+----------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|rectgen:boat3" ;
++-------------+-------+----------+----------------------------+
+; Port        ; Type  ; Severity ; Details                    ;
++-------------+-------+----------+----------------------------+
+; left[1..0]  ; Input ; Info     ; Stuck at VCC               ;
+; left[9..5]  ; Input ; Info     ; Stuck at GND               ;
+; left[3..2]  ; Input ; Info     ; Stuck at GND               ;
+; left[4]     ; Input ; Info     ; Stuck at VCC               ;
+; right[2..1] ; Input ; Info     ; Stuck at VCC               ;
+; right[9..7] ; Input ; Info     ; Stuck at GND               ;
+; right[5..3] ; Input ; Info     ; Stuck at GND               ;
+; right[6]    ; Input ; Info     ; Stuck at VCC               ;
+; right[0]    ; Input ; Info     ; Stuck at GND               ;
+; top[0]      ; Input ; Info     ; Stuck at GND               ;
+; bot[0]      ; Input ; Info     ; Stuck at GND               ;
++-------------+-------+----------+----------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|rectgen:boat2" ;
++-------------+-------+----------+----------------------------+
+; Port        ; Type  ; Severity ; Details                    ;
++-------------+-------+----------+----------------------------+
+; left[1..0]  ; Input ; Info     ; Stuck at VCC               ;
+; left[9..5]  ; Input ; Info     ; Stuck at GND               ;
+; left[3..2]  ; Input ; Info     ; Stuck at GND               ;
+; left[4]     ; Input ; Info     ; Stuck at VCC               ;
+; right[2..1] ; Input ; Info     ; Stuck at VCC               ;
+; right[9..7] ; Input ; Info     ; Stuck at GND               ;
+; right[5..3] ; Input ; Info     ; Stuck at GND               ;
+; right[6]    ; Input ; Info     ; Stuck at VCC               ;
+; right[0]    ; Input ; Info     ; Stuck at GND               ;
++-------------+-------+----------+----------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|rectgen:boat1" ;
++-------------+-------+----------+----------------------------+
+; Port        ; Type  ; Severity ; Details                    ;
++-------------+-------+----------+----------------------------+
+; left[1..0]  ; Input ; Info     ; Stuck at VCC               ;
+; left[9..5]  ; Input ; Info     ; Stuck at GND               ;
+; left[3..2]  ; Input ; Info     ; Stuck at GND               ;
+; left[4]     ; Input ; Info     ; Stuck at VCC               ;
+; right[2..1] ; Input ; Info     ; Stuck at VCC               ;
+; right[9..7] ; Input ; Info     ; Stuck at GND               ;
+; right[5..3] ; Input ; Info     ; Stuck at GND               ;
+; right[6]    ; Input ; Info     ; Stuck at VCC               ;
+; right[0]    ; Input ; Info     ; Stuck at GND               ;
+; top[3..2]   ; Input ; Info     ; Stuck at VCC               ;
+; top[9..7]   ; Input ; Info     ; Stuck at GND               ;
+; top[5..4]   ; Input ; Info     ; Stuck at GND               ;
+; top[1..0]   ; Input ; Info     ; Stuck at GND               ;
+; top[6]      ; Input ; Info     ; Stuck at VCC               ;
+; bot[6..1]   ; Input ; Info     ; Stuck at VCC               ;
+; bot[9..7]   ; Input ; Info     ; Stuck at GND               ;
+; bot[0]      ; Input ; Info     ; Stuck at GND               ;
++-------------+-------+----------+----------------------------+
 
 
 +-----------------------------------------------------------------+
@@ -799,26 +878,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 59                          ;
+; arriav_ff             ; 61                          ;
+;     ENA               ; 40                          ;
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 39                          ;
-; arriav_lcell_comb     ; 167                         ;
-;     arith             ; 56                          ;
-;         1 data inputs ; 52                          ;
-;         2 data inputs ; 4                           ;
-;     normal            ; 111                         ;
-;         0 data inputs ; 1                           ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 199                         ;
+;     arith             ; 60                          ;
+;         1 data inputs ; 24                          ;
+;         4 data inputs ; 4                           ;
+;         5 data inputs ; 32                          ;
+;     normal            ; 139                         ;
 ;         1 data inputs ; 22                          ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 23                          ;
-;         5 data inputs ; 28                          ;
-;         6 data inputs ; 27                          ;
-; boundary_port         ; 31                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 36                          ;
+;         5 data inputs ; 30                          ;
+;         6 data inputs ; 40                          ;
+; boundary_port         ; 35                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 3.04                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.78                        ;
 +-----------------------+-----------------------------+
 
 
@@ -827,7 +907,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -837,59 +917,58 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sun Apr  7 20:22:31 2024
+    Info: Processing started: Sat Apr 13 21:24:51 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga -c vga
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file rectgen.sv
-    Info (12023): Found entity 1: rectgen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/rectgen.sv Line: 1
+    Info (12023): Found entity 1: rectgen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/rectgen.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga.sv
-    Info (12023): Found entity 1: vga File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 1
+    Info (12023): Found entity 1: vga File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file videogen.sv
-    Info (12023): Found entity 1: videoGen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/videoGen.sv Line: 2
+    Info (12023): Found entity 1: videoGen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file randomgen_tb.sv
-    Info (12023): Found entity 1: RandomGen_tb File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/RandomGen_tb.sv Line: 3
+    Info (12023): Found entity 1: RandomGen_tb File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/RandomGen_tb.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file randomgen.sv
-    Info (12023): Found entity 1: RandomGen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/RandomGen.sv Line: 1
+    Info (12023): Found entity 1: RandomGen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/RandomGen.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file chargenrom.sv
-    Info (12023): Found entity 1: chargenrom File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/chargenrom.sv Line: 1
+    Info (12023): Found entity 1: chargenrom File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vgacontroller.sv
-    Info (12023): Found entity 1: vgaController File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vgaController.sv Line: 2
+    Info (12023): Found entity 1: vgaController File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vgaController.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file pll.sv
-    Info (12023): Found entity 1: pll File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/pll.sv Line: 1
+    Info (12023): Found entity 1: pll File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/pll.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_tb.sv
-    Info (12023): Found entity 1: vga_tb File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga_tb.sv Line: 1
+    Info (12023): Found entity 1: vga_tb File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga_tb.sv Line: 1
 Info (12127): Elaborating entity "vga" for the top level hierarchy
-Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 10
-Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 13
-Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:videoGen" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 16
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(47): truncated value with size 32 to match size of target (11) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/videoGen.sv Line: 47
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(48): truncated value with size 32 to match size of target (11) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/videoGen.sv Line: 48
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(49): truncated value with size 32 to match size of target (11) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/videoGen.sv Line: 49
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(50): truncated value with size 32 to match size of target (11) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/videoGen.sv Line: 50
-Warning (10034): Output port "g" at videoGen.sv(4) has no driver File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/videoGen.sv Line: 4
-Info (12128): Elaborating entity "rectgen" for hierarchy "videoGen:videoGen|rectgen:rectgen1" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/videoGen.sv Line: 16
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "g[0]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[1]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[2]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[3]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[4]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[5]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[6]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 5
-    Warning (13410): Pin "g[7]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023-Lab3/Laboratorio_3/vga.sv Line: 5
+Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 10
+Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 13
+Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:videoGen" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 16
+Warning (10036): Verilog HDL or VHDL warning at videoGen.sv(24): object "i" assigned a value but never read File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 24
+Warning (10036): Verilog HDL or VHDL warning at videoGen.sv(25): object "offset" assigned a value but never read File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(108): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 108
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(109): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 109
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(149): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 149
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(150): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 150
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(153): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 153
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(154): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 154
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(162): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 162
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(163): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 163
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(166): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 166
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(167): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 167
+Info (12128): Elaborating entity "rectgen" for hierarchy "videoGen:videoGen|rectgen:rectgen1" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 30
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 216 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "shoot" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 1
+Info (21057): Implemented 252 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 185 logic cells
+    Info (21061): Implemented 217 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Sun Apr  7 20:22:45 2024
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 4842 megabytes
+    Info: Processing ended: Sat Apr 13 21:25:03 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:29
 
 

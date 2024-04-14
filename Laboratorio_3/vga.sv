@@ -1,4 +1,4 @@
-module vga(input logic clk, nxt,
+module vga(input logic clk, moveX, moveY, dirX, dirY, shoot,
 			  output logic vgaclk, // 25.175 MHz VGA clock
 			  output logic hsync, vsync,
 			  output logic sync_b, blank_b, // To monitor 
@@ -13,5 +13,5 @@ module vga(input logic clk, nxt,
 	vgaController vgaCont(vgaclk, hsync, vsync, sync_b, blank_b, x, y);
 	
 	// Modulo para pintar la pantalla
-	videoGen videoGen(x, y, nxt, r, g, b);
+	videoGen videoGen(vgaclk, x, y, moveX, moveY, dirX, dirY, shoot, r, g, b);
 endmodule

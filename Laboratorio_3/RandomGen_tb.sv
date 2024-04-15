@@ -3,46 +3,46 @@
 module RandomGen_tb;
 
     // Parameters
-    parameter CLK_PERIOD = 10; // Clock period in ns
-    parameter SIM_TIME = 100;  // Simulation time in ns
-    parameter INIT_DELAY = 100; // Initial delay after releasing reset (adjust as needed)
-
+    parameter CLK_PERIOD = 10; 
+    parameter SIM_TIME = 100;  
+    parameter INIT_DELAY = 100;
+	 
     // Signals
     reg clk;
     reg rst_n;
-    reg [7:0] seed; // Input seed value
-    wire [7:0] rand_out;
+    reg [24:0] seed; 
+    wire [24:0] rand_out;
+    wire [24:0] result;
 
-    // Instantiate PRNG module
+    // Instancia RandomGen
     RandomGen dut (
         .clk(clk),
         .rst_n(rst_n),
         .seed(seed),
-        .rand_out(rand_out)
+        .rand_out(rand_out),
+        .result(result)
     );
 
-    // Generate clock
+
     always #((CLK_PERIOD/2)) clk = ~clk;
 
     // Initialize
     initial begin
         clk = 0;
         rst_n = 0;
-        seed = $random; // Generate a random seed value
-        # (CLK_PERIOD * 2); // Wait for a couple of clock cycles before releasing reset
+        seed = 25'b1111111111000010111000000; //Seed de 25bits
+        # (CLK_PERIOD * 2);
         rst_n = 1;
-        # (INIT_DELAY); // Simulation time
+        # (INIT_DELAY);
     end
 
     // Simulation
     initial begin
         #INIT_DELAY;
-        repeat (60) begin // Generate 60 random seed values and corresponding random numbers
+        repeat (60) begin // Genera 60 valores randoms con mismo valor de seed
             #10;
-            $display("Time = %0t, Seed = %h, Random number = %h", $time, seed, rand_out);
-            seed = $random; // Generate a new random seed value for the next iteration
+            $display("Time = %0t, Seed = %h, Random number = %h, Result = %h", $time, seed, rand_out, result);
         end
-        # (SIM_TIME - INIT_DELAY - 20); // Wait for the remaining simulation time
         $finish; // End simulation
     end
 

@@ -1,5 +1,5 @@
-Analysis & Synthesis report for vga
-Sat Apr 13 21:25:03 2024
+Analysis & Elaboration report for vga
+Thu Apr 18 15:06:26 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -7,39 +7,10 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Parameter Settings for User Entity Instance: vgaController:vgaCont
- 11. Port Connectivity Checks: "videoGen:videoGen|rectgen:boat11"
- 12. Port Connectivity Checks: "videoGen:videoGen|rectgen:boat4"
- 13. Port Connectivity Checks: "videoGen:videoGen|rectgen:boat3"
- 14. Port Connectivity Checks: "videoGen:videoGen|rectgen:boat2"
- 15. Port Connectivity Checks: "videoGen:videoGen|rectgen:boat1"
- 16. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen16"
- 17. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen15"
- 18. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen14"
- 19. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen13"
- 20. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen12"
- 21. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen11"
- 22. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen10"
- 23. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen9"
- 24. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen8"
- 25. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen7"
- 26. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen6"
- 27. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen5"
- 28. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen4"
- 29. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen3"
- 30. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen2"
- 31. Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen1"
- 32. Post-Synthesis Netlist Statistics for Top Partition
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -63,36 +34,47 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Apr 13 21:25:03 2024          ;
-; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name                   ; vga                                            ;
-; Top-level Entity Name           ; vga                                            ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 61                                             ;
-; Total pins                      ; 35                                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                 ;
++-------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Thu Apr 18 15:06:26 2024          ;
+; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                 ; vga                                            ;
+; Top-level Entity Name         ; registroBarcos                                 ;
+; Family                        ; Cyclone V                                      ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
+; Total registers               ; N/A until Partition Merge                      ;
+; Total pins                    ; N/A until Partition Merge                      ;
+; Total virtual pins            ; N/A until Partition Merge                      ;
+; Total block memory bits       ; N/A until Partition Merge                      ;
+; Total PLLs                    ; N/A until Partition Merge                      ;
+; Total DLLs                    ; N/A until Partition Merge                      ;
++-------------------------------+------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; vga                ; vga                ;
+; Top-level entity name                                                           ; registroBarcos     ; vga                ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -173,802 +155,47 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                             ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                         ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
-; rectgen.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/rectgen.sv       ;         ;
-; vga.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv           ;         ;
-; videoGen.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv      ;         ;
-; vgaController.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vgaController.sv ;         ;
-; pll.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/pll.sv           ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                     ;
-+---------------------------------------------+-------------------+
-; Resource                                    ; Usage             ;
-+---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 119               ;
-;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 197               ;
-;     -- 7 input functions                    ; 0                 ;
-;     -- 6 input functions                    ; 40                ;
-;     -- 5 input functions                    ; 62                ;
-;     -- 4 input functions                    ; 40                ;
-;     -- <=3 input functions                  ; 55                ;
-;                                             ;                   ;
-; Dedicated logic registers                   ; 61                ;
-;                                             ;                   ;
-; I/O pins                                    ; 35                ;
-;                                             ;                   ;
-; Total DSP Blocks                            ; 0                 ;
-;                                             ;                   ;
-; Maximum fan-out node                        ; pll:vgapll|toggle ;
-; Maximum fan-out                             ; 22                ;
-; Total fan-out                               ; 1094              ;
-; Average fan-out                             ; 3.34              ;
-+---------------------------------------------+-------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------+--------------+
-; |vga                       ; 197 (0)             ; 61 (0)                    ; 0                 ; 0          ; 35   ; 0            ; |vga                                     ; vga           ; work         ;
-;    |pll:vgapll|            ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|pll:vgapll                          ; pll           ; work         ;
-;    |vgaController:vgaCont| ; 31 (31)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |vga|vgaController:vgaCont               ; vgaController ; work         ;
-;    |videoGen:videoGen|     ; 165 (91)            ; 40 (40)                   ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen                   ; videoGen      ; work         ;
-;       |rectgen:boat1|      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:boat1     ; rectgen       ; work         ;
-;       |rectgen:boat2|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:boat2     ; rectgen       ; work         ;
-;       |rectgen:boat3|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:boat3     ; rectgen       ; work         ;
-;       |rectgen:boat4|      ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:boat4     ; rectgen       ; work         ;
-;       |rectgen:rectgen11|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen11 ; rectgen       ; work         ;
-;       |rectgen:rectgen12|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen12 ; rectgen       ; work         ;
-;       |rectgen:rectgen13|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen13 ; rectgen       ; work         ;
-;       |rectgen:rectgen14|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen14 ; rectgen       ; work         ;
-;       |rectgen:rectgen15|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen15 ; rectgen       ; work         ;
-;       |rectgen:rectgen16|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen16 ; rectgen       ; work         ;
-;       |rectgen:rectgen1|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen1  ; rectgen       ; work         ;
-;       |rectgen:rectgen2|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen2  ; rectgen       ; work         ;
-;       |rectgen:rectgen8|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen8  ; rectgen       ; work         ;
-;       |rectgen:rectgen9|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:rectgen9  ; rectgen       ; work         ;
-;       |rectgen:squareSel|  ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen|rectgen:squareSel ; rectgen       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 61    ;
-; Number of registers using Synchronous Clear  ; 20    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 50    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; videoGen:videoGen|leftC[6]              ; 4       ;
-; videoGen:videoGen|leftC[5]              ; 4       ;
-; videoGen:videoGen|leftC[3]              ; 4       ;
-; videoGen:videoGen|leftC[8]              ; 4       ;
-; videoGen:videoGen|topC[6]               ; 4       ;
-; videoGen:videoGen|topC[3]               ; 4       ;
-; videoGen:videoGen|topC[2]               ; 4       ;
-; videoGen:videoGen|botC[3]               ; 2       ;
-; videoGen:videoGen|botC[2]               ; 2       ;
-; videoGen:videoGen|botC[1]               ; 2       ;
-; videoGen:videoGen|botC[5]               ; 5       ;
-; videoGen:videoGen|botC[6]               ; 5       ;
-; videoGen:videoGen|botC[4]               ; 5       ;
-; videoGen:videoGen|rightC[4]             ; 4       ;
-; videoGen:videoGen|rightC[7]             ; 4       ;
-; videoGen:videoGen|rightC[1]             ; 2       ;
-; videoGen:videoGen|rightC[0]             ; 2       ;
-; videoGen:videoGen|rightC[3]             ; 4       ;
-; videoGen:videoGen|rightC[8]             ; 21      ;
-; Total number of inverted registers = 19 ;         ;
-+-----------------------------------------+---------+
-
-
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: vgaController:vgaCont ;
-+----------------+------------+--------------------------------------+
-; Parameter Name ; Value      ; Type                                 ;
-+----------------+------------+--------------------------------------+
-; HACTIVE        ; 1010000000 ; Unsigned Binary                      ;
-; HFP            ; 0000010000 ; Unsigned Binary                      ;
-; HSYN           ; 0001100000 ; Unsigned Binary                      ;
-; HBP            ; 0000110000 ; Unsigned Binary                      ;
-; HMAX           ; 1100100000 ; Unsigned Binary                      ;
-; VBP            ; 0000100001 ; Unsigned Binary                      ;
-; VACTIVE        ; 0111100000 ; Unsigned Binary                      ;
-; VFP            ; 0000001010 ; Unsigned Binary                      ;
-; VSYN           ; 0000000010 ; Unsigned Binary                      ;
-; VMAX           ; 1000001101 ; Unsigned Binary                      ;
-+----------------+------------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:boat11"                                                     ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; inrect ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:boat4" ;
-+-------------+-------+----------+----------------------------+
-; Port        ; Type  ; Severity ; Details                    ;
-+-------------+-------+----------+----------------------------+
-; left[1..0]  ; Input ; Info     ; Stuck at VCC               ;
-; left[9..5]  ; Input ; Info     ; Stuck at GND               ;
-; left[3..2]  ; Input ; Info     ; Stuck at GND               ;
-; left[4]     ; Input ; Info     ; Stuck at VCC               ;
-; right[2..1] ; Input ; Info     ; Stuck at VCC               ;
-; right[9..7] ; Input ; Info     ; Stuck at GND               ;
-; right[5..3] ; Input ; Info     ; Stuck at GND               ;
-; right[6]    ; Input ; Info     ; Stuck at VCC               ;
-; right[0]    ; Input ; Info     ; Stuck at GND               ;
-+-------------+-------+----------+----------------------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:boat3" ;
-+-------------+-------+----------+----------------------------+
-; Port        ; Type  ; Severity ; Details                    ;
-+-------------+-------+----------+----------------------------+
-; left[1..0]  ; Input ; Info     ; Stuck at VCC               ;
-; left[9..5]  ; Input ; Info     ; Stuck at GND               ;
-; left[3..2]  ; Input ; Info     ; Stuck at GND               ;
-; left[4]     ; Input ; Info     ; Stuck at VCC               ;
-; right[2..1] ; Input ; Info     ; Stuck at VCC               ;
-; right[9..7] ; Input ; Info     ; Stuck at GND               ;
-; right[5..3] ; Input ; Info     ; Stuck at GND               ;
-; right[6]    ; Input ; Info     ; Stuck at VCC               ;
-; right[0]    ; Input ; Info     ; Stuck at GND               ;
-; top[0]      ; Input ; Info     ; Stuck at GND               ;
-; bot[0]      ; Input ; Info     ; Stuck at GND               ;
-+-------------+-------+----------+----------------------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:boat2" ;
-+-------------+-------+----------+----------------------------+
-; Port        ; Type  ; Severity ; Details                    ;
-+-------------+-------+----------+----------------------------+
-; left[1..0]  ; Input ; Info     ; Stuck at VCC               ;
-; left[9..5]  ; Input ; Info     ; Stuck at GND               ;
-; left[3..2]  ; Input ; Info     ; Stuck at GND               ;
-; left[4]     ; Input ; Info     ; Stuck at VCC               ;
-; right[2..1] ; Input ; Info     ; Stuck at VCC               ;
-; right[9..7] ; Input ; Info     ; Stuck at GND               ;
-; right[5..3] ; Input ; Info     ; Stuck at GND               ;
-; right[6]    ; Input ; Info     ; Stuck at VCC               ;
-; right[0]    ; Input ; Info     ; Stuck at GND               ;
-+-------------+-------+----------+----------------------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:boat1" ;
-+-------------+-------+----------+----------------------------+
-; Port        ; Type  ; Severity ; Details                    ;
-+-------------+-------+----------+----------------------------+
-; left[1..0]  ; Input ; Info     ; Stuck at VCC               ;
-; left[9..5]  ; Input ; Info     ; Stuck at GND               ;
-; left[3..2]  ; Input ; Info     ; Stuck at GND               ;
-; left[4]     ; Input ; Info     ; Stuck at VCC               ;
-; right[2..1] ; Input ; Info     ; Stuck at VCC               ;
-; right[9..7] ; Input ; Info     ; Stuck at GND               ;
-; right[5..3] ; Input ; Info     ; Stuck at GND               ;
-; right[6]    ; Input ; Info     ; Stuck at VCC               ;
-; right[0]    ; Input ; Info     ; Stuck at GND               ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC               ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND               ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND               ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND               ;
-; top[6]      ; Input ; Info     ; Stuck at VCC               ;
-; bot[6..1]   ; Input ; Info     ; Stuck at VCC               ;
-; bot[9..7]   ; Input ; Info     ; Stuck at GND               ;
-; bot[0]      ; Input ; Info     ; Stuck at GND               ;
-+-------------+-------+----------+----------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen16" ;
-+-------------+-------+----------+--------------------------------+
-; Port        ; Type  ; Severity ; Details                        ;
-+-------------+-------+----------+--------------------------------+
-; left[5..3]  ; Input ; Info     ; Stuck at VCC                   ;
-; left[8..6]  ; Input ; Info     ; Stuck at GND                   ;
-; left[9]     ; Input ; Info     ; Stuck at VCC                   ;
-; left[2]     ; Input ; Info     ; Stuck at GND                   ;
-; left[1]     ; Input ; Info     ; Stuck at VCC                   ;
-; left[0]     ; Input ; Info     ; Stuck at GND                   ;
-; right[5..2] ; Input ; Info     ; Stuck at VCC                   ;
-; right[8..6] ; Input ; Info     ; Stuck at GND                   ;
-; right[9]    ; Input ; Info     ; Stuck at VCC                   ;
-; right[1]    ; Input ; Info     ; Stuck at GND                   ;
-; right[0]    ; Input ; Info     ; Stuck at VCC                   ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                   ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                   ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                   ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                   ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                   ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                   ;
-+-------------+-------+----------+--------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen15" ;
-+-------------+-------+----------+--------------------------------+
-; Port        ; Type  ; Severity ; Details                        ;
-+-------------+-------+----------+--------------------------------+
-; left[8..3]  ; Input ; Info     ; Stuck at GND                   ;
-; left[9]     ; Input ; Info     ; Stuck at VCC                   ;
-; left[2]     ; Input ; Info     ; Stuck at VCC                   ;
-; left[1]     ; Input ; Info     ; Stuck at GND                   ;
-; left[0]     ; Input ; Info     ; Stuck at VCC                   ;
-; right[8..4] ; Input ; Info     ; Stuck at GND                   ;
-; right[2..0] ; Input ; Info     ; Stuck at GND                   ;
-; right[9]    ; Input ; Info     ; Stuck at VCC                   ;
-; right[3]    ; Input ; Info     ; Stuck at VCC                   ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                   ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                   ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                   ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                   ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                   ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                   ;
-+-------------+-------+----------+--------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen14" ;
-+-------------+-------+----------+--------------------------------+
-; Port        ; Type  ; Severity ; Details                        ;
-+-------------+-------+----------+--------------------------------+
-; left[8..6]  ; Input ; Info     ; Stuck at VCC                   ;
-; left[3..0]  ; Input ; Info     ; Stuck at GND                   ;
-; left[9]     ; Input ; Info     ; Stuck at GND                   ;
-; left[5]     ; Input ; Info     ; Stuck at GND                   ;
-; left[4]     ; Input ; Info     ; Stuck at VCC                   ;
-; right[8..6] ; Input ; Info     ; Stuck at VCC                   ;
-; right[1..0] ; Input ; Info     ; Stuck at VCC                   ;
-; right[3..2] ; Input ; Info     ; Stuck at GND                   ;
-; right[9]    ; Input ; Info     ; Stuck at GND                   ;
-; right[5]    ; Input ; Info     ; Stuck at GND                   ;
-; right[4]    ; Input ; Info     ; Stuck at VCC                   ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                   ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                   ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                   ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                   ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                   ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                   ;
-+-------------+-------+----------+--------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen13" ;
-+-------------+-------+----------+--------------------------------+
-; Port        ; Type  ; Severity ; Details                        ;
-+-------------+-------+----------+--------------------------------+
-; left[8..7]  ; Input ; Info     ; Stuck at VCC                   ;
-; left[4..3]  ; Input ; Info     ; Stuck at VCC                   ;
-; left[1..0]  ; Input ; Info     ; Stuck at VCC                   ;
-; left[6..5]  ; Input ; Info     ; Stuck at GND                   ;
-; left[9]     ; Input ; Info     ; Stuck at GND                   ;
-; left[2]     ; Input ; Info     ; Stuck at GND                   ;
-; right[8..7] ; Input ; Info     ; Stuck at VCC                   ;
-; right[4..1] ; Input ; Info     ; Stuck at VCC                   ;
-; right[6..5] ; Input ; Info     ; Stuck at GND                   ;
-; right[9]    ; Input ; Info     ; Stuck at GND                   ;
-; right[0]    ; Input ; Info     ; Stuck at GND                   ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                   ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                   ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                   ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                   ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                   ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                   ;
-+-------------+-------+----------+--------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen12" ;
-+-------------+-------+----------+--------------------------------+
-; Port        ; Type  ; Severity ; Details                        ;
-+-------------+-------+----------+--------------------------------+
-; left        ; Input ; Info     ; Stuck at GND                   ;
-; right[6..0] ; Input ; Info     ; Stuck at GND                   ;
-; right[9]    ; Input ; Info     ; Stuck at VCC                   ;
-; right[8]    ; Input ; Info     ; Stuck at GND                   ;
-; right[7]    ; Input ; Info     ; Stuck at VCC                   ;
-; top[3..2]   ; Input ; Info     ; Stuck at GND                   ;
-; top[9]      ; Input ; Info     ; Stuck at GND                   ;
-; top[8]      ; Input ; Info     ; Stuck at VCC                   ;
-; top[7]      ; Input ; Info     ; Stuck at GND                   ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                   ;
-; top[5]      ; Input ; Info     ; Stuck at GND                   ;
-; top[4]      ; Input ; Info     ; Stuck at VCC                   ;
-; top[1]      ; Input ; Info     ; Stuck at VCC                   ;
-; top[0]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[3]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[2]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[1]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[0]      ; Input ; Info     ; Stuck at VCC                   ;
-+-------------+-------+----------+--------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen11" ;
-+-------------+-------+----------+--------------------------------+
-; Port        ; Type  ; Severity ; Details                        ;
-+-------------+-------+----------+--------------------------------+
-; left        ; Input ; Info     ; Stuck at GND                   ;
-; right[6..0] ; Input ; Info     ; Stuck at GND                   ;
-; right[9]    ; Input ; Info     ; Stuck at VCC                   ;
-; right[8]    ; Input ; Info     ; Stuck at GND                   ;
-; right[7]    ; Input ; Info     ; Stuck at VCC                   ;
-; top[4..2]   ; Input ; Info     ; Stuck at VCC                   ;
-; top[7..5]   ; Input ; Info     ; Stuck at GND                   ;
-; top[9]      ; Input ; Info     ; Stuck at GND                   ;
-; top[8]      ; Input ; Info     ; Stuck at VCC                   ;
-; top[1]      ; Input ; Info     ; Stuck at GND                   ;
-; top[0]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[7..6]   ; Input ; Info     ; Stuck at GND                   ;
-; bot[4..0]   ; Input ; Info     ; Stuck at GND                   ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[5]      ; Input ; Info     ; Stuck at VCC                   ;
-+-------------+-------+----------+--------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen10" ;
-+-------------+-------+----------+--------------------------------+
-; Port        ; Type  ; Severity ; Details                        ;
-+-------------+-------+----------+--------------------------------+
-; left        ; Input ; Info     ; Stuck at GND                   ;
-; right[6..0] ; Input ; Info     ; Stuck at GND                   ;
-; right[9]    ; Input ; Info     ; Stuck at VCC                   ;
-; right[8]    ; Input ; Info     ; Stuck at GND                   ;
-; right[7]    ; Input ; Info     ; Stuck at VCC                   ;
-; top[7..5]   ; Input ; Info     ; Stuck at VCC                   ;
-; top[9..8]   ; Input ; Info     ; Stuck at GND                   ;
-; top[2..0]   ; Input ; Info     ; Stuck at GND                   ;
-; top[4]      ; Input ; Info     ; Stuck at GND                   ;
-; top[3]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[7..5]   ; Input ; Info     ; Stuck at VCC                   ;
-; bot[1..0]   ; Input ; Info     ; Stuck at VCC                   ;
-; bot[9..8]   ; Input ; Info     ; Stuck at GND                   ;
-; bot[4]      ; Input ; Info     ; Stuck at GND                   ;
-; bot[3]      ; Input ; Info     ; Stuck at VCC                   ;
-; bot[2]      ; Input ; Info     ; Stuck at GND                   ;
-+-------------+-------+----------+--------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen9" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; left        ; Input ; Info     ; Stuck at GND                  ;
-; right[6..0] ; Input ; Info     ; Stuck at GND                  ;
-; right[9]    ; Input ; Info     ; Stuck at VCC                  ;
-; right[8]    ; Input ; Info     ; Stuck at GND                  ;
-; right[7]    ; Input ; Info     ; Stuck at VCC                  ;
-; top[5..4]   ; Input ; Info     ; Stuck at VCC                  ;
-; top[1..0]   ; Input ; Info     ; Stuck at VCC                  ;
-; top[9..8]   ; Input ; Info     ; Stuck at GND                  ;
-; top[3..2]   ; Input ; Info     ; Stuck at GND                  ;
-; top[7]      ; Input ; Info     ; Stuck at VCC                  ;
-; top[6]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[5..4]   ; Input ; Info     ; Stuck at VCC                  ;
-; bot[2..1]   ; Input ; Info     ; Stuck at VCC                  ;
-; bot[9..8]   ; Input ; Info     ; Stuck at GND                  ;
-; bot[7]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[6]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[3]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[0]      ; Input ; Info     ; Stuck at GND                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen8" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; left        ; Input ; Info     ; Stuck at GND                  ;
-; right[6..0] ; Input ; Info     ; Stuck at GND                  ;
-; right[9]    ; Input ; Info     ; Stuck at VCC                  ;
-; right[8]    ; Input ; Info     ; Stuck at GND                  ;
-; right[7]    ; Input ; Info     ; Stuck at VCC                  ;
-; top[6..1]   ; Input ; Info     ; Stuck at VCC                  ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                  ;
-; top[0]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[9..8]   ; Input ; Info     ; Stuck at GND                  ;
-; bot[6..1]   ; Input ; Info     ; Stuck at GND                  ;
-; bot[7]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[0]      ; Input ; Info     ; Stuck at VCC                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen7" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; left[4..3]  ; Input ; Info     ; Stuck at VCC                  ;
-; left[7..5]  ; Input ; Info     ; Stuck at GND                  ;
-; left[9]     ; Input ; Info     ; Stuck at GND                  ;
-; left[8]     ; Input ; Info     ; Stuck at VCC                  ;
-; left[2]     ; Input ; Info     ; Stuck at GND                  ;
-; left[1]     ; Input ; Info     ; Stuck at VCC                  ;
-; left[0]     ; Input ; Info     ; Stuck at GND                  ;
-; right[4..2] ; Input ; Info     ; Stuck at VCC                  ;
-; right[7..5] ; Input ; Info     ; Stuck at GND                  ;
-; right[9]    ; Input ; Info     ; Stuck at GND                  ;
-; right[8]    ; Input ; Info     ; Stuck at VCC                  ;
-; right[1]    ; Input ; Info     ; Stuck at GND                  ;
-; right[0]    ; Input ; Info     ; Stuck at VCC                  ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                  ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                  ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                  ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                  ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                  ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen6" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; left[7..5]  ; Input ; Info     ; Stuck at VCC                  ;
-; left[9..8]  ; Input ; Info     ; Stuck at GND                  ;
-; left[4..3]  ; Input ; Info     ; Stuck at GND                  ;
-; left[2]     ; Input ; Info     ; Stuck at VCC                  ;
-; left[1]     ; Input ; Info     ; Stuck at GND                  ;
-; left[0]     ; Input ; Info     ; Stuck at VCC                  ;
-; right[7..5] ; Input ; Info     ; Stuck at VCC                  ;
-; right[9..8] ; Input ; Info     ; Stuck at GND                  ;
-; right[2..0] ; Input ; Info     ; Stuck at GND                  ;
-; right[4]    ; Input ; Info     ; Stuck at GND                  ;
-; right[3]    ; Input ; Info     ; Stuck at VCC                  ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                  ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                  ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                  ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                  ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                  ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen5" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; left[5..4]  ; Input ; Info     ; Stuck at VCC                  ;
-; left[9..8]  ; Input ; Info     ; Stuck at GND                  ;
-; left[3..0]  ; Input ; Info     ; Stuck at GND                  ;
-; left[7]     ; Input ; Info     ; Stuck at VCC                  ;
-; left[6]     ; Input ; Info     ; Stuck at GND                  ;
-; right[5..4] ; Input ; Info     ; Stuck at VCC                  ;
-; right[1..0] ; Input ; Info     ; Stuck at VCC                  ;
-; right[9..8] ; Input ; Info     ; Stuck at GND                  ;
-; right[3..2] ; Input ; Info     ; Stuck at GND                  ;
-; right[7]    ; Input ; Info     ; Stuck at VCC                  ;
-; right[6]    ; Input ; Info     ; Stuck at GND                  ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                  ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                  ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                  ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                  ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                  ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen4" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; left[6..3]  ; Input ; Info     ; Stuck at VCC                  ;
-; left[1..0]  ; Input ; Info     ; Stuck at VCC                  ;
-; left[9..7]  ; Input ; Info     ; Stuck at GND                  ;
-; left[2]     ; Input ; Info     ; Stuck at GND                  ;
-; right[6..1] ; Input ; Info     ; Stuck at VCC                  ;
-; right[9..7] ; Input ; Info     ; Stuck at GND                  ;
-; right[0]    ; Input ; Info     ; Stuck at GND                  ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                  ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                  ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                  ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                  ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                  ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen3" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; left[2..1]  ; Input ; Info     ; Stuck at VCC                  ;
-; left[9..7]  ; Input ; Info     ; Stuck at GND                  ;
-; left[5..3]  ; Input ; Info     ; Stuck at GND                  ;
-; left[6]     ; Input ; Info     ; Stuck at VCC                  ;
-; left[0]     ; Input ; Info     ; Stuck at GND                  ;
-; right[9..7] ; Input ; Info     ; Stuck at GND                  ;
-; right[5..4] ; Input ; Info     ; Stuck at GND                  ;
-; right[2..1] ; Input ; Info     ; Stuck at GND                  ;
-; right[6]    ; Input ; Info     ; Stuck at VCC                  ;
-; right[3]    ; Input ; Info     ; Stuck at VCC                  ;
-; right[0]    ; Input ; Info     ; Stuck at VCC                  ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                  ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                  ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                  ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                  ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                  ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen2" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; left[6..5]  ; Input ; Info     ; Stuck at VCC                  ;
-; left[2..1]  ; Input ; Info     ; Stuck at GND                  ;
-; left[9]     ; Input ; Info     ; Stuck at GND                  ;
-; left[8]     ; Input ; Info     ; Stuck at VCC                  ;
-; left[7]     ; Input ; Info     ; Stuck at GND                  ;
-; left[4]     ; Input ; Info     ; Stuck at GND                  ;
-; left[3]     ; Input ; Info     ; Stuck at VCC                  ;
-; left[0]     ; Input ; Info     ; Stuck at VCC                  ;
-; right[6..5] ; Input ; Info     ; Stuck at VCC                  ;
-; right[3..2] ; Input ; Info     ; Stuck at VCC                  ;
-; right[8..7] ; Input ; Info     ; Stuck at GND                  ;
-; right[1..0] ; Input ; Info     ; Stuck at GND                  ;
-; right[9]    ; Input ; Info     ; Stuck at VCC                  ;
-; right[4]    ; Input ; Info     ; Stuck at GND                  ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                  ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                  ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                  ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                  ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                  ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "videoGen:videoGen|rectgen:rectgen1" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; left[9..5]  ; Input ; Info     ; Stuck at GND                  ;
-; left[1..0]  ; Input ; Info     ; Stuck at GND                  ;
-; left[4]     ; Input ; Info     ; Stuck at VCC                  ;
-; left[3]     ; Input ; Info     ; Stuck at GND                  ;
-; left[2]     ; Input ; Info     ; Stuck at VCC                  ;
-; right[2..0] ; Input ; Info     ; Stuck at VCC                  ;
-; right[7..5] ; Input ; Info     ; Stuck at GND                  ;
-; right[9]    ; Input ; Info     ; Stuck at GND                  ;
-; right[8]    ; Input ; Info     ; Stuck at VCC                  ;
-; right[4]    ; Input ; Info     ; Stuck at VCC                  ;
-; right[3]    ; Input ; Info     ; Stuck at GND                  ;
-; top[3..2]   ; Input ; Info     ; Stuck at VCC                  ;
-; top[9..7]   ; Input ; Info     ; Stuck at GND                  ;
-; top[5..4]   ; Input ; Info     ; Stuck at GND                  ;
-; top[1..0]   ; Input ; Info     ; Stuck at GND                  ;
-; top[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[3..0]   ; Input ; Info     ; Stuck at GND                  ;
-; bot[9]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[8]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[7]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[6]      ; Input ; Info     ; Stuck at VCC                  ;
-; bot[5]      ; Input ; Info     ; Stuck at GND                  ;
-; bot[4]      ; Input ; Info     ; Stuck at VCC                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 61                          ;
-;     ENA               ; 40                          ;
-;     ENA SCLR          ; 10                          ;
-;     SCLR              ; 10                          ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 199                         ;
-;     arith             ; 60                          ;
-;         1 data inputs ; 24                          ;
-;         4 data inputs ; 4                           ;
-;         5 data inputs ; 32                          ;
-;     normal            ; 139                         ;
-;         1 data inputs ; 22                          ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 36                          ;
-;         5 data inputs ; 30                          ;
-;         6 data inputs ; 40                          ;
-; boundary_port         ; 35                          ;
-;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.78                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sat Apr 13 21:24:51 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga -c vga
+    Info: Processing started: Thu Apr 18 15:06:14 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga -c vga --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file registrobarcos_tb.sv
+    Info (12023): Found entity 1: registroBarcos_tb File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file registrobarcos.sv
+    Info (12023): Found entity 1: registroBarcos File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rectgen.sv
-    Info (12023): Found entity 1: rectgen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/rectgen.sv Line: 1
+    Info (12023): Found entity 1: rectgen File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/rectgen.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga.sv
-    Info (12023): Found entity 1: vga File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 1
+    Info (12023): Found entity 1: vga File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file videogen.sv
-    Info (12023): Found entity 1: videoGen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 2
+    Info (12023): Found entity 1: videoGen File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file randomgen_tb.sv
-    Info (12023): Found entity 1: RandomGen_tb File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/RandomGen_tb.sv Line: 3
+    Info (12023): Found entity 1: RandomGen_tb File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/RandomGen_tb.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file randomgen.sv
-    Info (12023): Found entity 1: RandomGen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/RandomGen.sv Line: 1
+    Info (12023): Found entity 1: RandomGen File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/RandomGen.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file chargenrom.sv
-    Info (12023): Found entity 1: chargenrom File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 1
+    Info (12023): Found entity 1: chargenrom File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/chargenrom.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vgacontroller.sv
-    Info (12023): Found entity 1: vgaController File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vgaController.sv Line: 2
+    Info (12023): Found entity 1: vgaController File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/vgaController.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file pll.sv
-    Info (12023): Found entity 1: pll File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/pll.sv Line: 1
+    Info (12023): Found entity 1: pll File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/pll.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_tb.sv
-    Info (12023): Found entity 1: vga_tb File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga_tb.sv Line: 1
-Info (12127): Elaborating entity "vga" for the top level hierarchy
-Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 10
-Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 13
-Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:videoGen" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 16
-Warning (10036): Verilog HDL or VHDL warning at videoGen.sv(24): object "i" assigned a value but never read File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 24
-Warning (10036): Verilog HDL or VHDL warning at videoGen.sv(25): object "offset" assigned a value but never read File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 25
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(108): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 108
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(109): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 109
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(149): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 149
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(150): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 150
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(153): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 153
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(154): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 154
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(162): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 162
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(163): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 163
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(166): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 166
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(167): truncated value with size 32 to match size of target (10) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 167
-Info (12128): Elaborating entity "rectgen" for hierarchy "videoGen:videoGen|rectgen:rectgen1" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 30
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "shoot" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/vga.sv Line: 1
-Info (21057): Implemented 252 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 217 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4842 megabytes
-    Info: Processing ended: Sat Apr 13 21:25:03 2024
+    Info (12023): Found entity 1: vga_tb File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/vga_tb.sv Line: 1
+Info (12127): Elaborating entity "registroBarcos" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at registroBarcos.sv(9): object "end_bit" assigned a value but never read File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 9
+Warning (10764): Verilog HDL warning at registroBarcos.sv(36): converting signed shift amount to unsigned File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 36
+Warning (10230): Verilog HDL assignment warning at registroBarcos.sv(36): truncated value with size 32 to match size of target (25) File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 36
+Warning (10230): Verilog HDL assignment warning at registroBarcos.sv(64): truncated value with size 32 to match size of target (3) File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 64
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4781 megabytes
+    Info: Processing ended: Thu Apr 18 15:06:26 2024
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Total CPU time (on all processors): 00:00:15
 
 

@@ -1,5 +1,6 @@
 module registroBarcos (
     input [2:0] TotalBarcos,
+    input [2:0] NumBarco,
     input [24:0] new_position,
     input clk,
     output reg [24:0] updated_positions
@@ -8,8 +9,7 @@ module registroBarcos (
 reg [24:0] temp_positions;
 integer i, position, ones_count, start_bit, end_bit, available_space;
 reg [24:0] mask;
-reg first_time = 1'b1;
-reg [2:0] NumBarco = 3'b000; // Variable para indicar la primera ejecución
+reg first_time = 1'b1; // Variable para indicar la primera ejecución
 
 // Encontrar la posición del bit '1' más significativo en new_position
 always @(posedge clk) begin
@@ -21,7 +21,7 @@ always @(posedge clk) begin
         end
     end
 
-    // Establece el tamaño del barco
+    //Establece el tamaño del barco
     ones_count = 0;
     case(NumBarco)
         3'b000: ones_count = 1;
@@ -49,20 +49,21 @@ always @(posedge clk) begin
 
     // Copiar valores actuales a temp_positions
     temp_positions = updated_positions;
-
+    
     // Verificar espacio en la fila
     available_space = 5 - (position % 5) + 1;
-
-    // Actualizar temp_positions con nuevos valores solo si se cumplen las condiciones
-    if (available_space >= ones_count && NumBarco <= TotalBarcos && updated_positions[start_bit] != 1) begin
+    if (available_space >= ones_count) begin
+        // Actualizar temp_positions con nuevos valores
         if (position >= 0 && start_bit < 25) begin
             if (ones_count > 0) temp_positions[start_bit] = mask[0];
             if (ones_count > 1) temp_positions[start_bit + 1] = mask[1];
             if (ones_count > 2) temp_positions[start_bit + 2] = mask[2];
             if (ones_count > 3) temp_positions[start_bit + 3] = mask[3];
             if (ones_count > 4) temp_positions[start_bit + 4] = mask[4];
-				NumBarco = NumBarco + 1;
         end
+    end else begin
+        // Devolver updated_positions sin cambios si no hay suficiente espacio
+        temp_positions = updated_positions;
     end
     
     // Asignar temp_positions a updated_positions

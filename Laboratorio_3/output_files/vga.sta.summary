@@ -2,196 +2,276 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -3.902
-TNS   : -3.902
-
 Type  : Slow 1100mV 85C Model Setup 'pll:vgapll|toggle'
-Slack : -3.179
-TNS   : -72.749
+Slack : -11.943
+TNS   : -1000.393
 
-Type  : Slow 1100mV 85C Model Setup 'moveY'
-Slack : -2.447
-TNS   : -37.522
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -3.660
+TNS   : -3.660
 
 Type  : Slow 1100mV 85C Model Setup 'moveX'
-Slack : -2.347
-TNS   : -38.920
+Slack : -2.593
+TNS   : -42.012
+
+Type  : Slow 1100mV 85C Model Setup 'moveY'
+Slack : -2.483
+TNS   : -38.863
+
+Type  : Slow 1100mV 85C Model Setup 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : -1.445
+TNS   : -33.334
+
+Type  : Slow 1100mV 85C Model Hold 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : 0.364
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'moveY'
-Slack : 0.408
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'moveX'
-Slack : 0.419
+Slack : 0.407
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'pll:vgapll|toggle'
-Slack : 0.667
+Slack : 0.434
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 1.664
+Slack : 1.532
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'pll:vgapll|toggle'
+Slack : -1.288
+TNS   : -102.667
+
+Type  : Slow 1100mV 85C Model Removal 'pll:vgapll|toggle'
+Slack : 0.770
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.818
-TNS   : -1.403
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'moveX'
-Slack : -0.394
-TNS   : -13.840
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'moveY'
-Slack : -0.394
-TNS   : -13.534
+Slack : -0.935
+TNS   : -1.637
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pll:vgapll|toggle'
 Slack : -0.394
-TNS   : -12.418
+TNS   : -117.558
 
-Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -3.899
-TNS   : -3.899
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : -0.394
+TNS   : -14.758
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'moveX'
+Slack : -0.394
+TNS   : -13.695
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'moveY'
+Slack : -0.394
+TNS   : -13.628
 
 Type  : Slow 1100mV 0C Model Setup 'pll:vgapll|toggle'
-Slack : -3.136
-TNS   : -72.761
+Slack : -12.110
+TNS   : -1004.718
 
-Type  : Slow 1100mV 0C Model Setup 'moveY'
-Slack : -2.547
-TNS   : -38.278
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -3.540
+TNS   : -3.540
 
 Type  : Slow 1100mV 0C Model Setup 'moveX'
-Slack : -2.460
-TNS   : -40.696
+Slack : -2.674
+TNS   : -43.007
+
+Type  : Slow 1100mV 0C Model Setup 'moveY'
+Slack : -2.549
+TNS   : -39.465
+
+Type  : Slow 1100mV 0C Model Setup 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : -1.404
+TNS   : -32.439
+
+Type  : Slow 1100mV 0C Model Hold 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : 0.333
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'moveY'
-Slack : 0.405
+Slack : 0.398
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'moveX'
-Slack : 0.416
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'pll:vgapll|toggle'
-Slack : 0.660
+Slack : 0.442
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'clk'
-Slack : 1.727
+Slack : 1.511
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'pll:vgapll|toggle'
+Slack : -1.227
+TNS   : -96.155
+
+Type  : Slow 1100mV 0C Model Removal 'pll:vgapll|toggle'
+Slack : 0.736
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.821
-TNS   : -1.434
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'moveX'
-Slack : -0.394
-TNS   : -12.850
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'moveY'
-Slack : -0.394
-TNS   : -12.541
+Slack : -0.931
+TNS   : -1.654
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pll:vgapll|toggle'
 Slack : -0.394
-TNS   : -12.372
+TNS   : -113.387
 
-Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -3.002
-TNS   : -3.002
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : -0.394
+TNS   : -14.327
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'moveY'
+Slack : -0.394
+TNS   : -12.572
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'moveX'
+Slack : -0.394
+TNS   : -12.471
 
 Type  : Fast 1100mV 85C Model Setup 'pll:vgapll|toggle'
-Slack : -1.436
-TNS   : -32.571
+Slack : -6.210
+TNS   : -508.499
 
-Type  : Fast 1100mV 85C Model Setup 'moveY'
-Slack : -0.832
-TNS   : -11.776
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -2.883
+TNS   : -2.883
 
 Type  : Fast 1100mV 85C Model Setup 'moveX'
-Slack : -0.789
-TNS   : -11.767
+Slack : -0.963
+TNS   : -14.243
 
-Type  : Fast 1100mV 85C Model Hold 'moveY'
-Slack : 0.223
-TNS   : 0.000
+Type  : Fast 1100mV 85C Model Setup 'moveY'
+Slack : -0.887
+TNS   : -11.925
 
-Type  : Fast 1100mV 85C Model Hold 'moveX'
-Slack : 0.229
+Type  : Fast 1100mV 85C Model Setup 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : -0.799
+TNS   : -16.163
+
+Type  : Fast 1100mV 85C Model Hold 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : 0.050
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'pll:vgapll|toggle'
-Slack : 0.352
+Slack : 0.162
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'moveY'
+Slack : 0.219
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'moveX'
+Slack : 0.223
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : 1.593
+Slack : 1.516
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'pll:vgapll|toggle'
+Slack : -0.578
+TNS   : -43.471
+
+Type  : Fast 1100mV 85C Model Removal 'pll:vgapll|toggle'
+Slack : 0.352
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.710
-TNS   : -1.071
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'moveX'
-Slack : -0.334
-TNS   : -6.857
+Slack : -0.833
+TNS   : -1.317
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'moveY'
-Slack : -0.321
-TNS   : -6.565
+Slack : -0.335
+TNS   : -6.875
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'moveX'
+Slack : -0.335
+TNS   : -6.868
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : -0.045
+TNS   : -0.073
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pll:vgapll|toggle'
-Slack : 0.124
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -2.643
-TNS   : -2.643
+Slack : -0.042
+TNS   : -0.300
 
 Type  : Fast 1100mV 0C Model Setup 'pll:vgapll|toggle'
-Slack : -1.295
-TNS   : -29.747
+Slack : -5.829
+TNS   : -464.809
 
-Type  : Fast 1100mV 0C Model Setup 'moveY'
-Slack : -0.751
-TNS   : -9.996
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -2.466
+TNS   : -2.466
 
 Type  : Fast 1100mV 0C Model Setup 'moveX'
-Slack : -0.720
-TNS   : -10.300
+Slack : -0.861
+TNS   : -12.380
 
-Type  : Fast 1100mV 0C Model Hold 'moveY'
-Slack : 0.208
-TNS   : 0.000
+Type  : Fast 1100mV 0C Model Setup 'moveY'
+Slack : -0.793
+TNS   : -10.252
 
-Type  : Fast 1100mV 0C Model Hold 'moveX'
-Slack : 0.213
+Type  : Fast 1100mV 0C Model Setup 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : -0.673
+TNS   : -13.479
+
+Type  : Fast 1100mV 0C Model Hold 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : 0.009
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'pll:vgapll|toggle'
-Slack : 0.319
+Slack : 0.078
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'moveY'
+Slack : 0.203
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'moveX'
+Slack : 0.208
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : 1.354
+Slack : 1.240
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'pll:vgapll|toggle'
+Slack : -0.449
+TNS   : -32.931
+
+Type  : Fast 1100mV 0C Model Removal 'pll:vgapll|toggle'
+Slack : 0.310
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.695
-TNS   : -1.049
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'moveX'
-Slack : -0.319
-TNS   : -6.538
+Slack : -0.777
+TNS   : -1.213
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'moveY'
-Slack : -0.312
-TNS   : -6.371
+Slack : -0.318
+TNS   : -6.509
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'moveX'
+Slack : -0.315
+TNS   : -6.440
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'videoGen:videoGen|slowClock:sc|clk_1Hz'
+Slack : 0.004
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pll:vgapll|toggle'
-Slack : 0.128
+Slack : 0.012
 TNS   : 0.000
 
 ------------------------------------------------------------

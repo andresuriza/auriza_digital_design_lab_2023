@@ -13,8 +13,7 @@ module slowClock(input logic clk, reset,
 		 else
 			  begin
 					counter <= counter + 1;
-//					if (counter == 1) // UTILIZAR PARA TEST BENCH
-					if (counter == 25_000_000) // COMENTAR PARA TEST BENCH
+					if (counter == 1_000_000)
 						 begin
 							  counter <= 0;
 							  clk_1Hz <= ~clk_1Hz;

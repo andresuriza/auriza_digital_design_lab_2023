@@ -3,21 +3,23 @@ module videoGen(input clk, finished, win, lose, input logic [9:0] x, y,
 					input moveX, moveY, dirX, dirY, shoot,
 					output logic [7:0] r, g, b);
 logic pixel, rect, rect2, rect3, rect4, rect5, rect6, rect7, rect8,
-rect9, rect10, rect11, rect12, rect13, rect14, rect15, rect16, iR, iR2, iR3, wH, lH;
+rect9, rect10, rect11, rect12, rect13, rect14, rect15, rect16, iR, iR2, iR3, wH, lH, rCursorCOM;
 logic winC = 0;
 logic loseC = 0;
 logic boats [26:0]; // boats[0] corresponde a cursor, el resto a barcos
 logic boatsP [25:0];
-//logic [24:0] tablero  = 25'b1000111000000011111100000; 
+logic boatsShotPC [25:0];
+//logic [24:0] tablero  = 25'h1e07c3c; 
 
 logic [2:0] TotalBarcos = 3'b100;
-logic [2:0] NumBarco = 3'b011; 
-logic [24:0] new_position;
+logic [2:0] NumBarco = 3'b000; 
+logic [24:0] new_position = 0;
 logic [24:0] playerBoard = 0;
-logic [24:0] updated_positions;
+logic [24:0] updated_positions = 0;
+logic [24:0] shotPCBoard = 0;
 logic [24:0] result;
-logic [24:0] seed = 25'b1001010001110111110010101;
-//logic [24:0] seed = 25'b0010100101;
+//logic [24:0] seed = 25'b1001010001110111110010101;
+logic [24:0] seed = 25'b0010100101;
 logic rst_n = 0;
 logic clk2;
 
@@ -28,7 +30,7 @@ RandomGen random(.clk(clk), .rst_n(rst_n), .seed(seed), .result(result));
 //probe p(updated_positions);
 
 registroBarcos barcosCOM (TotalBarcos, result, clk, updated_positions);
-registroBarcos barcosPl (TotalBarcos, playerBoard, clk, new_position);
+registroBarcos2 barcosPl (TotalBarcos, NumBarco, playerBoard, clk, new_position);
 
 
 logic [9:0] leftC = 10'd360;
@@ -36,10 +38,20 @@ logic [9:0] rightC = 10'd411;
 logic [9:0] topC = 10'd76;
 logic [9:0] botC = 10'd126;
 
+logic [9:0] leftCCOM = 10'd19;
+logic [9:0] rightCCOM = 10'd70;
+logic [9:0] topCCOM = 10'd76;
+logic [9:0] botCCOM = 10'd126;
+
 logic [9:0] boatDimensions [0:99]; // [0:4*cantidad de cuadros-1]
 logic [9:0] initialBD [0:99];
 
 logic [24:0] t1Status = 0;
+
+logic isSquareSel = 1;
+logic isCursorCOM;
+
+assign isCursorCOM = ~isSquareSel;
 
 assign initialBD[0] = 10'd19;
 assign initialBD[1] = 10'd70;
@@ -48,6 +60,7 @@ assign initialBD[3] = 10'd126;
 
 logic [9:0] boatsPos [0:99];
 logic [6:0] i = 24;
+logic [6:0] n = 24;
 logic [6:0] offset = 0;
 logic done = 0;
 genvar k;
@@ -74,32 +87,60 @@ rectgen rectgen14(1,x, y, 10'd464, 10'd467, 10'd76, 10'd336, rect14); // Linea d
 rectgen rectgen15(1,x, y, 10'd517, 10'd520, 10'd76, 10'd336, rect15); // Linea divisora vertical jugador
 rectgen rectgen16(1,x, y, 10'd570, 10'd573, 10'd76, 10'd336, rect16); // Linea divisora vertical jugador
 
-rectgen squareSel(1,x, y, leftC, rightC, topC, botC, boats[0]);
-rectgen boat1(t1Status[24],x, y, boatsPos[0], boatsPos[1], boatsPos[2], boatsPos[3], boats[1]);
-rectgen boat2(t1Status[23],x, y, boatsPos[4], boatsPos[5], boatsPos[6], boatsPos[7], boats[2]);
-rectgen boat3(t1Status[22],x, y, boatsPos[8], boatsPos[9], boatsPos[10], boatsPos[11], boats[3]);
-rectgen boat4(t1Status[21],x, y, boatsPos[12], boatsPos[13], boatsPos[14], boatsPos[15], boats[4]);
-rectgen boat5(t1Status[20],x, y, boatsPos[16], boatsPos[17], boatsPos[18], boatsPos[19], boats[5]);
-rectgen boat6(t1Status[19],x, y, boatsPos[20], boatsPos[21], boatsPos[22], boatsPos[23], boats[6]);
-rectgen boat7(t1Status[18],x, y, boatsPos[24], boatsPos[25], boatsPos[26], boatsPos[27], boats[7]);
-rectgen boat8(t1Status[17],x, y, boatsPos[28], boatsPos[29], boatsPos[30], boatsPos[31], boats[8]);
-rectgen boat9(t1Status[16],x, y, boatsPos[32], boatsPos[33], boatsPos[34], boatsPos[35], boats[9]);
-rectgen boat10(t1Status[15],x, y, boatsPos[36], boatsPos[37], boatsPos[38], boatsPos[39], boats[10]);
-rectgen boat11(t1Status[14],x, y, boatsPos[40], boatsPos[41], boatsPos[42], boatsPos[43], boats[11]);
-rectgen boat12(t1Status[13],x, y, boatsPos[44], boatsPos[45], boatsPos[46], boatsPos[47], boats[12]);
-rectgen boat13(t1Status[12],x, y, boatsPos[48], boatsPos[49], boatsPos[50], boatsPos[51], boats[13]);
-rectgen boat14(t1Status[11],x, y, boatsPos[52], boatsPos[53], boatsPos[54], boatsPos[55], boats[14]);
-rectgen boat15(t1Status[10],x, y, boatsPos[56], boatsPos[57], boatsPos[58], boatsPos[59], boats[15]);
-rectgen boat16(t1Status[9],x, y, boatsPos[60], boatsPos[61], boatsPos[62], boatsPos[63], boats[16]);
-rectgen boat17(t1Status[8],x, y, boatsPos[64], boatsPos[65], boatsPos[66], boatsPos[67], boats[17]);
-rectgen boat18(t1Status[7],x, y, boatsPos[68], boatsPos[69], boatsPos[70], boatsPos[71], boats[18]);
-rectgen boat19(t1Status[6],x, y, boatsPos[72], boatsPos[73], boatsPos[74], boatsPos[75], boats[19]);
-rectgen boat20(t1Status[5],x, y, boatsPos[76], boatsPos[77], boatsPos[78], boatsPos[79], boats[20]);
-rectgen boat21(t1Status[4],x, y, boatsPos[80], boatsPos[81], boatsPos[82], boatsPos[83], boats[21]);
-rectgen boat22(t1Status[3],x, y, boatsPos[84], boatsPos[85], boatsPos[86], boatsPos[87], boats[22]);
-rectgen boat23(t1Status[2],x, y, boatsPos[88], boatsPos[89], boatsPos[90], boatsPos[91], boats[23]);
-rectgen boat24(t1Status[1],x, y, boatsPos[92], boatsPos[93], boatsPos[94], boatsPos[95], boats[24]);
-rectgen boat25(t1Status[0],x, y, boatsPos[96], boatsPos[97], boatsPos[98], boatsPos[99], boats[25]);
+rectgen squareSel(isSquareSel,x, y, leftC, rightC, topC, botC, boats[0]);
+rectgen cursorCOM(isCursorCOM,x, y, leftCCOM, rightCCOM, topCCOM, botCCOM, rCursorCOM);
+//rectgen boat1(updated_positions[24],x, y, boatsPos[0], boatsPos[1], boatsPos[2], boatsPos[3], boats[1]);
+//rectgen boat2(updated_positions[23],x, y, boatsPos[4], boatsPos[5], boatsPos[6], boatsPos[7], boats[2]);
+//rectgen boat3(updated_positions[22],x, y, boatsPos[8], boatsPos[9], boatsPos[10], boatsPos[11], boats[3]);
+//rectgen boat4(updated_positions[21],x, y, boatsPos[12], boatsPos[13], boatsPos[14], boatsPos[15], boats[4]);
+//rectgen boat5(updated_positions[20],x, y, boatsPos[16], boatsPos[17], boatsPos[18], boatsPos[19], boats[5]);
+//rectgen boat6(updated_positions[19],x, y, boatsPos[20], boatsPos[21], boatsPos[22], boatsPos[23], boats[6]);
+//rectgen boat7(updated_positions[18],x, y, boatsPos[24], boatsPos[25], boatsPos[26], boatsPos[27], boats[7]);
+//rectgen boat8(updated_positions[17],x, y, boatsPos[28], boatsPos[29], boatsPos[30], boatsPos[31], boats[8]);
+//rectgen boat9(updated_positions[16],x, y, boatsPos[32], boatsPos[33], boatsPos[34], boatsPos[35], boats[9]);
+//rectgen boat10(updated_positions[15],x, y, boatsPos[36], boatsPos[37], boatsPos[38], boatsPos[39], boats[10]);
+//rectgen boat11(updated_positions[14],x, y, boatsPos[40], boatsPos[41], boatsPos[42], boatsPos[43], boats[11]);
+//rectgen boat12(updated_positions[13],x, y, boatsPos[44], boatsPos[45], boatsPos[46], boatsPos[47], boats[12]);
+//rectgen boat13(updated_positions[12],x, y, boatsPos[48], boatsPos[49], boatsPos[50], boatsPos[51], boats[13]);
+//rectgen boat14(updated_positions[11],x, y, boatsPos[52], boatsPos[53], boatsPos[54], boatsPos[55], boats[14]);
+//rectgen boat15(updated_positions[10],x, y, boatsPos[56], boatsPos[57], boatsPos[58], boatsPos[59], boats[15]);
+//rectgen boat16(updated_positions[9],x, y, boatsPos[60], boatsPos[61], boatsPos[62], boatsPos[63], boats[16]);
+//rectgen boat17(updated_positions[8],x, y, boatsPos[64], boatsPos[65], boatsPos[66], boatsPos[67], boats[17]);
+//rectgen boat18(updated_positions[7],x, y, boatsPos[68], boatsPos[69], boatsPos[70], boatsPos[71], boats[18]);
+//rectgen boat19(updated_positions[6],x, y, boatsPos[72], boatsPos[73], boatsPos[74], boatsPos[75], boats[19]);
+//rectgen boat20(updated_positions[5],x, y, boatsPos[76], boatsPos[77], boatsPos[78], boatsPos[79], boats[20]);
+//rectgen boat21(updated_positions[4],x, y, boatsPos[80], boatsPos[81], boatsPos[82], boatsPos[83], boats[21]);
+//rectgen boat22(updated_positions[3],x, y, boatsPos[84], boatsPos[85], boatsPos[86], boatsPos[87], boats[22]);
+//rectgen boat23(updated_positions[2],x, y, boatsPos[88], boatsPos[89], boatsPos[90], boatsPos[91], boats[23]);
+//rectgen boat24(updated_positions[1],x, y, boatsPos[92], boatsPos[93], boatsPos[94], boatsPos[95], boats[24]);
+//rectgen boat25(updated_positions[0],x, y, boatsPos[96], boatsPos[97], boatsPos[98], boatsPos[99], boats[25]);
+
+
+rectgen shotPC(shotPCBoard[24],x, y, boatsPos[0], boatsPos[1], boatsPos[2], boatsPos[3], boatsShotPC[1]);
+rectgen shotPC2(shotPCBoard[23],x, y, boatsPos[4], boatsPos[5], boatsPos[6], boatsPos[7], boatsShotPC[2]);
+rectgen shotPC3(shotPCBoard[22],x, y, boatsPos[8], boatsPos[9], boatsPos[10], boatsPos[11], boatsShotPC[3]);
+rectgen shotPC4(shotPCBoard[21],x, y, boatsPos[12], boatsPos[13], boatsPos[14], boatsPos[15], boatsShotPC[4]);
+rectgen shotPC5(shotPCBoard[20],x, y, boatsPos[16], boatsPos[17], boatsPos[18], boatsPos[19], boatsShotPC[5]);
+rectgen shotPC6(shotPCBoard[19],x, y, boatsPos[20], boatsPos[21], boatsPos[22], boatsPos[23], boatsShotPC[6]);
+rectgen shotPC7(shotPCBoard[18],x, y, boatsPos[24], boatsPos[25], boatsPos[26], boatsPos[27], boatsShotPC[7]);
+rectgen shotPC8(shotPCBoard[17],x, y, boatsPos[28], boatsPos[29], boatsPos[30], boatsPos[31], boatsShotPC[8]);
+rectgen shotPC9(shotPCBoard[16],x, y, boatsPos[32], boatsPos[33], boatsPos[34], boatsPos[35], boatsShotPC[9]);
+rectgen shotPC10(shotPCBoard[15],x, y, boatsPos[36], boatsPos[37], boatsPos[38], boatsPos[39], boatsShotPC[10]);
+rectgen shotPC11(shotPCBoard[14],x, y, boatsPos[40], boatsPos[41], boatsPos[42], boatsPos[43], boatsShotPC[11]);
+rectgen shotPC12(shotPCBoard[13],x, y, boatsPos[44], boatsPos[45], boatsPos[46], boatsPos[47], boatsShotPC[12]);
+rectgen shotPC13(shotPCBoard[12],x, y, boatsPos[48], boatsPos[49], boatsPos[50], boatsPos[51], boatsShotPC[13]);
+rectgen shotPC14(shotPCBoard[11],x, y,  boatsPos[52], boatsPos[53], boatsPos[54], boatsPos[55], boatsShotPC[14]);
+rectgen shotPC15(shotPCBoard[10],x, y, boatsPos[56], boatsPos[57], boatsPos[58], boatsPos[59], boatsShotPC[15]);
+rectgen shotPC16(shotPCBoard[9],x, y, boatsPos[60], boatsPos[61], boatsPos[62], boatsPos[63], boatsShotPC[16]);
+rectgen shotPC17(shotPCBoard[8],x, y, boatsPos[64], boatsPos[65], boatsPos[66], boatsPos[67], boatsShotPC[17]);
+rectgen shotPC18(shotPCBoard[7],x, y, boatsPos[68], boatsPos[69], boatsPos[70], boatsPos[71], boatsShotPC[18]);
+rectgen shotPC19(shotPCBoard[6],x, y, boatsPos[72], boatsPos[73], boatsPos[74], boatsPos[75], boatsShotPC[19]);
+rectgen shotPC20(shotPCBoard[5],x, y, boatsPos[76], boatsPos[77], boatsPos[78], boatsPos[79], boatsShotPC[20]);
+rectgen shotPC21(shotPCBoard[4],x, y, boatsPos[80], boatsPos[81], boatsPos[82], boatsPos[83], boatsShotPC[21]);
+rectgen shotPC22(shotPCBoard[3],x, y, boatsPos[84], boatsPos[85], boatsPos[86], boatsPos[87], boatsShotPC[22]);
+rectgen shotPC23(shotPCBoard[2],x, y, boatsPos[88], boatsPos[89], boatsPos[90], boatsPos[91], boatsShotPC[23]);
+rectgen shotPC24(shotPCBoard[1],x, y, boatsPos[92], boatsPos[93], boatsPos[94], boatsPos[95], boatsShotPC[24]);
+rectgen shotPC25(shotPCBoard[0],x, y, boatsPos[96], boatsPos[97], boatsPos[98], boatsPos[99],  boatsShotPC[25]);
 
 rectgen boatP1(new_position[24],x, y, boatsPos[0] + 342, boatsPos[0] + 393, boatsPos[2], boatsPos[3], boatsP[1]);
 rectgen boatP2(new_position[23],x, y, boatsPos[4] + 342, boatsPos[4]+ 393, boatsPos[6], boatsPos[7], boatsP[2]);
@@ -127,8 +168,6 @@ rectgen boatP23(new_position[2],x, y, boatsPos[88] + 342, boatsPos[88]+ 393, boa
 rectgen boatP24(new_position[1],x, y, boatsPos[92] + 342, boatsPos[92]+ 393, boatsPos[94], boatsPos[95], boatsP[24]);
 rectgen boatP25(new_position[0],x, y, boatsPos[96] + 342, boatsPos[96]+ 393, boatsPos[98], boatsPos[99], boatsP[25]);
 
-
-
 rectgen iL(winC,x, y, 300, 302, 429, 459, iR);
 rectgen iL2(winC,x, y, 311, 313, 429, 459, iR2);
 rectgen iL2R(loseC,x, y, 311, 313, 429, 459, iR2R);
@@ -136,7 +175,7 @@ rectgen iL3(winC,x, y, 323, 325, 429, 459, iR3);
 rectgen wHoriz(winC,x, y, 300, 325, 457, 459, wH);
 rectgen lHoriz(loseC,x, y, 313, 325, 457, 459, lH);
 //325
-assign r = (boats[0] || boats[1] || boats[2] || boats[3] || boats[4]
+assign r = (boats[0] || rCursorCOM || boats[1] || boats[2] || boats[3] || boats[4]
 || boats[5] || boats[6] || boats[7] || boats[8] || boats[9] || boats[10]
 || boats[11] || boats[12] || boats[13] || boats[14] || boats[15] || boats[16] 
 || boats[17] || boats[18] || boats[19] || boats[20] || boats[21] || boats[22] 
@@ -144,7 +183,12 @@ assign r = (boats[0] || boats[1] || boats[2] || boats[3] || boats[4]
 || boatsP[5] || boatsP[6] || boatsP[7] || boatsP[8] || boatsP[9] || boatsP[10]
 || boatsP[11] || boatsP[12] || boatsP[13] || boatsP[14] || boatsP[15] || boatsP[16] 
 || boatsP[17] || boatsP[18] || boatsP[19] || boatsP[20] || boatsP[21] || boatsP[22] 
-|| boatsP[23] || boatsP[24] || boatsP[25] || iR2R || lH) ? 8'hFF:8'h00;
+|| boatsP[23] || boatsP[24] || boatsP[25] || iR2R || lH) & ~(boatsShotPC[1] || boatsShotPC[2] || boatsShotPC[3] 
+|| boatsShotPC[4] || boatsShotPC[5] || boatsShotPC[6] || boatsShotPC[7] || boatsShotPC[8] || boatsShotPC[9]
+|| boatsShotPC[10] || boatsShotPC[11] || boatsShotPC[12] || boatsShotPC[13] || boatsShotPC[14]
+|| boatsShotPC[15] || boatsShotPC[16] || boatsShotPC[17] || boatsShotPC[18] || boatsShotPC[19]
+|| boatsShotPC[20] || boatsShotPC[21] || boatsShotPC[22] || boatsShotPC[23] || boatsShotPC[24]
+|| boatsShotPC[25]) ? 8'hFF:8'h00;
 assign g = (boats[1] || boats[2] || boats[3] || boats[4]
 || boats[5] || boats[6] || boats[7] || boats[8] || boats[9] || boats[10] || boats[11]
 || boats[12] || boats[13] || boats[14] || boats[15] || boats[16] || boats[17]
@@ -153,10 +197,20 @@ assign g = (boats[1] || boats[2] || boats[3] || boats[4]
 || boatsP[5] || boatsP[6] || boatsP[7] || boatsP[8] || boatsP[9] || boatsP[10]
 || boatsP[11] || boatsP[12] || boatsP[13] || boatsP[14] || boatsP[15] || boatsP[16] 
 || boatsP[17] || boatsP[18] || boatsP[19] || boatsP[20] || boatsP[21] || boatsP[22] 
-|| boatsP[23] || boatsP[24] || boatsP[25]) & ~(boats[0]) ? 8'hFF:8'h00;
-assign b = (rect || rect2 || iR || iR2 || iR3 || wH) & ~(rect3 || rect4 || rect5 || rect6 || rect7
+|| boatsP[23] || boatsP[24] || boatsP[25] || boatsShotPC[1] || boatsShotPC[2] || boatsShotPC[3] 
+|| boatsShotPC[4] || boatsShotPC[5] || boatsShotPC[6] || boatsShotPC[7] || boatsShotPC[8] || boatsShotPC[9]
+|| boatsShotPC[10] || boatsShotPC[11] || boatsShotPC[12] || boatsShotPC[13] || boatsShotPC[14]
+|| boatsShotPC[15] || boatsShotPC[16] || boatsShotPC[17] || boatsShotPC[18] || boatsShotPC[19]
+|| boatsShotPC[20] || boatsShotPC[21] || boatsShotPC[22] || boatsShotPC[23] || boatsShotPC[24]
+|| boatsShotPC[25]) & ~(boats[0] || rCursorCOM) ? 8'hFF:8'h00;
+assign b = (rect || rect2 || iR || iR2 || iR3 || wH || boatsShotPC[1] || boatsShotPC[2] || boatsShotPC[3] 
+|| boatsShotPC[4] || boatsShotPC[5] || boatsShotPC[6] || boatsShotPC[7] || boatsShotPC[8] || boatsShotPC[9]
+|| boatsShotPC[10] || boatsShotPC[11] || boatsShotPC[12] || boatsShotPC[13] || boatsShotPC[14]
+|| boatsShotPC[15] || boatsShotPC[16] || boatsShotPC[17] || boatsShotPC[18] || boatsShotPC[19]
+|| boatsShotPC[20] || boatsShotPC[21] || boatsShotPC[22] || boatsShotPC[23] || boatsShotPC[24]
+|| boatsShotPC[25]) & ~(rect3 || rect4 || rect5 || rect6 || rect7
 || rect8 || rect9 || rect10 || rect11 || rect12 || rect13 || rect14 || rect15
-|| rect16 || boats[0] || boats[1] || boats[2] || boats[3] || boats[4]
+|| rect16 || boats[0] || rCursorCOM || boats[1] || boats[2] || boats[3] || boats[4]
 || boats[5] || boats[6] || boats[7] || boats[8] || boats[9] || boats[10] || boats[11]
 || boats[12] || boats[13] || boats[14] || boats[15] || boats[16] || boats[17]
 || boats[18] || boats[19] || boats[20] || boats[21] || boats[22] || boats[23]
@@ -301,73 +355,78 @@ assign boatsPos = boatDimensions;
 
 always_ff @(posedge clk) begin
 	rst_n = 1;
-
+	t1Status = updated_positions;	
 end
+
 		// Genera nums de dimensiones
 
-assign t1Status = updated_positions;	
-		
-//always_ff @(posedge clk) begin
-//	for(j = 0; j < 25; j++) begin //: generar_barcos
-//			if (updated_positions[24-j] == 1) begin
-//				t1Status[24-j] = 1;
-////				 boatDimensions[j*4] = initialBD[j*4];
-////				 boatDimensions[(j*4) + 1] = initialBD[(j*4) + 1];
-////				 boatDimensions[(j*4) + 2] = initialBD[(j*4) + 2];
-////				 boatDimensions[(j*4) + 3] = initialBD[(j*4) + 3];
-//			end
-////			else begin
-////				boatDimensions[j*4] = 0;
-////				 boatDimensions[(j*4) + 1] = 0;
-////				 boatDimensions[(j*4) + 2] = 0;
-////				 boatDimensions[(j*4) + 3] = 0;
-////			end
-//		end
-//	for(s = 0; s < 100; s++) begin	
-//			boatsPos[s] = boatDimensions[s];
-//	 end
-//end
-
-
+	
 
 always_ff @(posedge shoot) begin
 	if (shoot) begin
-		playerBoard[i] = 1;
+		if (isSquareSel) begin
+			playerBoard = 0;
+			playerBoard[i] = 1;
+			
+			if (NumBarco <= TotalBarcos) begin
+				NumBarco = NumBarco + 1;	
+			end
+			
+			else begin
+				isSquareSel = 0;
+			end
+		end
+		else begin
+		if (updated_positions[n] == 1)
+			shotPCBoard[n] = 1;	
+		end
 	end
+	
 end
 
 always_ff @(posedge moveX) begin
-		i = i - 1;
-		if (rightC < 623) begin
-			leftC = leftC + 53;
-			rightC = rightC + 53;
+		if (isSquareSel) begin
+			i = i - 1;
+			if (rightC < 623) begin
+				leftC = leftC + 53;
+				rightC = rightC + 53;
+			end
+			else if ((rightC == 623) & (botC < 336)) begin
+				topC = topC + 53;
+				botC = botC + 53;
+				leftC = 10'd360;
+				rightC = 10'd411;
+			end
+			else if (botC == 338) begin
+				leftC = 10'd360;
+				rightC = 10'd411;
+				topC = 10'd76;
+				botC = 10'd126;
+				i = 24;
+			end
 		end
-		else if ((rightC == 623) & (botC < 336)) begin
-			topC = topC + 53;
-			botC = botC + 53;
-			leftC = 10'd360;
-			rightC = 10'd411;
-		end
-		else if (botC == 338) begin
-			leftC = 10'd360;
-			rightC = 10'd411;
-			topC = 10'd76;
-			botC = 10'd126;
-			i = 24;
+		
+		else begin
+			n = n - 1;
+			if (rightCCOM < 282) begin
+				leftCCOM = leftCCOM + 53;
+				rightCCOM = rightCCOM + 53;
+			end
+			else if ((rightCCOM == 282) & (botCCOM < 336)) begin
+				topCCOM = topCCOM + 53;
+				botCCOM = botCCOM + 53;
+				leftCCOM = 10'd19;
+				rightCCOM = 10'd70;
+			end
+			else if (botCCOM == 338) begin
+				leftCCOM = 10'd19;
+				rightCCOM = 10'd70;
+				topCCOM = 10'd76;
+				botCCOM = 10'd126;
+				n = 24;
+			end
 		end
 end
 
-//always_ff @(posedge moveY) begin
-//	if (moveY) begin
-//		if ((dirY == 0) & (botC < 336)) begin
-//			topC = topC + 53;
-//			botC = botC + 53;
-//		end
-//		else if ((dirY == 1) & (topC > 76)) begin
-//			topC = topC - 53;
-//			botC = botC - 53;
-//		end
-//	end
-//end
 
 endmodule

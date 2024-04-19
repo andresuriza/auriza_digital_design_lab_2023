@@ -14,13 +14,17 @@ reg [2:0] NumBarco = 3'b000; // Variable para indicar la primera ejecución
 // Encontrar la posición del bit '1' más significativo en new_position
 always @(posedge clk) begin
     position = -1;
-    for (i = 24; i >= 0; i = i - 1) begin
+    for (i = 0; i < 24; i++) begin
         if (new_position[i] == 1'b1) begin
             position = i;
             break;
         end
     end
 
+	 // 000100000
+	 // 100000000
+	 // 100100000
+	 
     // Establece el tamaño del barco
     ones_count = 0;
     case(NumBarco)

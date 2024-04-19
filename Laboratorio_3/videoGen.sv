@@ -1,6 +1,7 @@
 //640X480
-module videoGen(input clk, finished, win, lose, input logic [9:0] x, y, 
+module videoGen(input clk, input logic [2:0] bcs, finished, win, lose, input logic [9:0] x, y, 
 					input moveX, moveY, dirX, dirY, shoot,
+					
 					output logic [7:0] r, g, b);
 logic pixel, rect, rect2, rect3, rect4, rect5, rect6, rect7, rect8,
 rect9, rect10, rect11, rect12, rect13, rect14, rect15, rect16, iR, iR2, iR3, wH, lH, rCursorCOM;
@@ -11,7 +12,8 @@ logic boatsP [25:0];
 logic boatsShotPC [25:0];
 //logic [24:0] tablero  = 25'h1e07c3c; 
 
-logic [2:0] TotalBarcos = 3'b100;
+logic [2:0] TotalBarcos;
+assign TotalBarcos = bcs;
 logic [2:0] NumBarco = 3'b000; 
 logic [24:0] new_position = 0;
 logic [24:0] playerBoard = 0;

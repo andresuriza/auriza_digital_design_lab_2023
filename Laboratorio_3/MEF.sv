@@ -1,10 +1,10 @@
-module MEF (input logic btn_nxt, m, rst, clk, 
+module MEF (input logic btn_nxt, m, rst, clk, moveX, moveY, dirX, dirY, shoot, win, lose, finished, 
 				input logic [2:0] bcs, 
 				output logic [7:0] estado);
 
 	logic [2:0] state, next_state;
-	logic t0, lpj, lppc;
-	logic [7:0] mCounter;
+	logic t0, lpj, lppc, vgaclk, hsync, vsync, sync_b, blank_b;
+	logic [7:0] mCounter, r, g, b;
 	reg [24:0] up_pst_pc, up_pst_j, dspr_j, tblr_j, dspr_pc, tblr_pc;
 	reg [24:0] nw_ps_pc, nw_pst_j, nw_tblr_j, nw_tblr_pc;
 	registroBarcos regBarcosJ(bcs,nw_pst_j, clk, up_pst_j);
@@ -14,6 +14,7 @@ module MEF (input logic btn_nxt, m, rst, clk,
 	verifDisparo verifBarcoPC(dspr_pc, tblr_pc, clk, nw_tblr_pc);
 	vidaBarco vdaJgdr(nw_tblr_pc, clk, lpj);
 	vidaBarco vdaBrcJ(nw_tblr_j, clk, lppc);
+	vga vGA(clk, bcs, moveX, moveY, dirX, dirY, shoot, win, lose, finished, vgaclk, hsync, vsync, sync_b, blank_b, r, g, b);
 	
 
 	

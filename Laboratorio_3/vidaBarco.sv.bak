@@ -1,0 +1,16 @@
+module vidaBarco(
+	 input [24:0] tablero,
+    input clk,
+    output logic lp
+);
+
+always @(posedge clk) begin
+    position = -1;
+    for (i = 24; i >= 0; i = i - 1) begin
+        if (new_position[i] == 1'b1) begin
+				lp = 0;
+            break;
+        end	
+    end
+	 lp = 1;
+end

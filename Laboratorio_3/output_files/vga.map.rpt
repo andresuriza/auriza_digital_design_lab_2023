@@ -1,5 +1,5 @@
 Analysis & Elaboration report for vga
-Fri Apr 19 12:41:38 2024
+Fri Apr 19 13:04:30 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -10,7 +10,9 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
   4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  5. Port Connectivity Checks: "registroBarcos:regBarcosPC"
+  6. Port Connectivity Checks: "registroBarcos:regBarcosJ"
+  7. Analysis & Elaboration Messages
 
 
 
@@ -37,7 +39,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Failed - Fri Apr 19 12:41:38 2024              ;
+; Analysis & Elaboration Status ; Successful - Fri Apr 19 13:04:30 2024          ;
 ; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                 ; vga                                            ;
 ; Top-level Entity Name         ; MEF                                            ;
@@ -155,13 +157,32 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "registroBarcos:regBarcosPC"                                                                                                                                         ;
++-------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                                                                                                ;
++-------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; new_position      ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (25 bits) it drives.  Extra input bit(s) "new_position[24..1]" will be connected to GND. ;
+; updated_positions ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
++-------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "registroBarcos:regBarcosJ"                                                                       ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; updated_positions ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Fri Apr 19 12:41:30 2024
+    Info: Processing started: Fri Apr 19 13:04:22 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga -c vga --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -171,10 +192,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file verifdi
     Info (12023): Found entity 1: verifDisparos_tb File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/verifDisparos_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file verifdisparo.sv
     Info (12023): Found entity 1: verifDisparo File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/verifDisparo.sv Line: 1
-Error (10170): Verilog HDL syntax error at MEF.sv(43) near text: "(";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 43
-Error (10170): Verilog HDL syntax error at MEF.sv(43) near text: ")";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 43
-Error (10112): Ignored design unit "MEF" at MEF.sv(1) due to previous errors File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file mef.sv
+Info (12021): Found 1 design units, including 1 entities, in source file mef.sv
+    Info (12023): Found entity 1: MEF File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clkcounter.sv
     Info (12023): Found entity 1: clkCounter File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/clkCounter.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file slowclock.sv
@@ -207,10 +226,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file registr
     Info (12023): Found entity 1: registroBarcosJugador File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcosJugador.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vidabarco.sv
     Info (12023): Found entity 1: vidaBarco File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/vidaBarco.sv Line: 1
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 4777 megabytes
-    Error: Processing ended: Fri Apr 19 12:41:38 2024
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:09
+Warning (10236): Verilog HDL Implicit Net warning at MEF.sv(13): created implicit net for "nw_pst_pc" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 13
+Warning (10236): Verilog HDL Implicit Net warning at videoGen.sv(134): created implicit net for "iR2R" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/videoGen.sv Line: 134
+Info (12127): Elaborating entity "MEF" for the top level hierarchy
+Warning (10034): Output port "estado" at MEF.sv(3) has no driver File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 3
+Info (12128): Elaborating entity "registroBarcos" for hierarchy "registroBarcos:regBarcosJ" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 10
+Warning (10036): Verilog HDL or VHDL warning at registroBarcos.sv(9): object "end_bit" assigned a value but never read File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 9
+Warning (10764): Verilog HDL warning at registroBarcos.sv(36): converting signed shift amount to unsigned File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 36
+Warning (10230): Verilog HDL assignment warning at registroBarcos.sv(36): truncated value with size 32 to match size of target (25) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 36
+Warning (10230): Verilog HDL assignment warning at registroBarcos.sv(64): truncated value with size 32 to match size of target (3) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 64
+Info (12128): Elaborating entity "clkCounter" for hierarchy "clkCounter:counter" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 11
+Warning (10230): Verilog HDL assignment warning at clkCounter.sv(16): truncated value with size 32 to match size of target (8) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/clkCounter.sv Line: 16
+Info (12128): Elaborating entity "slowClock" for hierarchy "clkCounter:counter|slowClock:slow_clock" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/clkCounter.sv Line: 7
+Warning (10230): Verilog HDL assignment warning at slowClock.sv(15): truncated value with size 32 to match size of target (28) File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/slowClock.sv Line: 15
+Info (12128): Elaborating entity "verifDisparo" for hierarchy "verifDisparo:verifBarcoJgdr" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 12
+Info (12128): Elaborating entity "vidaBarco" for hierarchy "vidaBarco:vdaJgdr" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Laboratorio_3/MEF.sv Line: 15
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4789 megabytes
+    Info: Processing ended: Fri Apr 19 13:04:30 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:08
 
 

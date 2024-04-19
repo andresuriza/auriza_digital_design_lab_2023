@@ -40,7 +40,6 @@ module MEF (input logic btn_nxt, m, rst, clk,
 					else next_state = 3'b000; //inicio
 				3'b001:
 					begin
-					  registroBarcos regBarcosJ(bcs,nw_pst_j, clk, up_pst_j);
 					  if (btn_nxt) 
 							next_state = 3'b010; 
 					  else 
@@ -48,7 +47,6 @@ module MEF (input logic btn_nxt, m, rst, clk,
 					end	
 				3'b010: 
 					begin//Jugador
-						
 						if (t0) next_state = 3'b100; 
 						else if (btn_nxt) next_state = 3'b011;
 						else next_state = 3'b010;

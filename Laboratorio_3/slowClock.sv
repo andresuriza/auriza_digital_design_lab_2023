@@ -1,5 +1,5 @@
 module slowClock(input logic clk, reset,
-					  output logic clk_1Hz = 1'b0);
+					  output logic clk_1Hz);
 
 	logic [27:0] counter;
 
@@ -13,9 +13,9 @@ module slowClock(input logic clk, reset,
 		 else
 			  begin
 					counter <= counter + 1;
-					if (counter == 1_000_000)
+					if (counter == 2) // 25M equivalen a 1MHz
 						 begin
-							  counter <= 0;
+							  counter <= 1_000_000;
 							  clk_1Hz <= ~clk_1Hz;
 						 end
 			  end

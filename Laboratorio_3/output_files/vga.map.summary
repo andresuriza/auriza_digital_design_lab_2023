@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Apr 18 20:07:54 2024
+Analysis & Synthesis Status : Successful - Fri Apr 19 01:49:05 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : vga
 Top-level Entity Name : vga
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 213
+Total registers : 233
 Total pins : 38
 Total virtual pins : 0
 Total block memory bits : 0

@@ -1,5 +1,5 @@
 Flow report for vga
-Thu Apr 18 20:10:34 2024
+Fri Apr 19 01:50:25 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Thu Apr 18 20:10:34 2024          ;
+; Flow Status                     ; Successful - Fri Apr 19 01:50:25 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; vga                                            ;
 ; Top-level Entity Name           ; vga                                            ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 413 / 32,070 ( 1 % )                           ;
-; Total registers                 ; 271                                            ;
+; Logic utilization (in ALMs)     ; 656 / 32,070 ( 2 % )                           ;
+; Total registers                 ; 258                                            ;
 ; Total pins                      ; 38 / 457 ( 8 % )                               ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                          ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/18/2024 20:07:09 ;
+; Start date & time ; 04/19/2024 01:48:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; vga                 ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
-; COMPILER_SIGNATURE_ID                ; 238338863815067.171349242936920        ; --            ; --          ; --                ;
+; COMPILER_SIGNATURE_ID                ; 238338863815067.171351292928644        ; --            ; --          ; --                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; videoGen_tb       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; registroBarcos_tb ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; vga_tb            ;
@@ -113,12 +113,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:46     ; 1.0                     ; 4869 MB             ; 00:00:50                           ;
-; Fitter               ; 00:01:41     ; 1.1                     ; 6536 MB             ; 00:03:05                           ;
-; Assembler            ; 00:00:17     ; 1.0                     ; 4879 MB             ; 00:00:10                           ;
-; Timing Analyzer      ; 00:00:17     ; 1.4                     ; 5159 MB             ; 00:00:16                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4732 MB             ; 00:00:02                           ;
-; Total                ; 00:03:04     ; --                      ; --                  ; 00:04:23                           ;
+; Analysis & Synthesis ; 00:00:17     ; 1.0                     ; 4862 MB             ; 00:00:33                           ;
+; Fitter               ; 00:01:00     ; 1.1                     ; 6539 MB             ; 00:02:27                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4872 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:08     ; 1.4                     ; 5174 MB             ; 00:00:10                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4744 MB             ; 00:00:01                           ;
+; Total                ; 00:01:33     ; --                      ; --                  ; 00:03:18                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

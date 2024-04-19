@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at registroBarcos.sv(45): always construct contains both blocking and non-blocking assignments File: C:/Users/maest/Documents/TEC/github/Taller/Lab1/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 45
+Warning (10268): Verilog HDL information at registroBarcos.sv(43): always construct contains both blocking and non-blocking assignments File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/auriza_digital_design_lab_2023/Laboratorio_3/registroBarcos.sv Line: 43

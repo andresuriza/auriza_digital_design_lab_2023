@@ -35,7 +35,7 @@ always @(posedge clk or negedge rst_n) begin
     if (~rst_n) begin
         result <= 25'b0; //Reinicio de resultado a '0's
     end else begin
-		  result <= (index == 0) ? 25'b1000000000000000000000000 : (1 << index); //Escribe el bit '1' en posición random
+		  result <= (index == 0) ? 25'b0000000000000000000000000 : (1 << index); //Escribe el bit '1' en posición random
     end
 end
 

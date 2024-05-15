@@ -1,0 +1,517 @@
+Analysis & Synthesis report for Proyecto
+Tue May 14 20:17:10 2024
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: vgaController:vgaCont
+ 10. Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[6].td"
+ 11. Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[5].td"
+ 12. Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[4].td"
+ 13. Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[3].td"
+ 14. Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[2].td"
+ 15. Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[1].td"
+ 16. Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[0].td"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue May 14 20:17:10 2024          ;
+; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                   ; Proyecto                                       ;
+; Top-level Entity Name           ; vga                                            ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 21                                             ;
+; Total pins                      ; 30                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; vga                ; Proyecto           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
+; videoGen.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv      ;         ;
+; vgaController.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vgaController.sv ;         ;
+; vga.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv           ;         ;
+; pll.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/pll.sv           ;         ;
+; textDecode.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv    ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimate of Logic utilization (ALMs needed) ; 35                ;
+;                                             ;                   ;
+; Combinational ALUT usage for logic          ; 56                ;
+;     -- 7 input functions                    ; 1                 ;
+;     -- 6 input functions                    ; 12                ;
+;     -- 5 input functions                    ; 8                 ;
+;     -- 4 input functions                    ; 6                 ;
+;     -- <=3 input functions                  ; 29                ;
+;                                             ;                   ;
+; Dedicated logic registers                   ; 21                ;
+;                                             ;                   ;
+; I/O pins                                    ; 30                ;
+;                                             ;                   ;
+; Total DSP Blocks                            ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; pll:vgapll|toggle ;
+; Maximum fan-out                             ; 22                ;
+; Total fan-out                               ; 317               ;
+; Average fan-out                             ; 2.31              ;
++---------------------------------------------+-------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+---------------+--------------+
+; |vga                       ; 56 (0)              ; 21 (0)                    ; 0                 ; 0          ; 30   ; 0            ; |vga                       ; vga           ; work         ;
+;    |pll:vgapll|            ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|pll:vgapll            ; pll           ; work         ;
+;    |vgaController:vgaCont| ; 33 (33)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |vga|vgaController:vgaCont ; vgaController ; work         ;
+;    |videoGen:videoGen|     ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:videoGen     ; videoGen      ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 21    ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaController:vgaCont ;
++----------------+------------+--------------------------------------+
+; Parameter Name ; Value      ; Type                                 ;
++----------------+------------+--------------------------------------+
+; HACTIVE        ; 1010000000 ; Unsigned Binary                      ;
+; HFP            ; 0000010000 ; Unsigned Binary                      ;
+; HSYN           ; 0001100000 ; Unsigned Binary                      ;
+; HBP            ; 0000110000 ; Unsigned Binary                      ;
+; HMAX           ; 1100100000 ; Unsigned Binary                      ;
+; VBP            ; 0000100001 ; Unsigned Binary                      ;
+; VACTIVE        ; 0111100000 ; Unsigned Binary                      ;
+; VFP            ; 0000001010 ; Unsigned Binary                      ;
+; VSYN           ; 0000000010 ; Unsigned Binary                      ;
+; VMAX           ; 1000001101 ; Unsigned Binary                      ;
++----------------+------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[6].td" ;
++----------------+-------+----------+--------------------------------+
+; Port           ; Type  ; Severity ; Details                        ;
++----------------+-------+----------+--------------------------------+
+; charCode[1..0] ; Input ; Info     ; Stuck at VCC                   ;
+; charCode[7..5] ; Input ; Info     ; Stuck at GND                   ;
+; charCode[3..2] ; Input ; Info     ; Stuck at GND                   ;
+; charCode[4]    ; Input ; Info     ; Stuck at VCC                   ;
++----------------+-------+----------+--------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[5].td" ;
++----------------+-------+----------+--------------------------------+
+; Port           ; Type  ; Severity ; Details                        ;
++----------------+-------+----------+--------------------------------+
+; charCode[7..5] ; Input ; Info     ; Stuck at GND                   ;
+; charCode[3..2] ; Input ; Info     ; Stuck at GND                   ;
+; charCode[4]    ; Input ; Info     ; Stuck at VCC                   ;
+; charCode[1]    ; Input ; Info     ; Stuck at VCC                   ;
+; charCode[0]    ; Input ; Info     ; Stuck at GND                   ;
++----------------+-------+----------+--------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[4].td" ;
++----------------+-------+----------+--------------------------------+
+; Port           ; Type  ; Severity ; Details                        ;
++----------------+-------+----------+--------------------------------+
+; charCode[7..3] ; Input ; Info     ; Stuck at GND                   ;
+; charCode[1..0] ; Input ; Info     ; Stuck at GND                   ;
+; charCode[2]    ; Input ; Info     ; Stuck at VCC                   ;
++----------------+-------+----------+--------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[3].td" ;
++----------------+-------+----------+--------------------------------+
+; Port           ; Type  ; Severity ; Details                        ;
++----------------+-------+----------+--------------------------------+
+; charCode[1..0] ; Input ; Info     ; Stuck at VCC                   ;
+; charCode[7..5] ; Input ; Info     ; Stuck at GND                   ;
+; charCode[3..2] ; Input ; Info     ; Stuck at GND                   ;
+; charCode[4]    ; Input ; Info     ; Stuck at VCC                   ;
++----------------+-------+----------+--------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[2].td" ;
++----------+-------+----------+--------------------------------------+
+; Port     ; Type  ; Severity ; Details                              ;
++----------+-------+----------+--------------------------------------+
+; charCode ; Input ; Info     ; Stuck at GND                         ;
++----------+-------+----------+--------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[1].td" ;
++----------------+-------+----------+--------------------------------+
+; Port           ; Type  ; Severity ; Details                        ;
++----------------+-------+----------+--------------------------------+
+; charCode[2..1] ; Input ; Info     ; Stuck at VCC                   ;
+; charCode[7..3] ; Input ; Info     ; Stuck at GND                   ;
+; charCode[0]    ; Input ; Info     ; Stuck at GND                   ;
++----------------+-------+----------+--------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:videoGen|textDecode:gen[0].td" ;
++----------------+-------+----------+--------------------------------+
+; Port           ; Type  ; Severity ; Details                        ;
++----------------+-------+----------+--------------------------------+
+; charCode[7..5] ; Input ; Info     ; Stuck at GND                   ;
+; charCode[4]    ; Input ; Info     ; Stuck at VCC                   ;
+; charCode[3]    ; Input ; Info     ; Stuck at GND                   ;
+; charCode[2]    ; Input ; Info     ; Stuck at VCC                   ;
+; charCode[1]    ; Input ; Info     ; Stuck at GND                   ;
+; charCode[0]    ; Input ; Info     ; Stuck at VCC                   ;
++----------------+-------+----------+--------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 21                          ;
+;     ENA SCLR          ; 10                          ;
+;     SCLR              ; 10                          ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 58                          ;
+;     arith             ; 20                          ;
+;         1 data inputs ; 20                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 37                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 6                           ;
+;         5 data inputs ; 8                           ;
+;         6 data inputs ; 12                          ;
+; boundary_port         ; 30                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 3.17                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Tue May 14 20:16:41 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proyecto -c Proyecto
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file videogen.sv
+    Info (12023): Found entity 1: videoGen File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file vgacontroller.sv
+    Info (12023): Found entity 1: vgaController File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vgaController.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file vga.sv
+    Info (12023): Found entity 1: vga File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pll.sv
+    Info (12023): Found entity 1: pll File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/pll.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file textdecode.sv
+    Info (12023): Found entity 1: textDecode File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga_tb.sv
+    Info (12023): Found entity 1: vga_tb File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga_tb.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at videoGen.sv(46): created implicit net for "txt1" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 46
+Warning (10236): Verilog HDL Implicit Net warning at videoGen.sv(47): created implicit net for "txt2" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 47
+Warning (10236): Verilog HDL Implicit Net warning at videoGen.sv(48): created implicit net for "txt3" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 48
+Warning (10236): Verilog HDL Implicit Net warning at videoGen.sv(49): created implicit net for "txt4" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 49
+Warning (10236): Verilog HDL Implicit Net warning at videoGen.sv(50): created implicit net for "txt5" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 50
+Warning (10236): Verilog HDL Implicit Net warning at videoGen.sv(51): created implicit net for "txt6" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 51
+Warning (10236): Verilog HDL Implicit Net warning at videoGen.sv(52): created implicit net for "txt7" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 52
+Info (12127): Elaborating entity "vga" for the top level hierarchy
+Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 10
+Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 13
+Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:videoGen" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 16
+Warning (10034): Output port "g" at videoGen.sv(2) has no driver File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 2
+Warning (10034): Output port "b" at videoGen.sv(2) has no driver File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 2
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "pixelsArr" into its bus
+Info (12128): Elaborating entity "textDecode" for hierarchy "videoGen:videoGen|textDecode:gen[0].td" File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/videoGen.sv Line: 28
+Warning (10270): Verilog HDL Case Statement warning at textDecode.sv(14): incomplete case statement has no default case item File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[0][0]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[0][1]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[0][2]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[0][3]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[0][4]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[0][5]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[0][6]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[0][7]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[1][0]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[1][1]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[1][2]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[1][3]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[1][4]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[1][5]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[1][6]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[1][7]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[2][0]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[2][1]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[2][2]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[2][3]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[2][4]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[2][5]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[2][6]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[2][7]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[3][0]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[3][1]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[3][2]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[3][3]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[3][4]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[3][5]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[3][6]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[3][7]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[4][0]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[4][1]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[4][2]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[4][3]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[4][4]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[4][5]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[4][6]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[4][7]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[5][0]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[5][1]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[5][2]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[5][3]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[5][4]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[5][5]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[5][6]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[5][7]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[6][0]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[6][1]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[6][2]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[6][3]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[6][4]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[6][5]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[6][6]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[6][7]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[7][0]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[7][1]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[7][2]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[7][3]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[7][4]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[7][5]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[7][6]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Info (10041): Inferred latch for "pixels[7][7]" at textDecode.sv(14) File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/textDecode.sv Line: 14
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "g[0]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "g[1]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "g[2]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "g[3]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "g[4]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "g[5]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "g[6]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "g[7]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "b[0]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "b[1]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "b[2]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "b[3]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "b[4]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "b[5]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "b[6]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+    Warning (13410): Pin "b[7]" is stuck at GND File: C:/Users/andres/Documents/TEC/Taller de Diseno Digital/Proyecto/vga.sv Line: 5
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 106 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 76 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Tue May 14 20:17:10 2024
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:28
+
+

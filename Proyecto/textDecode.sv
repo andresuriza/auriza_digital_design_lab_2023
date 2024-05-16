@@ -298,6 +298,16 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[6] = 8'b01000000;
 				pixels[7] = 8'b11111110;
 			end
+			26: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b00000000;
+				pixels[2] = 8'b00000000;
+				pixels[3] = 8'b00000000;
+				pixels[4] = 8'b00000000;
+				pixels[5] = 8'b00000000;
+				pixels[6] = 8'b00000000;
+				pixels[7] = 8'b00000000;
+			end
 		endcase
 	end
 		

@@ -1,68 +1,403 @@
 // 640x480 
-module videoGen(input logic [9:0] x, y, output logic [7:0] r, g, b);
+module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7:0] r, g, b);
 	logic [63:0] pixelLineArr [656:0]; // Parametrizable
 	logic [7:0] pixelsArr [656:0][7:0]; // Parametrizable
 	logic pixelOnArr [656:0]; // Parametrizable
 	logic [656:0] txtArray;
-	logic [7:0] fakeMem[656:0] = '{11, 14, 17, 4, 12, 26, 8, 15, 18, 20, 12, 26, 3, 14, 11, 14, 17, 26, 18, 8, 19, 26, 0, 12, 4, 19, 26, 2, 14, 13, 18, 4, 2, 19, 4, 19, 20, 17, 26, 0, 3, 8, 15, 8, 18, 2, 8, 13, 6, 26, 4, 11, 8, 19, 26, 0, 11, 8, 16, 20, 0, 12, 26, 20, 19, 26, 5, 17, 8, 13, 6, 8, 11, 11, 0, 26, 8, 15, 18, 20, 12, 26, 4, 20, 26, 21, 14, 11, 20, 19, 15, 0, 19, 26, 18, 0, 15, 8, 4, 13, 26, 0, 11, 8, 16, 20, 0, 12, 26, 1, 8, 1, 4, 13, 3, 20, 12, 26, 11, 4, 14, 26, 20, 19, 26, 18, 0, 6, 8, 19, 19, 8, 18, 26, 15, 7, 0, 17, 4, 19, 17, 0, 26, 13, 20, 11, 11, 0, 26, 4, 18, 19, 26, 18, 0, 6, 8, 19, 19, 8, 18, 26, 3, 20, 8, 26, 8, 13, 26, 19, 8, 13, 2, 8, 3, 20, 13, 19, 26, 0, 17, 2, 20, 26, 14, 3, 8, 14, 26, 2, 14, 12, 12, 14, 3, 14, 26, 12, 8, 26, 12, 0, 20, 17, 8, 18, 26, 21, 4, 18, 19, 8, 1, 20, 11, 20, 12, 26, 4, 20, 26, 19, 14, 17, 19, 14, 17, 26, 0, 19, 26, 0, 11, 8, 16, 20, 0, 12, 26, 13, 20, 11, 11, 0, 12, 26, 11, 20, 2, 19, 20, 18, 26, 15, 20, 11, 21, 8, 13, 0, 17, 26, 4, 20, 8, 18, 12, 14, 3, 26, 15, 17, 14, 8, 13, 26, 11, 14, 1, 14, 17, 19, 8, 18, 26, 11, 0, 14, 17, 4, 4, 19, 26, 11, 8, 6, 20, 11, 0, 26, 20, 11, 19, 17, 8, 2, 4, 18, 26, 21, 4, 13, 4, 13, 0, 19, 8, 18, 26, 3, 20, 8, 18, 26, 19, 8, 13, 2, 8, 3, 20, 13, 19, 26, 4, 11, 8, 19, 26, 8, 3, 26, 16, 20, 0, 12, 26, 21, 0, 17, 8, 20, 18, 26, 13, 14, 13, 26, 15, 4, 11, 11, 4, 13, 19, 4, 18, 16, 20, 4, 26, 19, 20, 17, 15, 8, 18, 26, 0, 11, 8, 16, 20, 0, 12, 26, 12, 0, 20, 17, 8, 18, 26, 4, 19, 26, 2, 14, 13, 18, 4, 16, 20, 0, 19, 26, 5, 4, 11, 8, 18, 26, 21, 4, 11, 26, 2, 14, 13, 21, 0, 11, 11, 8, 18, 26, 3, 20, 8, 26, 3, 14, 13, 4, 2, 26, 14, 17, 13, 0, 17, 4, 26, 14, 3, 8, 14, 26, 18, 8, 19, 26, 0, 12, 4, 19, 26, 19, 8, 13, 2, 8, 3, 20, 13, 19, 26, 11, 14, 1, 14, 17, 19, 8, 18, 26, 4, 23, 26, 4, 23, 26, 18, 20, 18, 2, 8, 15, 8, 19, 26, 0, 17, 2, 20, 26, 13, 14, 13, 26, 14, 17, 13, 0, 17, 4, 26, 9, 20, 18, 19, 14, 26, 12, 0, 20, 17, 8, 18, 26, 21, 8, 19, 0, 4, 26, 0, 20, 6, 20, 4, 26, 0, 11, 8, 16, 20, 0, 12, 26, 16, 20, 8, 18, 26, 2, 14, 13, 18, 4, 16, 20, 0, 19, 26, 4, 11, 8, 19, 26, 8, 13, 19, 4, 6, 4, 17, 26, 0, 2, 26, 12, 0, 18, 18, 0, 26, 0, 2, 26, 15, 20, 17, 20, 18, 26, 19, 8, 13, 2, 8, 
-3, 20, 13, 19, 26, 15, 4, 11, 11, 4, 13, 19, 4, 18, 16, 20, 4, 26, 8, 3, 26, 21, 8, 19, 0, 4, 26, 3, 8, 0, 12, 26, 15, 17, 14, 8, 13, 26, 3, 0, 15, 8, 1, 20, 18, 26, 15, 14, 17, 19, 19, 8, 19, 14, 17, 26, 12, 0, 20, 17, 8, 18, 26, 13, 4, 2};
+	logic [7:0] charCode;
+	logic [7:0] pixels[7:0];
 	
 	genvar i, j;
+
+	logic [9:0] z = 0;
+	
+	logic [9:0] address_a, address_b;
+	logic [7:0] data_a, data_b, q_a, q_b;
+	logic wren_a, wren_b;
+	
+	// q_b trae datos en base a address_b
+	ram2 mem(address_a, address_b, clkRam, data_a, data_b, wren_a, wren_b, q_a, q_b);
+	
+	always_comb begin
+		case(charCode[7:0])
+			// A
+			 0: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b01111000;
+				pixels[2] = 8'b10000100;
+				pixels[3] = 8'b10000100;
+				pixels[4] = 8'b11111100;
+				pixels[5] = 8'b10000100;
+				pixels[6] = 8'b10000100;
+				pixels[7] = 8'b10000100;
+			 end
+			 // B
+			 1: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b11110000;
+				pixels[2] = 8'b10001000;
+				pixels[3] = 8'b10001000;
+				pixels[4] = 8'b11111000;
+				pixels[5] = 8'b10000100;
+				pixels[6] = 8'b10000100;
+				pixels[7] = 8'b11111000;
+			 end
+			 // C
+			 2: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b01111110;
+				pixels[2] = 8'b10000000;
+				pixels[3] = 8'b10000000;
+				pixels[4] = 8'b10000000;
+				pixels[5] = 8'b10000000;
+				pixels[6] = 8'b10000000;
+				pixels[7] = 8'b01111110;
+			 end
+			 // D
+			 3: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b11111000;
+				pixels[2] = 8'b10000100;
+				pixels[3] = 8'b10000100;
+				pixels[4] = 8'b10000100;
+				pixels[5] = 8'b10000100;
+				pixels[6] = 8'b10000100;
+				pixels[7] = 8'b11111000;
+			 end
+			 // E
+			 4: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b11111110;
+				pixels[2] = 8'b10000000;
+				pixels[3] = 8'b10000000;
+				pixels[4] = 8'b11111100;
+				pixels[5] = 8'b10000000;
+				pixels[6] = 8'b10000000;
+				pixels[7] = 8'b11111110;
+			 end
+			 // F
+			  5: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b11111110;
+				pixels[2] = 8'b10000000;
+				pixels[3] = 8'b10000000;
+				pixels[4] = 8'b11111100;
+				pixels[5] = 8'b10000000;
+				pixels[6] = 8'b10000000;
+				pixels[7] = 8'b10000000;
+			 end
+			 // G
+			 6: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b01111110;
+				pixels[2] = 8'b10000000;
+				pixels[3] = 8'b10000000;
+				pixels[4] = 8'b10000110;
+				pixels[5] = 8'b10000010;
+				pixels[6] = 8'b10000010;
+				pixels[7] = 8'b01111100;
+			 end
+			 // H
+			 7: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b10000010;
+				pixels[2] = 8'b10000010;
+				pixels[3] = 8'b10000010;
+				pixels[4] = 8'b11111110;
+				pixels[5] = 8'b10000010;
+				pixels[6] = 8'b10000010;
+				pixels[7] = 8'b10000010;
+			 end
+			 // I
+			 8: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b11111110;
+				pixels[2] = 8'b00010000;
+				pixels[3] = 8'b00010000;
+				pixels[4] = 8'b00010000;
+				pixels[5] = 8'b00010000;
+				pixels[6] = 8'b00010000;
+				pixels[7] = 8'b11111110;
+			 end
+			 // J
+			 9: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b11111110;
+				pixels[2] = 8'b00001000;
+				pixels[3] = 8'b00001000;
+				pixels[4] = 8'b00001000;
+				pixels[5] = 8'b10001000;
+				pixels[6] = 8'b10001000;
+				pixels[7] = 8'b01110000;
+			 end
+			 // K
+			 10: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b10010000;
+				pixels[2] = 8'b10100000;
+				pixels[3] = 8'b11000000;
+				pixels[4] = 8'b11000000;
+				pixels[5] = 8'b10100000;
+				pixels[6] = 8'b10010000;
+				pixels[7] = 8'b10001000;
+			 end
+			 // L
+			 11: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b10000000;
+				pixels[2] = 8'b10000000;
+				pixels[3] = 8'b10000000;
+				pixels[4] = 8'b10000000;
+				pixels[5] = 8'b10000000;
+				pixels[6] = 8'b10000000;
+				pixels[7] = 8'b11111110;
+			 end
+			 // M
+			 12: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b10000010;
+				pixels[2] = 8'b11000110;
+				pixels[3] = 8'b10101010;
+				pixels[4] = 8'b10010010;
+				pixels[5] = 8'b10000010;
+				pixels[6] = 8'b10000010;
+				pixels[7] = 8'b10000010;
+			 end
+			 // N
+			 13: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b10000010;
+				pixels[2] = 8'b11000010;
+				pixels[3] = 8'b10100010;
+				pixels[4] = 8'b10010010;
+				pixels[5] = 8'b10001010;
+				pixels[6] = 8'b10000110;
+				pixels[7] = 8'b10000010;
+			 end
+			 // O
+			 14: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b01111100;
+				pixels[2] = 8'b10000010;
+				pixels[3] = 8'b10000010;
+				pixels[4] = 8'b10000010;
+				pixels[5] = 8'b10000010;
+				pixels[6] = 8'b10000010;
+				pixels[7] = 8'b01111100;
+			 end
+			 // P
+			 15: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b11111100;
+				pixels[2] = 8'b10000010;
+				pixels[3] = 8'b10000010;
+				pixels[4] = 8'b11111100;
+				pixels[5] = 8'b10000000;
+				pixels[6] = 8'b10000000;
+				pixels[7] = 8'b10000000;
+			 end
+			 // Q
+			 16: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b01111110;
+				pixels[2] = 8'b10000010;
+				pixels[3] = 8'b10000010;
+				pixels[4] = 8'b10010010;
+				pixels[5] = 8'b10001010;
+				pixels[6] = 8'b10000110;
+				pixels[7] = 8'b01111110;
+			 end
+			 // R
+			 17: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b11111100;
+				pixels[2] = 8'b10000010;
+				pixels[3] = 8'b10000010;
+				pixels[4] = 8'b11111100;
+				pixels[5] = 8'b10011000;
+				pixels[6] = 8'b10001100;
+				pixels[7] = 8'b10000110;
+			 end
+			 // S
+			 18: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b01111100;
+				pixels[2] = 8'b10000010;
+				pixels[3] = 8'b10000000;
+				pixels[4] = 8'b01111100;
+				pixels[5] = 8'b00000010;
+				pixels[6] = 8'b10000010;
+				pixels[7] = 8'b01111100;
+			 end
+			 // T
+			 19: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b11111110;
+				pixels[2] = 8'b00010000;
+				pixels[3] = 8'b00010000;
+				pixels[4] = 8'b00010000;
+				pixels[5] = 8'b00010000;
+				pixels[6] = 8'b00010000;
+				pixels[7] = 8'b00010000;
+			 end
+			 // U
+			 20: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b10000010;
+				pixels[2] = 8'b10000010;
+				pixels[3] = 8'b10000010;
+				pixels[4] = 8'b10000010;
+				pixels[5] = 8'b10000010;
+				pixels[6] = 8'b10000010;
+				pixels[7] = 8'b11111110;
+			 end
+			 // V
+			 21: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b10000010;
+				pixels[2] = 8'b10000010;
+				pixels[3] = 8'b01000100;
+				pixels[4] = 8'b01000100;
+				pixels[5] = 8'b00101000;
+				pixels[6] = 8'b00101000;
+				pixels[7] = 8'b00010000;
+			 end
+			 // W
+			 22: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b10000010;
+				pixels[2] = 8'b10000010;
+				pixels[3] = 8'b10000010;
+				pixels[4] = 8'b10010010;
+				pixels[5] = 8'b01010100;
+				pixels[6] = 8'b01010100;
+				pixels[7] = 8'b00101000;
+			 end
+			 // X
+			 23: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b10000010;
+				pixels[2] = 8'b01000100;
+				pixels[3] = 8'b00101000;
+				pixels[4] = 8'b00010000;
+				pixels[5] = 8'b00101000;
+				pixels[6] = 8'b01000100;
+				pixels[7] = 8'b10000010;
+			 end
+			 // Y
+			 24: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b10000010;
+				pixels[2] = 8'b01000100;
+				pixels[3] = 8'b00101000;
+				pixels[4] = 8'b00010000;
+				pixels[5] = 8'b00100000;
+				pixels[6] = 8'b01000000;
+				pixels[7] = 8'b10000000;
+			 end
+			 // Z
+			 25: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b11111110;
+				pixels[2] = 8'b00000100;
+				pixels[3] = 8'b00001000;
+				pixels[4] = 8'b00010000;
+				pixels[5] = 8'b00100000;
+				pixels[6] = 8'b01000000;
+				pixels[7] = 8'b11111110;
+			end
+			26: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b00000000;
+				pixels[2] = 8'b00000000;
+				pixels[3] = 8'b00000000;
+				pixels[4] = 8'b00000000;
+				pixels[5] = 8'b00000000;
+				pixels[6] = 8'b00000000;
+				pixels[7] = 8'b00000000;
+			end
+			default: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b00000000;
+				pixels[2] = 8'b00000000;
+				pixels[3] = 8'b00000000;
+				pixels[4] = 8'b00000000;
+				pixels[5] = 8'b00000000;
+				pixels[6] = 8'b00000000;
+				pixels[7] = 8'b00000000;
+			end
+		endcase
+	end
+	
+	assign address_b = z;
+	assign charCode = q_b;
+
+	always_ff @(negedge clk) begin
+			if (z < 657) begin
+				pixelLineArr[656-z][7:0] = pixels[0];
+				pixelLineArr[656-z][15:8] = pixels[1];
+				pixelLineArr[656-z][23:16] = pixels[2];
+				pixelLineArr[656-z][31:24] = pixels[3];
+				pixelLineArr[656-z][39:32] = pixels[4];
+				pixelLineArr[656-z][47:40] = pixels[5];
+				pixelLineArr[656-z][55:48] = pixels[6];
+				pixelLineArr[656-z][63:56] = pixels[7];
+				z = z+1;
+			end
+	end
 	
 	generate
-			  for (i=0; i < 657; i++) begin : gen
-					textDecode td(fakeMem[656-i], pixelLineArr[656-i]);
-					assign pixelsArr[656-i][0] = pixelLineArr[656-i][7:0];
-					assign pixelsArr[656-i][1] = pixelLineArr[656-i][15:8];
-					assign pixelsArr[656-i][2] = pixelLineArr[656-i][23:16];
-					assign pixelsArr[656-i][3] = pixelLineArr[656-i][31:24];
-					assign pixelsArr[656-i][4] = pixelLineArr[656-i][39:32];
-					assign pixelsArr[656-i][5] = pixelLineArr[656-i][47:40];
-					assign pixelsArr[656-i][6] = pixelLineArr[656-i][55:48];
-					assign pixelsArr[656-i][7] = pixelLineArr[656-i][63:56];
-					assign pixelOnArr[656-i] = (pixelsArr[656-i][y[2:0]][~x[2:0]]);
-			  end
+		for (j=0; j < 657; j++) begin : gen
+			assign pixelsArr[656-j][0] = pixelLineArr[656-j][7:0];
+			assign pixelsArr[656-j][1] = pixelLineArr[656-j][15:8];
+			assign pixelsArr[656-j][2] = pixelLineArr[656-j][23:16];
+			assign pixelsArr[656-j][3] = pixelLineArr[656-j][31:24];
+			assign pixelsArr[656-j][4] = pixelLineArr[656-j][39:32];
+			assign pixelsArr[656-j][5] = pixelLineArr[656-j][47:40];
+			assign pixelsArr[656-j][6] = pixelLineArr[656-j][55:48];
+			assign pixelsArr[656-j][7] = pixelLineArr[656-j][63:56];
+			assign pixelOnArr[656-j] = (pixelsArr[656-j][y[2:0]][~x[2:0]]);
+		end
     endgenerate
 
-//  558
 	generate
 			  for (i=0; i < 78; i++) begin : genPos
 				assign txtArray[656-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 0 & y < 8); // Diferencia de 8
 			  end
   
 			  for (i=0; i < 78; i++) begin : genPos2
-				assign txtArray[578-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 8 & y < 16); // Diferencia de 8
+				assign txtArray[578-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 16 & y < 24); // Diferencia de 8
 			  end
   
 			  for (i=0; i < 78; i++) begin : genPos3
-				assign txtArray[500-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 16 & y < 24); // Diferencia de 8
+				assign txtArray[500-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 32 & y < 40); // Diferencia de 8
 			  end
  
 
 			  for (i=0; i < 78; i++) begin : genPos4
-				assign txtArray[422-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 24 & y < 32); // Diferencia de 8
+				assign txtArray[422-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 48 & y < 56); // Diferencia de 8
 			  end
 
 			  for (i=0; i < 78; i++) begin : genPos5
-				assign txtArray[344-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 32 & y < 40); // Diferencia de 8
+				assign txtArray[344-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 64 & y < 72); // Diferencia de 8
 			  end
  
 	
 			  for (i=0; i < 78; i++) begin : genPos6
-				assign txtArray[266-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 40 & y < 48); // Diferencia de 8
+				assign txtArray[266-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 80 & y < 88); // Diferencia de 8
 			  end
 
 
 			  for (i=0; i < 78; i++) begin : genPos7
-				assign txtArray[188-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 48 & y < 56); // Diferencia de 8
+				assign txtArray[188-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 96 & y < 104); // Diferencia de 8
 			  end
 
 			  for (i=0; i < 78; i++) begin : genPos8
-				assign txtArray[110-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 56 & y < 64); // Diferencia de 8
+				assign txtArray[110-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 112 & y < 120); // Diferencia de 8
 			  end
 			  
 			  for (i=0; i < 33; i++) begin : genPos9
-				assign txtArray[32-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 64 & y < 72); // Diferencia de 8
+				assign txtArray[32-i] = (x >= 16+(8*i) & x < 16+(8*(i+1)) & y >= 128 & y < 136); // Diferencia de 8
 			  end
   endgenerate
 

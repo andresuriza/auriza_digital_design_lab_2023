@@ -1,0 +1,80 @@
+-- Copyright (C) 2022  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and any partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details, at
+-- https://fpgasoftware.intel.com/eula.
+
+-- Quartus Prime generated Memory Initialization File (.mif)
+
+WIDTH=32;
+DEPTH=56;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+	0   :   e3a00000;
+	1   :   e3a05000;
+	2   :   e1a06000;
+	3   :   e3a070aa;
+	4   :   e59980e0;
+	5   :   e3a0ad0d;
+	6   :   ea000000;
+	7   :   ea00002d;
+	8   :   e5d01000;
+	9   :   e3510061;
+	10   :   0a00000a;
+	11   :   e3510065;
+	12   :   0a000008;
+	13   :   e3510069;
+	14   :   0a000006;
+	15   :   e351006f;
+	16   :   0a000004;
+	17   :   e3510075;
+	18   :   0a000002;
+	19   :   e1510007;
+	20   :   0a000002;
+	21   :   ea00001c;
+	22   :   e2855001;
+	23   :   ea00001a;
+	24   :   e1550008;
+	25   :   1a000013;
+	26   :   e1a00006;
+	27   :   e5d01000;
+	28   :   e1510007;
+	29   :   0a00000f;
+	30   :   e3510061;
+	31   :   0a000008;
+	32   :   e3510065;
+	33   :   0a000006;
+	34   :   e3510069;
+	35   :   0a000004;
+	36   :   e351006f;
+	37   :   0a000002;
+	38   :   e3510075;
+	39   :   0a000000;
+	40   :   ea000001;
+	41   :   e3a02024;
+	42   :   e5c02000;
+	43   :   e2800010;
+	44   :   e150000a;
+	45   :   daffffec;
+	46   :   e3a05000;
+	47   :   e2800010;
+	48   :   e1a06000;
+	49   :   e150000a;
+	50   :   baffffd4;
+	51   :   e2800010;
+	52   :   e150000a;
+	53   :   baffffd1;
+	[54..55]  :   0;
+END;

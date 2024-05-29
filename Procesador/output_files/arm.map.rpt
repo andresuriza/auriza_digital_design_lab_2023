@@ -1,5 +1,5 @@
 Analysis & Elaboration report for arm
-Wed May 15 14:41:29 2024
+Wed May 22 14:01:16 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -9,9 +9,25 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
-  6. Analysis & Elaboration Suppressed Messages
+  4. Parameter Settings for User Entity Instance: controller:c|condlogic:cl|flopenr:flagreg1
+  5. Parameter Settings for User Entity Instance: controller:c|condlogic:cl|flopenr:flagreg0
+  6. Parameter Settings for User Entity Instance: datapath:dp|mux2:pcmux
+  7. Parameter Settings for User Entity Instance: datapath:dp|flopr:pcreg
+  8. Parameter Settings for User Entity Instance: datapath:dp|adder:pcadd1
+  9. Parameter Settings for User Entity Instance: datapath:dp|adder:pcadd2
+ 10. Parameter Settings for User Entity Instance: datapath:dp|mux2:ra1mux
+ 11. Parameter Settings for User Entity Instance: datapath:dp|mux2:ra2mux
+ 12. Parameter Settings for User Entity Instance: datapath:dp|mux2:resmux
+ 13. Parameter Settings for User Entity Instance: datapath:dp|mux2:srcbmux
+ 14. Analysis & Elaboration Settings
+ 15. Port Connectivity Checks: "datapath:dp|alu:alu"
+ 16. Port Connectivity Checks: "datapath:dp|mux2:srcbmux"
+ 17. Port Connectivity Checks: "datapath:dp|regfile:rf"
+ 18. Port Connectivity Checks: "datapath:dp|mux2:ra1mux"
+ 19. Port Connectivity Checks: "datapath:dp|adder:pcadd2"
+ 20. Port Connectivity Checks: "datapath:dp|adder:pcadd1"
+ 21. Analysis & Elaboration Messages
+ 22. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -38,7 +54,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Failed - Wed May 15 14:41:29 2024              ;
+; Analysis & Elaboration Status ; Successful - Wed May 22 14:01:16 2024          ;
 ; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                 ; arm                                            ;
 ; Top-level Entity Name         ; arm                                            ;
@@ -67,6 +83,106 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 +----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controller:c|condlogic:cl|flopenr:flagreg1 ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 2     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controller:c|condlogic:cl|flopenr:flagreg0 ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 2     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|mux2:pcmux ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|flopr:pcreg ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|adder:pcadd1 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|adder:pcadd2 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|mux2:ra1mux ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|mux2:ra2mux ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|mux2:resmux ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|mux2:srcbmux ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -156,13 +272,75 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|alu:alu"                                                                                                                                                                   ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A        ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B        ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ALU_Sel  ; Input  ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "ALU_Sel[3..2]" will be connected to GND.                                    ;
+; ALU_Out  ; Output ; Warning  ; Output or bidir port (8 bits) is smaller than the port expression (32 bits) it drives.  The 24 most-significant bit(s) in the port expression will be connected to GND.            ;
+; CarryOut ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (4 bits) it drives.  The 3 most-significant bit(s) in the port expression will be connected to GND.              ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|mux2:srcbmux"                                                               ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; y[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|regfile:rf"                                                                   ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; rd1[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|mux2:ra1mux" ;
++------+-------+----------+---------------------------+
+; Port ; Type  ; Severity ; Details                   ;
++------+-------+----------+---------------------------+
+; d1   ; Input ; Info     ; Stuck at VCC              ;
++------+-------+----------+---------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|adder:pcadd2" ;
++----------+-------+----------+------------------------+
+; Port     ; Type  ; Severity ; Details                ;
++----------+-------+----------+------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND           ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND           ;
+; b[2]     ; Input ; Info     ; Stuck at VCC           ;
++----------+-------+----------+------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|adder:pcadd1" ;
++----------+-------+----------+------------------------+
+; Port     ; Type  ; Severity ; Details                ;
++----------+-------+----------+------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND           ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND           ;
+; b[2]     ; Input ; Info     ; Stuck at VCC           ;
++----------+-------+----------+------------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Wed May 15 14:41:20 2024
+    Info: Processing started: Wed May 22 14:00:54 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off arm -c arm --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -190,6 +368,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file flopenr
     Info (12023): Found entity 1: flopenr File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/flopenr.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux2.sv
     Info (12023): Found entity 1: mux2 File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/mux2.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: alu File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/alu.sv Line: 1
 Info (12127): Elaborating entity "arm" for the top level hierarchy
 Info (12128): Elaborating entity "controller" for hierarchy "controller:c" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/arm.sv Line: 16
 Info (12128): Elaborating entity "decoder" for hierarchy "controller:c|decoder:dec" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/controller.sv Line: 17
@@ -203,13 +383,39 @@ Info (12128): Elaborating entity "adder" for hierarchy "datapath:dp|adder:pcadd1
 Info (12128): Elaborating entity "mux2" for hierarchy "datapath:dp|mux2:ra1mux" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 26
 Info (12128): Elaborating entity "regfile" for hierarchy "datapath:dp|regfile:rf" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 30
 Info (12128): Elaborating entity "extend" for hierarchy "datapath:dp|extend:ext" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 32
-Error (12006): Node instance "alu" instantiates undefined entity "alu". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP. File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 36
+Info (12128): Elaborating entity "alu" for hierarchy "datapath:dp|alu:alu" File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 36
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "datapath:dp|ALUResult[31]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[30]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[29]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[28]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[27]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[26]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[25]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[24]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[23]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[22]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[21]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[20]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[19]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[18]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[17]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[16]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[15]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[14]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[13]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[12]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[11]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[10]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[9]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+    Warning (12110): Net "datapath:dp|ALUResult[8]" is missing source, defaulting to GND File: C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/datapath.sv Line: 12
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (144001): Generated suppressed messages file C:/Users/isabe/Documents/GitHub/auriza_digital_design_lab_2023/Procesador/output_files/arm.map.smsg
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4785 megabytes
-    Error: Processing ended: Wed May 15 14:41:29 2024
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:09
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4799 megabytes
+    Info: Processing ended: Wed May 22 14:01:16 2024
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:11
 
 
 +--------------------------------------------+

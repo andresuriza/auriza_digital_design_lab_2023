@@ -1,0 +1,54 @@
+module instruction_tb();
+		
+	logic	[5:0]  pc;
+	logic	  clock;
+	logic	[31:0]  q;
+	
+	
+	AssemblyROM IM(pc, clock, q);
+	initial begin
+	pc = 0;
+	rst = 0;
+	#40
+	rst = 1;
+	#40
+	rst = 0;
+	clk = 0;
+	#40
+	clk = 1;
+	#40
+	clk = 0;
+	#40
+	clk = 1;
+	#40
+	clk = 0;
+	#40
+	clk = 1;
+	#40
+	clk = 0;
+	#40
+	clk = 1;
+	#40
+	clk = 0;
+	#40
+	clk = 1;
+	#40
+	clk = 0;
+	pc = pc + 4;
+	#40
+	clk = 1;
+	#40
+	clk = 0;
+	#40
+	clk = 1;
+	#40
+	clk = 0;
+	#40
+	clk = 1;
+	#40
+	clk = 0;
+	#40
+	clk = 1;
+	
+	end
+endmodule

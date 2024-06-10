@@ -2,37 +2,46 @@
 
 import re
 
-letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
-           'q','r','s','t','u','v', 'w','x','y','z', ' ']
+letters = {'a':'61',
+           'b':'62',
+           'c':'63',
+           'd':'64',
+           'e':'65',
+           'f':'66',
+           'g':'67',
+           'h':'68',
+           'i':'69',
+           'j':'6A',
+           'k':'6B',
+           'l':'6C',
+           'm':'6D',
+           'n':'6E',
+           'o':'6F',
+           'p':'70',
+           'q':'71',
+           'r':'72',
+           's':'73',
+           't':'74',
+           'u':'75',
+           'v':'76',
+           'w':'77',
+           'x':'78',
+           'y':'79',
+           'z':'7A',
+           ' ':'20',
+           '$':'24',
+           }
 
 mem = []
 
-SENTENCE = ('lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-            'aliquam ut fringilla ipsum, eu volutpat sapien. aliquam'
-            'bibendum, leo ut sagittis pharetra, nulla est sagittis'
-            'dui, in tincidunt arcu odio commodo mi. mauris'
-            'vestibulum eu tortor at aliquam. nullam luctus pulvinar'
-            'euismod. proin lobortis laoreet ligula ultrices'
-            'venenatis. duis tincidunt elit id quam varius, non' 
-            'pellentesque turpis aliquam. mauris et consequat felis,'
-            'vel convallis dui. donec ornare, odio sit amet tincidunt' 
-            'lobortis, ex ex suscipit arcu, non ornare justo mauris'
-            'vitae augue. aliquam quis consequat elit. integer ac' 
-            'massa ac purus tincidunt pellentesque id vitae diam.'
-            'proin dapibus porttitor mauris nec.')
+SENTENCE = ('lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquam ut fringilla ipsum, eu volutpat sapien. aliquam bibendum, leo ut sagittis pharetra, nulla est sagittis dui, in tincidunt arcu odio commodo mi. mauris vestibulum eu tortor at aliquam. nullam luctus pulvinar euismod. proin lobortis laoreet ligula ultrices venenatis. duis tincidunt elit id quam varius, non pellentesque turpis aliquam. mauris et consequat felis, vel convallis dui. donec ornare, odio sit amet tincidunt lobortis, ex ex suscipit arcu, non ornare justo mauris vitae augue. aliquam quis consequat elit. integer ac massa ac purus tincidunt pellentesque id vitae diam. proin dapibus porttitor mauris nec.')
 
 def ram_gen(sentence):
   """Genera caracteres ASCII"""
   #sub = 0
   for letter in sentence:
-      #if letter == ' ':
-      #    mem.append([])
-      #    sub += 1
-
     if letter not in ('.', ','):
-      for i in letters:
-        if letter == i:
-          mem.append(letters.index(i))
+          mem.append(letters[letter])
 
 def dimensions_calc(val_ini):
   """Calcula dimensiones"""
@@ -53,6 +62,11 @@ def text_copy():
 
 MEM_SIZE = 656
 
-for j in range(MEM_SIZE):
-  print(MEM_SIZE - 78)
-  MEM_SIZE -= 78
+ram_gen(SENTENCE)
+
+i = 0
+
+for code in mem:
+   print(i, "   :   " + code + ";")
+   i += 1
+

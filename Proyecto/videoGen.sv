@@ -1,7 +1,7 @@
 // 640x480 
 module videoGen(input logic [9:0] x, y,
 					input logic [7:0] q_b,
-					input logic clk, 
+					input logic clk, ramClk, 
 					output logic [7:0] r, g, b,
 					output logic [9:0] address_b);
 					
@@ -305,7 +305,7 @@ module videoGen(input logic [9:0] x, y,
 				pixels[7] = 8'b11111110;
 			end
 			// Blank
-			8'h7B: begin
+			8'h20: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b00000000;
 				pixels[2] = 8'b00000000;
@@ -316,7 +316,7 @@ module videoGen(input logic [9:0] x, y,
 				pixels[7] = 8'b00000000;
 			end
 			// Simbolo
-			8'h7C: begin
+			8'h24: begin
 				pixels[0] = 8'b00010000;
 				pixels[1] = 8'b01111100;
 				pixels[2] = 8'b10010010;
@@ -342,7 +342,7 @@ module videoGen(input logic [9:0] x, y,
 	assign address_b = z;
 	assign charCode = q_b;
 
-	always_ff @(q_b) begin
+	always_ff @(negedge ramClk) begin
 		if (z < 657) begin
 			pixelLineArr[656-z][7:0] = pixels[0];
 			pixelLineArr[656-z][15:8] = pixels[1];

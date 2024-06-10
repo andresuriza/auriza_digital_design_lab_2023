@@ -18,7 +18,7 @@ module vga(input logic clk, testB,
 	vgaController vgaCont(vgaclk, hsync, vsync, sync_b, blank_b, x, y);
 	
 	// Modulo para pintar la pantalla
-	videoGen videoGen(x, y, q_b, vgaclk, r, g, b, address_b);
+	videoGen videoGen(x, y, q_b, vgaclk, clk, r, g, b, address_b);
 	
 	ram2 memRAM(address_a, address_b, clk, data_a, data_b, wren_a, wren_b, q_a, q_b);
 	

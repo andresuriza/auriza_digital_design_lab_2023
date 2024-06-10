@@ -1,5 +1,10 @@
 // 640x480 
-module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7:0] r, g, b);
+module videoGen(input logic [9:0] x, y,
+					input logic [7:0] q_b,
+					input logic clk, 
+					output logic [7:0] r, g, b,
+					output logic [9:0] address_b);
+					
 	logic [63:0] pixelLineArr [656:0]; // Parametrizable
 	logic [7:0] pixelsArr [656:0][7:0]; // Parametrizable
 	logic pixelOnArr [656:0]; // Parametrizable
@@ -11,17 +16,10 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 
 	logic [9:0] z = 0;
 	
-	logic [9:0] address_a, address_b;
-	logic [7:0] data_a, data_b, q_a, q_b;
-	logic wren_a, wren_b;
-	
-	// q_b trae datos en base a address_b
-	ram2 mem(address_a, address_b, clkRam, data_a, data_b, wren_a, wren_b, q_a, q_b);
-	
 	always_comb begin
 		case(charCode[7:0])
 			// A
-			 0: begin
+			 8'h61: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111000;
 				pixels[2] = 8'b10000100;
@@ -32,7 +30,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b10000100;
 			 end
 			 // B
-			 1: begin
+			 8'h62: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11110000;
 				pixels[2] = 8'b10001000;
@@ -43,7 +41,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b11111000;
 			 end
 			 // C
-			 2: begin
+			 8'h63: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111110;
 				pixels[2] = 8'b10000000;
@@ -54,7 +52,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b01111110;
 			 end
 			 // D
-			 3: begin
+			 8'h64: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111000;
 				pixels[2] = 8'b10000100;
@@ -65,7 +63,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b11111000;
 			 end
 			 // E
-			 4: begin
+			 8'h65: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b10000000;
@@ -76,7 +74,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b11111110;
 			 end
 			 // F
-			  5: begin
+			  8'h66: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b10000000;
@@ -87,7 +85,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b10000000;
 			 end
 			 // G
-			 6: begin
+			 8'h67: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111110;
 				pixels[2] = 8'b10000000;
@@ -98,7 +96,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b01111100;
 			 end
 			 // H
-			 7: begin
+			 8'h68: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b10000010;
@@ -109,7 +107,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b10000010;
 			 end
 			 // I
-			 8: begin
+			 8'h69: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b00010000;
@@ -120,7 +118,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b11111110;
 			 end
 			 // J
-			 9: begin
+			 8'h6A: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b00001000;
@@ -131,7 +129,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b01110000;
 			 end
 			 // K
-			 10: begin
+			 8'h6B: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10010000;
 				pixels[2] = 8'b10100000;
@@ -142,7 +140,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b10001000;
 			 end
 			 // L
-			 11: begin
+			 8'h6C: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000000;
 				pixels[2] = 8'b10000000;
@@ -153,7 +151,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b11111110;
 			 end
 			 // M
-			 12: begin
+			 8'h6D: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b11000110;
@@ -164,7 +162,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b10000010;
 			 end
 			 // N
-			 13: begin
+			 8'h6E: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b11000010;
@@ -175,7 +173,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b10000010;
 			 end
 			 // O
-			 14: begin
+			 8'h6F: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111100;
 				pixels[2] = 8'b10000010;
@@ -186,7 +184,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b01111100;
 			 end
 			 // P
-			 15: begin
+			8'h70: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111100;
 				pixels[2] = 8'b10000010;
@@ -197,7 +195,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b10000000;
 			 end
 			 // Q
-			 16: begin
+			 8'h71: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111110;
 				pixels[2] = 8'b10000010;
@@ -208,7 +206,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b01111110;
 			 end
 			 // R
-			 17: begin
+			 8'h72: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111100;
 				pixels[2] = 8'b10000010;
@@ -219,7 +217,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b10000110;
 			 end
 			 // S
-			 18: begin
+			 8'h73: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111100;
 				pixels[2] = 8'b10000010;
@@ -230,7 +228,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b01111100;
 			 end
 			 // T
-			 19: begin
+			 8'h74: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b00010000;
@@ -241,7 +239,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b00010000;
 			 end
 			 // U
-			 20: begin
+			 8'h75: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b10000010;
@@ -252,7 +250,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b11111110;
 			 end
 			 // V
-			 21: begin
+			 8'h76: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b10000010;
@@ -263,7 +261,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b00010000;
 			 end
 			 // W
-			 22: begin
+			 8'h77: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b10000010;
@@ -274,7 +272,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b00101000;
 			 end
 			 // X
-			 23: begin
+			 8'h78: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b01000100;
@@ -285,7 +283,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b10000010;
 			 end
 			 // Y
-			 24: begin
+			 8'h79: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b01000100;
@@ -296,7 +294,7 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[7] = 8'b10000000;
 			 end
 			 // Z
-			 25: begin
+			 8'h7A: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b00000100;
@@ -306,7 +304,8 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[6] = 8'b01000000;
 				pixels[7] = 8'b11111110;
 			end
-			26: begin
+			// Blank
+			8'h7B: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b00000000;
 				pixels[2] = 8'b00000000;
@@ -315,6 +314,17 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 				pixels[5] = 8'b00000000;
 				pixels[6] = 8'b00000000;
 				pixels[7] = 8'b00000000;
+			end
+			// Simbolo
+			8'h7C: begin
+				pixels[0] = 8'b00010000;
+				pixels[1] = 8'b01111100;
+				pixels[2] = 8'b10010010;
+				pixels[3] = 8'b10010000;
+				pixels[4] = 8'b01111100;
+				pixels[5] = 8'b00010010;
+				pixels[6] = 8'b10010010;
+				pixels[7] = 8'b01111100;
 			end
 			default: begin
 				pixels[0] = 8'b00000000;
@@ -332,18 +342,18 @@ module videoGen(input logic [9:0] x, y, input logic clkRam, clk, output logic [7
 	assign address_b = z;
 	assign charCode = q_b;
 
-	always_ff @(negedge clk) begin
-			if (z < 657) begin
-				pixelLineArr[656-z][7:0] = pixels[0];
-				pixelLineArr[656-z][15:8] = pixels[1];
-				pixelLineArr[656-z][23:16] = pixels[2];
-				pixelLineArr[656-z][31:24] = pixels[3];
-				pixelLineArr[656-z][39:32] = pixels[4];
-				pixelLineArr[656-z][47:40] = pixels[5];
-				pixelLineArr[656-z][55:48] = pixels[6];
-				pixelLineArr[656-z][63:56] = pixels[7];
-				z = z+1;
-			end
+	always_ff @(q_b) begin
+		if (z < 657) begin
+			pixelLineArr[656-z][7:0] = pixels[0];
+			pixelLineArr[656-z][15:8] = pixels[1];
+			pixelLineArr[656-z][23:16] = pixels[2];
+			pixelLineArr[656-z][31:24] = pixels[3];
+			pixelLineArr[656-z][39:32] = pixels[4];
+			pixelLineArr[656-z][47:40] = pixels[5];
+			pixelLineArr[656-z][55:48] = pixels[6];
+			pixelLineArr[656-z][63:56] = pixels[7];
+			z = z+1;
+		end
 	end
 	
 	generate

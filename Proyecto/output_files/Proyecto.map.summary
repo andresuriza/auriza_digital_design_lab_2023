@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun May 19 20:42:29 2024
+Analysis & Synthesis Status : Successful - Sun Jun  9 16:45:47 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : Proyecto
 Top-level Entity Name : vga
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 29596
+Total registers : 21
 Total pins : 31
 Total virtual pins : 0
 Total block memory bits : 5,256

@@ -13,7 +13,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 	always_comb begin
 		case(charCode[7:0])
 			// A
-			 0: begin
+			 8'h61: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111000;
 				pixels[2] = 8'b10000100;
@@ -24,7 +24,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b10000100;
 			 end
 			 // B
-			 1: begin
+			 8'h62: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11110000;
 				pixels[2] = 8'b10001000;
@@ -35,7 +35,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b11111000;
 			 end
 			 // C
-			 2: begin
+			 8'h63: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111110;
 				pixels[2] = 8'b10000000;
@@ -46,7 +46,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b01111110;
 			 end
 			 // D
-			 3: begin
+			 8'h64: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111000;
 				pixels[2] = 8'b10000100;
@@ -57,7 +57,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b11111000;
 			 end
 			 // E
-			 4: begin
+			 8'h65: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b10000000;
@@ -68,7 +68,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b11111110;
 			 end
 			 // F
-			  5: begin
+			  8'h66: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b10000000;
@@ -79,7 +79,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b10000000;
 			 end
 			 // G
-			 6: begin
+			 8'h67: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111110;
 				pixels[2] = 8'b10000000;
@@ -90,7 +90,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b01111100;
 			 end
 			 // H
-			 7: begin
+			 8'h68: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b10000010;
@@ -101,7 +101,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b10000010;
 			 end
 			 // I
-			 8: begin
+			 8'h69: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b00010000;
@@ -112,7 +112,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b11111110;
 			 end
 			 // J
-			 9: begin
+			 8'h6A: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b00001000;
@@ -123,7 +123,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b01110000;
 			 end
 			 // K
-			 10: begin
+			 8'h6B: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10010000;
 				pixels[2] = 8'b10100000;
@@ -134,7 +134,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b10001000;
 			 end
 			 // L
-			 11: begin
+			 8'h6C: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000000;
 				pixels[2] = 8'b10000000;
@@ -145,7 +145,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b11111110;
 			 end
 			 // M
-			 12: begin
+			 8'h6D: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b11000110;
@@ -156,7 +156,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b10000010;
 			 end
 			 // N
-			 13: begin
+			 8'h6E: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b11000010;
@@ -167,7 +167,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b10000010;
 			 end
 			 // O
-			 14: begin
+			 8'h6F: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111100;
 				pixels[2] = 8'b10000010;
@@ -178,7 +178,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b01111100;
 			 end
 			 // P
-			 15: begin
+			8'h70: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111100;
 				pixels[2] = 8'b10000010;
@@ -189,7 +189,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b10000000;
 			 end
 			 // Q
-			 16: begin
+			 8'h71: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111110;
 				pixels[2] = 8'b10000010;
@@ -200,7 +200,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b01111110;
 			 end
 			 // R
-			 17: begin
+			 8'h72: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111100;
 				pixels[2] = 8'b10000010;
@@ -211,7 +211,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b10000110;
 			 end
 			 // S
-			 18: begin
+			 8'h73: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b01111100;
 				pixels[2] = 8'b10000010;
@@ -222,7 +222,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b01111100;
 			 end
 			 // T
-			 19: begin
+			 8'h74: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b00010000;
@@ -233,7 +233,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b00010000;
 			 end
 			 // U
-			 20: begin
+			 8'h75: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b10000010;
@@ -244,7 +244,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b11111110;
 			 end
 			 // V
-			 21: begin
+			 8'h76: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b10000010;
@@ -255,7 +255,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b00010000;
 			 end
 			 // W
-			 22: begin
+			 8'h77: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b10000010;
@@ -266,7 +266,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b00101000;
 			 end
 			 // X
-			 23: begin
+			 8'h78: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b01000100;
@@ -277,7 +277,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b10000010;
 			 end
 			 // Y
-			 24: begin
+			 8'h79: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b10000010;
 				pixels[2] = 8'b01000100;
@@ -288,7 +288,7 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[7] = 8'b10000000;
 			 end
 			 // Z
-			 25: begin
+			 8'h7A: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b11111110;
 				pixels[2] = 8'b00000100;
@@ -298,7 +298,29 @@ module textDecode(input logic [7:0] charCode, output logic [63:0] pixelsExternal
 				pixels[6] = 8'b01000000;
 				pixels[7] = 8'b11111110;
 			end
-			26: begin
+			// Blank
+			8'h20: begin
+				pixels[0] = 8'b00000000;
+				pixels[1] = 8'b00000000;
+				pixels[2] = 8'b00000000;
+				pixels[3] = 8'b00000000;
+				pixels[4] = 8'b00000000;
+				pixels[5] = 8'b00000000;
+				pixels[6] = 8'b00000000;
+				pixels[7] = 8'b00000000;
+			end
+			// Simbolo
+			8'h24: begin
+				pixels[0] = 8'b00010000;
+				pixels[1] = 8'b01111100;
+				pixels[2] = 8'b10010010;
+				pixels[3] = 8'b10010000;
+				pixels[4] = 8'b01111100;
+				pixels[5] = 8'b00010010;
+				pixels[6] = 8'b10010010;
+				pixels[7] = 8'b01111100;
+			end
+			default: begin
 				pixels[0] = 8'b00000000;
 				pixels[1] = 8'b00000000;
 				pixels[2] = 8'b00000000;

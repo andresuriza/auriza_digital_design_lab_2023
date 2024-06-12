@@ -87,7 +87,6 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH top_tb -section
 set_global_assignment -name EDA_TEST_BENCH_NAME vga_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id vga_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME vga_tb -section_id vga_tb
-set_location_assignment PIN_AA14 -to testB
 set_global_assignment -name SYSTEMVERILOG_FILE regfile.sv
 set_global_assignment -name SYSTEMVERILOG_FILE mux2.sv
 set_global_assignment -name SYSTEMVERILOG_FILE flopr.sv
@@ -118,9 +117,14 @@ set_global_assignment -name SYSTEMVERILOG_FILE top_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME top_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id top_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME top_tb -section_id top_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE vga_tb.sv -section_id vga_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE top_tb.sv -section_id top_tb
+set_location_assignment PIN_AA14 -to inicio
+set_location_assignment PIN_AA15 -to procesar
+set_location_assignment PIN_AB12 -to vocales[0]
+set_location_assignment PIN_AC12 -to vocales[1]
+set_location_assignment PIN_AF9 -to vocales[2]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name EDA_TEST_BENCH_FILE vga_tb.sv -section_id vga_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE top_tb.sv -section_id top_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

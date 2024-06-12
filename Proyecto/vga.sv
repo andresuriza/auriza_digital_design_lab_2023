@@ -1,8 +1,10 @@
 module vga(input logic clk,
+			  input logic [7:0] q_b,
 			  output logic vgaclk, // 25.175 MHz VGA clock
 			  output logic hsync, vsync,
 			  output logic sync_b, blank_b, // To monitor 
-			  output logic [7:0] r, g, b);
+			  output logic [7:0] r, g, b,
+			  output logic [9:0] address_b);
 			  
 	logic [9:0] x, y;
 	logic clkChar;

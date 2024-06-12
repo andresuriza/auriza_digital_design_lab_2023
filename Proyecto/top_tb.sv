@@ -9,7 +9,7 @@ module top_tb;
 	logic [31:0] WriteData, DataAdr;
 	logic MemWrite;
 	
-	top top1(clk, reset,inicio,vocales, vgaclk, hsync, vsync, sync_b, blank_b, r, g, b, WriteData, DataAdr, MemWrite);
+	top top1(clk, inicio,vocales, vgaclk, hsync, vsync, sync_b, blank_b, r, g, b, WriteData, DataAdr, MemWrite);
 	
 	
 endmodule

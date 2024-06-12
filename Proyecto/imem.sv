@@ -4,7 +4,7 @@ module imem(
 );
 
     // Adjust the depth of the RAM to match the MIF file
-    logic [31:0] RAM[215:0];
+    logic [31:0] RAM[221:0];
 
     // Initialize the memory with the contents of the MIF file
     initial

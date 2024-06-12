@@ -1,5 +1,5 @@
 Flow report for Proyecto
-Wed Jun 12 01:35:20 2024
+Wed Jun 12 07:22:59 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -38,24 +38,29 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+------------------------------------------------------------------------------+
-; Flow Summary                                                                 ;
-+-----------------------------+------------------------------------------------+
-; Flow Status                 ; Successful - Wed Jun 12 01:35:20 2024          ;
-; Quartus Prime Version       ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name               ; Proyecto                                       ;
-; Top-level Entity Name       ; top                                            ;
-; Family                      ; Cyclone V                                      ;
-; Device                      ; 5CSEMA5F31C6                                   ;
-; Timing Models               ; Final                                          ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
-; Total registers             ; N/A until Partition Merge                      ;
-; Total pins                  ; N/A until Partition Merge                      ;
-; Total virtual pins          ; N/A until Partition Merge                      ;
-; Total block memory bits     ; N/A until Partition Merge                      ;
-; Total PLLs                  ; N/A until Partition Merge                      ;
-; Total DLLs                  ; N/A until Partition Merge                      ;
-+-----------------------------+------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++---------------------------------+------------------------------------------------+
+; Flow Status                     ; Successful - Wed Jun 12 07:22:59 2024          ;
+; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                   ; Proyecto                                       ;
+; Top-level Entity Name           ; top                                            ;
+; Family                          ; Cyclone V                                      ;
+; Device                          ; 5CSEMA5F31C6                                   ;
+; Timing Models                   ; Final                                          ;
+; Logic utilization (in ALMs)     ; 20,471 / 32,070 ( 64 % )                       ;
+; Total registers                 ; 33428                                          ;
+; Total pins                      ; 101 / 457 ( 22 % )                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 5,256 / 4,065,280 ( < 1 % )                    ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                  ;
++---------------------------------+------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/12/2024 01:35:05 ;
+; Start date & time ; 06/12/2024 07:05:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Proyecto            ;
 +-------------------+---------------------+
@@ -74,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 238338863815067.171817770509128        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 238338863815067.171819754712448        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; vga_tb         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; top_tb         ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; top_tb                                 ; --            ; --          ; eda_simulation ;
@@ -101,29 +106,41 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:16     ; 1.0                     ; 5012 MB             ; 00:00:32                           ;
-; Total                  ; 00:00:16     ; --                      ; --                  ; 00:00:32                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:02:00     ; 1.4                     ; 5316 MB             ; 00:02:46                           ;
+; Fitter               ; 00:13:02     ; 1.2                     ; 7171 MB             ; 00:33:38                           ;
+; Assembler            ; 00:00:23     ; 1.0                     ; 5169 MB             ; 00:00:23                           ;
+; Timing Analyzer      ; 00:01:13     ; 2.7                     ; 5935 MB             ; 00:02:56                           ;
+; EDA Netlist Writer   ; 00:00:13     ; 1.0                     ; 5022 MB             ; 00:00:13                           ;
+; Total                ; 00:16:51     ; --                      ; --                  ; 00:39:56                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; ANDRES-PC        ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; ANDRES-PC        ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; ANDRES-PC        ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; ANDRES-PC        ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; ANDRES-PC        ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; ANDRES-PC        ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off Proyecto -c Proyecto --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off Proyecto -c Proyecto
+quartus_fit --read_settings_files=off --write_settings_files=off Proyecto -c Proyecto
+quartus_asm --read_settings_files=off --write_settings_files=off Proyecto -c Proyecto
+quartus_sta Proyecto -c Proyecto
+quartus_eda --read_settings_files=off --write_settings_files=off Proyecto -c Proyecto
 
 
 

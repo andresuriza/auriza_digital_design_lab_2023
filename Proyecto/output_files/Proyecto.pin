@@ -121,22 +121,22 @@ GND                          : AA11      : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA13      :        :                   :         : 3B        :                
 inicio                       : AA14      : input  : 2.5 V             :         : 3B        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA15      :        :                   :         : 3B        :                
+procesar                     : AA15      : input  : 2.5 V             :         : 3B        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 4A        :                
 VCCIO4A                      : AA17      : power  :                   : 2.5V    : 4A        :                
-WriteData[26]                : AA18      : output : 2.5 V             :         : 4A        : N              
+MemWrite                     : AA18      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA19      :        :                   :         : 4A        :                
-WriteData[5]                 : AA20      : output : 2.5 V             :         : 4A        : N              
-DataAdr[24]                  : AA21      : output : 2.5 V             :         : 4A        : N              
+DataAdr[14]                  : AA20      : output : 2.5 V             :         : 4A        : N              
+WriteData[3]                 : AA21      : output : 2.5 V             :         : 4A        : N              
 GND                          : AA22      : gnd    :                   :         :           :                
 VCCPGM                       : AA23      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
-DataAdr[18]                  : AA24      : output : 2.5 V             :         : 5A        : N              
-DataAdr[7]                   : AA25      : output : 2.5 V             :         : 5A        : N              
+DataAdr[26]                  : AA24      : output : 2.5 V             :         : 5A        : N              
+DataAdr[13]                  : AA25      : output : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA26      :        :                   :         : 5B        :                
 VCCIO5B                      : AA27      : power  :                   : 2.5V    : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA28      :        :                   :         : 5B        :                
 VREFB5BN0                    : AA29      : power  :                   :         : 5B        :                
-DataAdr[17]                  : AA30      : output : 2.5 V             :         : 5B        : N              
+DataAdr[12]                  : AA30      : output : 2.5 V             :         : 5B        : N              
 GND                          : AB1       : gnd    :                   :         :           :                
 GND                          : AB2       : gnd    :                   :         :           :                
 DNU                          : AB3       :        :                   :         :           :                
@@ -157,14 +157,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB17      :        :                   :      
 VCCPD3B4A                    : AB18      : power  :                   : 2.5V    : 3B, 4A    :                
 GND                          : AB19      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AB20      : power  :                   : 2.5V    : 3B, 4A    :                
-DataAdr[22]                  : AB21      : output : 2.5 V             :         : 4A        : N              
-DataAdr[0]                   : AB22      : output : 2.5 V             :         : 5A        : N              
-DataAdr[10]                  : AB23      : output : 2.5 V             :         : 5A        : N              
+WriteData[26]                : AB21      : output : 2.5 V             :         : 4A        : N              
+DataAdr[20]                  : AB22      : output : 2.5 V             :         : 5A        : N              
+DataAdr[17]                  : AB23      : output : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : AB24      : power  :                   : 2.5V    : 5A        :                
-WriteData[3]                 : AB25      : output : 2.5 V             :         : 5A        : N              
-DataAdr[15]                  : AB26      : output : 2.5 V             :         : 5A        : N              
+DataAdr[0]                   : AB25      : output : 2.5 V             :         : 5A        : N              
+DataAdr[25]                  : AB26      : output : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB27      :        :                   :         : 5B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB28      :        :                   :         : 5B        :                
+reset                        : AB28      : input  : 2.5 V             :         : 5B        : N              
 GND                          : AB29      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB30      :        :                   :         : 5B        :                
 GND                          : AC1       : gnd    :                   :         :           :                
@@ -184,18 +184,18 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AC14      :        :                   :      
 VCCPD3B4A                    : AC15      : power  :                   : 2.5V    : 3B, 4A    :                
 GND                          : AC16      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AC17      : power  :                   : 2.5V    : 3B, 4A    :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC18      :        :                   :         : 4A        :                
+WriteData[15]                : AC18      : output : 2.5 V             :         : 4A        : N              
 VCCPD3B4A                    : AC19      : power  :                   : 2.5V    : 3B, 4A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC20      :        :                   :         : 4A        :                
 VCCIO4A                      : AC21      : power  :                   : 2.5V    : 4A        :                
-DataAdr[26]                  : AC22      : output : 2.5 V             :         : 4A        : N              
-DataAdr[29]                  : AC23      : output : 2.5 V             :         : 4A        : N              
+DataAdr[16]                  : AC22      : output : 2.5 V             :         : 4A        : N              
+DataAdr[30]                  : AC23      : output : 2.5 V             :         : 4A        : N              
 VREFB5AN0                    : AC24      : power  :                   :         : 5A        :                
-WriteData[18]                : AC25      : output : 2.5 V             :         : 5A        : N              
+WriteData[9]                 : AC25      : output : 2.5 V             :         : 5A        : N              
 GND                          : AC26      : gnd    :                   :         :           :                
-WriteData[8]                 : AC27      : output : 2.5 V             :         : 5A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC28      :        :                   :         : 5B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC29      :        :                   :         : 5B        :                
+WriteData[23]                : AC27      : output : 2.5 V             :         : 5A        : N              
+DataAdr[10]                  : AC28      : output : 2.5 V             :         : 5B        : N              
+DataAdr[28]                  : AC29      : output : 2.5 V             :         : 5B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC30      :        :                   :         : 5B        :                
 GND                          : AD1       : gnd    :                   :         :           :                
 GND                          : AD2       : gnd    :                   :         :           :                
@@ -213,19 +213,19 @@ VCCIO3B                      : AD13      : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD14      :        :                   :         : 3B        :                
 DNU                          : AD15      :        :                   :         :           :                
 VCCPD3B4A                    : AD16      : power  :                   : 2.5V    : 3B, 4A    :                
-WriteData[28]                : AD17      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD17      :        :                   :         : 4A        :                
 VCCIO4A                      : AD18      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD19      :        :                   :         : 4A        :                
-WriteData[25]                : AD20      : output : 2.5 V             :         : 4A        : N              
-WriteData[2]                 : AD21      : output : 2.5 V             :         : 4A        : N              
+WriteData[31]                : AD20      : output : 2.5 V             :         : 4A        : N              
+WriteData[22]                : AD21      : output : 2.5 V             :         : 4A        : N              
 VCC_AUX                      : AD22      : power  :                   : 2.5V    :           :                
 GND                          : AD23      : gnd    :                   :         :           :                
-DataAdr[27]                  : AD24      : output : 2.5 V             :         : 4A        : N              
-DataAdr[5]                   : AD25      : output : 2.5 V             :         : 5A        : N              
-DataAdr[4]                   : AD26      : output : 2.5 V             :         : 5A        : N              
-DataAdr[14]                  : AD27      : output : 2.5 V             :         : 5A        : N              
+DataAdr[19]                  : AD24      : output : 2.5 V             :         : 4A        : N              
+DataAdr[4]                   : AD25      : output : 2.5 V             :         : 5A        : N              
+DataAdr[7]                   : AD26      : output : 2.5 V             :         : 5A        : N              
+WriteData[8]                 : AD27      : output : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : AD28      : power  :                   : 2.5V    : 5A        :                
-DataAdr[28]                  : AD29      : output : 2.5 V             :         : 5B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD29      :        :                   :         : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD30      :        :                   :         : 5B        :                
 GND                          : AE1       : gnd    :                   :         :           :                
 GND                          : AE2       : gnd    :                   :         :           :                
@@ -244,17 +244,17 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AE14      :        :                   :      
 VCCIO3B                      : AE15      : power  :                   : 2.5V    : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE16      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE17      :        :                   :         : 4A        :                
-WriteData[16]                : AE18      : output : 2.5 V             :         : 4A        : N              
-WriteData[6]                 : AE19      : output : 2.5 V             :         : 4A        : N              
+WriteData[13]                : AE18      : output : 2.5 V             :         : 4A        : N              
+WriteData[11]                : AE19      : output : 2.5 V             :         : 4A        : N              
 GND                          : AE20      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AE21      : power  :                   : 2.5V    : 3B, 4A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :         : 4A        :                
-DataAdr[30]                  : AE24      : output : 2.5 V             :         : 4A        : N              
+WriteData[17]                : AE24      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AE25      : power  :                   : 2.5V    : 4A        :                
-DataAdr[23]                  : AE26      : output : 2.5 V             :         : 5A        : N              
-WriteData[29]                : AE27      : output : 2.5 V             :         : 5A        : N              
-DataAdr[1]                   : AE28      : output : 2.5 V             :         : 5A        : N              
+WriteData[14]                : AE26      : output : 2.5 V             :         : 5A        : N              
+DataAdr[21]                  : AE27      : output : 2.5 V             :         : 5A        : N              
+DataAdr[24]                  : AE28      : output : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE29      :        :                   :         : 5B        :                
 VCCIO5B                      : AE30      : power  :                   : 2.5V    : 5B        :                
 GND                          : AF1       : gnd    :                   :         :           :                
@@ -276,17 +276,17 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AF16      :        :                   :      
 GND                          : AF17      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF19      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF20      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF21      :        :                   :         : 4A        :                
+WriteData[16]                : AF20      : output : 2.5 V             :         : 4A        : N              
+WriteData[19]                : AF21      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AF22      : power  :                   : 2.5V    : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF23      :        :                   :         : 4A        :                
+WriteData[5]                 : AF23      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF24      :        :                   :         : 4A        :                
-DataAdr[19]                  : AF25      : output : 2.5 V             :         : 4A        : N              
-DataAdr[25]                  : AF26      : output : 2.5 V             :         : 4A        : N              
+DataAdr[27]                  : AF25      : output : 2.5 V             :         : 4A        : N              
+DataAdr[22]                  : AF26      : output : 2.5 V             :         : 4A        : N              
 GND                          : AF27      : gnd    :                   :         :           :                
-WriteData[13]                : AF28      : output : 2.5 V             :         : 5A        : N              
-DataAdr[6]                   : AF29      : output : 2.5 V             :         : 5A        : N              
-DataAdr[3]                   : AF30      : output : 2.5 V             :         : 5A        : N              
+WriteData[27]                : AF28      : output : 2.5 V             :         : 5A        : N              
+WriteData[28]                : AF29      : output : 2.5 V             :         : 5A        : N              
+WriteData[21]                : AF30      : output : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG1       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG2       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG3       :        :                   :         : 3A        :                
@@ -308,15 +308,15 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG18      :        :                   :      
 VCCIO4A                      : AG19      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG20      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG21      :        :                   :         : 4A        :                
-WriteData[9]                 : AG22      : output : 2.5 V             :         : 4A        : N              
-WriteData[20]                : AG23      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG22      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG23      :        :                   :         : 4A        :                
 GND                          : AG24      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG25      :        :                   :         : 4A        :                
-DataAdr[9]                   : AG26      : output : 2.5 V             :         : 4A        : N              
-WriteData[21]                : AG27      : output : 2.5 V             :         : 5A        : N              
-DataAdr[16]                  : AG28      : output : 2.5 V             :         : 5A        : N              
+DataAdr[11]                  : AG26      : output : 2.5 V             :         : 4A        : N              
+WriteData[7]                 : AG27      : output : 2.5 V             :         : 5A        : N              
+WriteData[24]                : AG28      : output : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : AG29      : power  :                   : 2.5V    : 5A        :                
-DataAdr[8]                   : AG30      : output : 2.5 V             :         : 5A        : N              
+WriteData[12]                : AG30      : output : 2.5 V             :         : 5A        : N              
 GND                          : AH1       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH2       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH3       :        :                   :         : 3A        :                
@@ -338,15 +338,15 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AH18      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH19      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH20      :        :                   :         : 4A        :                
 GND                          : AH21      : gnd    :                   :         :           :                
-WriteData[24]                : AH22      : output : 2.5 V             :         : 4A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 4A        :                
+WriteData[29]                : AH23      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH24      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH25      :        :                   :         : 4A        :                
+DataAdr[1]                   : AH25      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AH26      : power  :                   : 2.5V    : 4A        :                
-WriteData[19]                : AH27      : output : 2.5 V             :         : 4A        : N              
-WriteData[11]                : AH28      : output : 2.5 V             :         : 5A        : N              
-DataAdr[2]                   : AH29      : output : 2.5 V             :         : 5A        : N              
-DataAdr[21]                  : AH30      : output : 2.5 V             :         : 5A        : N              
+WriteData[20]                : AH27      : output : 2.5 V             :         : 4A        : N              
+DataAdr[5]                   : AH28      : output : 2.5 V             :         : 5A        : N              
+WriteData[10]                : AH29      : output : 2.5 V             :         : 5A        : N              
+WriteData[1]                 : AH30      : output : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ1       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ2       :        :                   :         : 3A        :                
 GND                          : AJ3       : gnd    :                   :         :           :                
@@ -368,14 +368,14 @@ GND                          : AJ18      : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ19      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ20      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ21      :        :                   :         : 4A        :                
-MemWrite                     : AJ22      : output : 2.5 V             :         : 4A        : N              
+WriteData[4]                 : AJ22      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AJ23      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ24      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ25      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ26      :        :                   :         : 4A        :                
-WriteData[27]                : AJ27      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ27      :        :                   :         : 4A        :                
 GND                          : AJ28      : gnd    :                   :         :           :                
-WriteData[17]                : AJ29      : output : 2.5 V             :         : 5A        : N              
+WriteData[18]                : AJ29      : output : 2.5 V             :         : 5A        : N              
 GND                          : AJ30      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK2       :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK3       :        :                   :         : 3B        :                
@@ -396,15 +396,15 @@ VREFB4AN0                    : AK17      : power  :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK19      :        :                   :         : 4A        :                
 VCCIO4A                      : AK20      : power  :                   : 2.5V    : 4A        :                
-WriteData[7]                 : AK21      : output : 2.5 V             :         : 4A        : N              
-WriteData[22]                : AK22      : output : 2.5 V             :         : 4A        : N              
+WriteData[25]                : AK21      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK23      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK24      :        :                   :         : 4A        :                
 GND                          : AK25      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK26      :        :                   :         : 4A        :                
-DataAdr[20]                  : AK27      : output : 2.5 V             :         : 4A        : N              
-WriteData[12]                : AK28      : output : 2.5 V             :         : 4A        : N              
-WriteData[0]                 : AK29      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK27      :        :                   :         : 4A        :                
+DataAdr[18]                  : AK28      : output : 2.5 V             :         : 4A        : N              
+DataAdr[29]                  : AK29      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B1        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B2        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :         : 8A        :                
@@ -530,7 +530,7 @@ GND                          : F2        : gnd    :                   :         
 CONF_DONE                    : F3        :        :                   :         : 9A        :                
 nSTATUS                      : F4        :        :                   :         : 9A        :                
 GND                          : F5        : gnd    :                   :         :           :                
-vocales[3]                   : F6        : input  : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F6        :        :                   :         : 8A        :                
 GND                          : F7        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 8A        :                
@@ -902,14 +902,14 @@ GND                          : V14       : gnd    :                   :         
 VCC                          : V15       : power  :                   : 1.1V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V16       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V17       :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V18       :        :                   :         : 4A        :                
+DataAdr[15]                  : V18       : output : 2.5 V             :         : 4A        : N              
 GND                          : V19       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V20       :        :                   :         : 6B        :                
 GND                          : V21       : gnd    :                   :         :           :                
 VCCPD5A                      : V22       : power  :                   : 2.5V    : 5A        :                
-WriteData[15]                : V23       : output : 2.5 V             :         : 5A        : N              
+WriteData[30]                : V23       : output : 2.5 V             :         : 5A        : N              
 VCCPD5A                      : V24       : power  :                   : 2.5V    : 5A        :                
-DataAdr[13]                  : V25       : output : 2.5 V             :         : 5B        : N              
+DataAdr[8]                   : V25       : output : 2.5 V             :         : 5B        : N              
 VCCIO6B_HPS                  : V26       : power  :                   : 2.5V    : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V27       :        :                   :         : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V28       :        :                   :         : 6B        :                
@@ -933,13 +933,13 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : W15       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : W16       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W17       :        :                   :         : 4A        :                
 GND                          : W18       : gnd    :                   :         :           :                
-WriteData[31]                : W19       : output : 2.5 V             :         : 4A        : N              
-WriteData[10]                : W20       : output : 2.5 V             :         : 5A        : N              
-DataAdr[31]                  : W21       : output : 2.5 V             :         : 5A        : N              
-DataAdr[12]                  : W22       : output : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W19       :        :                   :         : 4A        :                
+DataAdr[2]                   : W20       : output : 2.5 V             :         : 5A        : N              
+DataAdr[23]                  : W21       : output : 2.5 V             :         : 5A        : N              
+WriteData[6]                 : W22       : output : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : W23       : power  :                   : 2.5V    : 5A        :                
-WriteData[14]                : W24       : output : 2.5 V             :         : 5A        : N              
-reset                        : W25       : input  : 2.5 V             :         : 5B        : N              
+DataAdr[3]                   : W24       : output : 2.5 V             :         : 5A        : N              
+DataAdr[9]                   : W25       : output : 2.5 V             :         : 5B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : W26       :        :                   :         : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W27       :        :                   :         : 6B        :                
 GND                          : W28       : gnd    :                   :         :           :                
@@ -961,14 +961,14 @@ VCC                          : Y13       : power  :                   : 1.1V    
 GND                          : Y14       : gnd    :                   :         :           :                
 GND                          : Y15       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 3B        :                
-WriteData[4]                 : Y17       : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y18       :        :                   :         : 4A        :                
-WriteData[1]                 : Y19       : output : 2.5 V             :         : 4A        : N              
+DataAdr[31]                  : Y19       : output : 2.5 V             :         : 4A        : N              
 GND                          : Y20       : gnd    :                   :         :           :                
-WriteData[23]                : Y21       : output : 2.5 V             :         : 5A        : N              
+DataAdr[6]                   : Y21       : output : 2.5 V             :         : 5A        : N              
 VCCA_FPLL                    : Y22       : power  :                   : 2.5V    :           :                
-WriteData[30]                : Y23       : output : 2.5 V             :         : 5A        : N              
-DataAdr[11]                  : Y24       : output : 2.5 V             :         : 5A        : N              
+WriteData[2]                 : Y23       : output : 2.5 V             :         : 5A        : N              
+WriteData[0]                 : Y24       : output : 2.5 V             :         : 5A        : N              
 GND                          : Y25       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y26       :        :                   :         : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y27       :        :                   :         : 5B        :                

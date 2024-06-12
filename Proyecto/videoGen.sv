@@ -378,7 +378,7 @@ module videoGen(input logic [9:0] x, y,
 		
 		if (subrEn) begin
 			if (q_b != 'h20) begin
-				subr[z] = 1;
+				subr[656-(z-1)] = 1;
 			end
 			else begin
 				subrEn = 0;
